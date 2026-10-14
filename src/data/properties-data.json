@@ -1,0 +1,1324 @@
+[
+  {
+    "id": "bsc-prop-01",
+    "referenceCode": "BSQ-MAY-0101",
+    "title": "The Grosvenor Penthouse & Sky Garden",
+    "slug": "grosvenor-penthouse-sky-garden",
+    "price": 18500000,
+    "priceDisplay": "£18,500,000",
+    "priceType": "Guide Price",
+    "status": "Off-Market Exclusive",
+    "category": "Super-Prime Mayfair",
+    "location": "Grosvenor Square, Mayfair",
+    "addressLine": "Grosvenor Square, Mayfair, London",
+    "city": "London",
+    "postcode": "W1K 2HP",
+    "featuredImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 4,
+      "bathrooms": 5,
+      "areaSqFt": 4850,
+      "tenure": "Share of Freehold (999 yr lease)",
+      "epcRating": "B",
+      "councilTaxBand": "Band H"
+    },
+    "amenities": [
+      "24/7 Uniformed Concierge & Security",
+      "Direct Keyed Biometric Lift Access",
+      "Private Wrap-Around Heated Terrace",
+      "Outdoor Culinary Suite & Barbecue",
+      "Custom Italian Marble & Granite Finishes",
+      "Gaggenau 400 Series Culinary Appliances",
+      "Underfloor Heating & Comfort Cooling",
+      "Integrated Crestron Smart Home Control",
+      "2 Secure Underground Parking Bays",
+      "Private Wine Storage Vault"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Interior & Architecture",
+        "items": [
+          "Double-height reception with 3.4m ceiling volumes",
+          "Bookmatched Statuario Italian marble bathrooms",
+          "Custom bronze fenestration and acoustic glazing",
+          "Bespoke Poliform walk-in dressing suites"
+        ]
+      },
+      {
+        "category": "Wellness & Outdoor",
+        "items": [
+          "1,200 sq ft wrap-around landscaped private sky garden",
+          "Integrated infrared heated pergolas",
+          "Private hydrotherapy hot tub overlooking Mayfair",
+          "Outdoor kitchen with teppanyaki grill"
+        ]
+      },
+      {
+        "category": "Security & Management",
+        "items": [
+          "24/7 dedicated porterage and lifestyle management",
+          "Biometric destination-controlled private lift",
+          "CCTV perimeter security and encrypted intercom",
+          "Secure underground parking with EV supercharger"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5123,
+      "lng": -0.1517
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.275466487178!2d-0.15392652317180108!3d51.51229997181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876052d9a6c7ec9%3A0x6a0c5cbb7a1dfa0!2sGrosvenor%20Sq%2C%20London%20W1K!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Bond Street Underground (Elizabeth Line)",
+        "distance": "0.2 miles (4 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Hyde Park (Speaker's Corner Gate)",
+        "distance": "0.15 miles (3 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "Mount Street Luxury Boutiques & Dining",
+        "distance": "0.1 miles (2 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "Farnborough Airport (Private Aviation)",
+        "distance": "36 miles (45 mins)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Panoramic 360° vistas across Mayfair",
+      "Grosvenor Gardens",
+      "and Hyde Park",
+      "Direct keyed biometric lift opening directly into your private foyer",
+      "24/7 Uniformed concierge",
+      "valet parking",
+      "and private lifestyle desk",
+      "Expansive 1",
+      "200 sq ft private wrap-around terrace with outdoor kitchen",
+      "Custom Italian marble surfaces & Gaggenau 400-series appliances"
+    ],
+    "description": "Commanding an unrivaled position directly overlooking Grosvenor Square, this lateral penthouse represents the pinnacle of contemporary Mayfair living. Engineered with double-height volume, bespoke bronze fenestration, and state-of-the-art climate acoustic filtration, this residence offers an exceptional family sanctuary or prime international pied-à-terre.",
+    "extendedOverview": [
+      "Designed with meticulous precision by an award-winning British architectural practice, the penthouse is arranged across the top two levels with seamless indoor-outdoor transitions.\n\nThe primary reception suite spans over 35 feet, flooded with natural light from triple-aspect floor-to-ceiling sliding glass walls that retract to create an expansive entertaining pavilion.\n\nThe master wing occupies its own private sanctuary, complete with dual bespoke dressing rooms, a bookmatched marble spa bathroom, and direct access onto the secluded morning terrace."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 75% LTV",
+      "estimatedBridgingRate": "from 0.52% pm",
+      "facilityType": "Super-Prime Residential Bridge / Private Bank Term"
+    },
+    "featured": true,
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "areaSqFt": 4850,
+    "tenure": "Share of Freehold (999 yr lease)",
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
+    ]
+  },
+  {
+    "id": "bsc-prop-02",
+    "referenceCode": "BSQ-KBG-0204",
+    "title": "Knightsbridge Private Villa & Mews",
+    "slug": "knightsbridge-private-villa-mews",
+    "price": 24750000,
+    "priceDisplay": "£24,750,000",
+    "priceType": "Guide Price",
+    "status": "Off-Market Exclusive",
+    "category": "Prime Residential",
+    "location": "Ennismore Gardens, Knightsbridge",
+    "addressLine": "Ennismore Gardens, Knightsbridge, London",
+    "city": "London",
+    "postcode": "SW7 1AA",
+    "featuredImage": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 6,
+      "bathrooms": 7,
+      "areaSqFt": 7200,
+      "tenure": "Freehold",
+      "epcRating": "C",
+      "councilTaxBand": "Band H (Kensington & Chelsea)"
+    },
+    "amenities": [
+      "Subterranean 12m Ozone Swimming Pool",
+      "Private Gymnasium & Wellness Spa",
+      "Interconnected Rear Mews House",
+      "Private 3-Car Garage with Turntable",
+      "Direct Access to Private Communal Gardens",
+      "Full Passenger Lift Serving All Levels",
+      "Bespoke Cinema & Screening Room",
+      "Sommelier Wine Cellar (1,500 Bottles)",
+      "Crestron & Lutron Lighting Automation",
+      "Staff Accommodation Suite"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Wellness & Spa",
+        "items": [
+          "12-metre subterranean indoor ozone heated swimming pool",
+          "Finnish cedarwood sauna and marble steam room",
+          "Fully equipped commercial-spec Technogym suite",
+          "Dedicated treatment and massage studio"
+        ]
+      },
+      {
+        "category": "Vehicular & Outbuildings",
+        "items": [
+          "Integrated rear mews house with guest/staff quarters",
+          "Enclosed triple garage with hydraulic turntable",
+          "Direct vehicular access from private mews lane",
+          "Secure underground luggage and vault storage"
+        ]
+      },
+      {
+        "category": "Heritage & Living",
+        "items": [
+          "Grade II listed stucco façade meticulously restored",
+          "First-floor grand ballroom with 4.1m ceiling heights",
+          "Private keyed access to Ennismore Gardens private square",
+          "Bespoke English oak library and cigar room"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5005,
+      "lng": -0.1691
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.743126789412!2d-0.17132242317237373!3d51.500479971810435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605417ef1bbf5%3A0xb35e3fbdb874cb18!2sEnnismore%20Gardens%2C%20London%20SW7!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Knightsbridge Underground (Piccadilly Line)",
+        "distance": "0.3 miles (6 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Harrods & Sloane Street Flagships",
+        "distance": "0.35 miles (7 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "Hyde Park (Prince of Wales Gate)",
+        "distance": "0.2 miles (4 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "London Heathrow Airport (Terminals 2/5)",
+        "distance": "14 miles (25 mins)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Substantial Grade II listed stucco-fronted family mansion",
+      "Interconnected rear mews house with private garage for 3 cars",
+      "Subterranean wellness suite: 12m ozone swimming pool & steam room",
+      "Direct access into private communal ornamental gardens",
+      "Full bespoke smart-home automation & integrated security"
+    ],
+    "description": "A rare opportunity to acquire a substantial freehold trophy residence in prime Knightsbridge. Discreetly offered on an off-market basis through Berkeley Square Capital's private acquisition desk, featuring extensive entertaining proportions, high ceilings, and seamless connection to a private rear mews.",
+    "extendedOverview": [
+      "Occupying a premier location on Ennismore Gardens, this grand stucco residence combines the heritage dignity of London's Victorian architectural zenith with world-class engineering.",
+      "The lower levels have been excavated to create an exquisite spa retreat featuring a backlit ozone pool, gym, steam room, and sommelier cellar.",
+      "The rear mews provides complete autonomy for guests, security staff, or extended family with independent private street access."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 70% LTV",
+      "estimatedBridgingRate": "from 0.49% pm",
+      "facilityType": "Acquisition Debt / Lombard Facility"
+    },
+    "featured": true
+  },
+  {
+    "id": "bsc-prop-03",
+    "referenceCode": "BSQ-BEL-0312",
+    "title": "Belgravia Regency Mansion House",
+    "slug": "belgravia-regency-mansion-house",
+    "price": 14200000,
+    "priceDisplay": "£14,200,000",
+    "priceType": "Offers in Region of",
+    "status": "Under Offer",
+    "category": "Prime Residential",
+    "location": "Chester Square, Belgravia",
+    "addressLine": "Chester Square, Belgravia, London",
+    "city": "London",
+    "postcode": "SW1W 9HR",
+    "featuredImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "areaSqFt": 5120,
+      "tenure": "Freehold",
+      "epcRating": "B",
+      "councilTaxBand": "Band H (Westminster)"
+    },
+    "amenities": [
+      "Full Passenger Lift Serving 5 Floors",
+      "Private South-Facing Walled Courtyard",
+      "Grand First-Floor Drawing Room",
+      "Master Suite Occupying Full Second Floor",
+      "Bespoke Hand-Crafted Kitchen Suite",
+      "Air Conditioning to All Principal Rooms",
+      "Underfloor Heating Throughout",
+      "Integrated Audio & Security Systems",
+      "Access to Chester Square Private Gardens",
+      "Secondary Utility & Staff Entrance"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Period Heritage & Spaces",
+        "items": [
+          "Restored Regency cornicing and original marble hearths",
+          "First-floor French casement doors onto ornamental balcony",
+          "South-facing private walled garden with limestone paving",
+          "Dedicated study and private morning room"
+        ]
+      },
+      {
+        "category": "Modern Infrastructure",
+        "items": [
+          "Silent hydraulic passenger lift connecting ground to fourth floor",
+          "Zoned climate control and ducted air conditioning",
+          "Centralized Cat-6 cabling and enterprise Wi-Fi",
+          "Integrated Banham security alarm and CCTV"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.4947,
+      "lng": -0.1508
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.0042858907374!2d-0.15301822317267196!3d51.49473897180749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876053f3e1b7ec9%3A0x6b1c5cbb7a1dfa0!2sChester%20Sq%2C%20London%20SW1W!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Sloane Square Station (District/Circle Lines)",
+        "distance": "0.25 miles (5 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Elizabeth Street Artisan Boutiques & Cafes",
+        "distance": "0.1 miles (2 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "Peter Jones & King's Road Chelsea",
+        "distance": "0.3 miles (6 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "Victoria International Station (Gatwick Express)",
+        "distance": "0.4 miles (8 min walk)",
+        "type": "transport"
+      }
+    ],
+    "highlights": [
+      "Historic white stucco Regency architecture",
+      "First-floor grand drawing room with floor-to-ceiling French doors",
+      "Passenger lift serving all 5 floors",
+      "Private south-facing walled courtyard garden",
+      "Master bedroom suite occupying the entire second floor"
+    ],
+    "description": "Exemplifying the understated grandeur of Chester Square, this fully renovated townhouse combines timeless period proportions with contemporary engineering. Fully furnished by an award-winning British interior house.",
+    "extendedOverview": [
+      "Chester Square is celebrated as one of Central London's finest residential addresses. This freehold mansion has been completely rebuilt behind its classical stucco facade.",
+      "A light-filled family kitchen and breakfast room connects effortlessly with the private walled courtyard garden.",
+      "The upper floors provide four substantial guest suites, each with private en-suite marble bathrooms and integrated custom wardrobes."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 75% LTV",
+      "estimatedBridgingRate": "from 0.55% pm",
+      "facilityType": "Auction & Fast Acquisition Bridge"
+    },
+    "featured": false
+  },
+  {
+    "id": "bsc-prop-04",
+    "referenceCode": "BSQ-MRY-0418",
+    "title": "Marylebone Mixed-Use Portfolio & Freehold",
+    "slug": "marylebone-mixed-use-freehold",
+    "price": 32000000,
+    "priceDisplay": "£32,000,000",
+    "priceType": "Guide Price",
+    "status": "Available",
+    "category": "Mixed-Use Development",
+    "location": "Marylebone High Street, Marylebone",
+    "addressLine": "Marylebone High Street, London",
+    "city": "London",
+    "postcode": "W1U 5JU",
+    "featuredImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 12,
+      "bathrooms": 14,
+      "areaSqFt": 18450,
+      "tenure": "Freehold",
+      "epcRating": "A",
+      "councilTaxBand": "Commercial / Residential Mixed"
+    },
+    "amenities": [
+      "100% Prime High-Street Retail Frontage",
+      "12 Luxury Lateral Residential Apartments",
+      "Passing Rent Roll: £1.84M per Annum",
+      "Unimplemented Consent for Penthouse Extension",
+      "Dual Commercial & Residential Lift Cores",
+      "BREEAM Excellent Rated Sustainability",
+      "Secure Underground Parking & Loading Bay",
+      "High Covenant Strength Institutional Leases",
+      "Fully Sub-Metered Utility Infrastructure",
+      "Private Communal Courtyard for Residents"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Commercial & Income",
+        "items": [
+          "Flagship ground & lower ground retail units",
+          "5.75% Net Initial Yield with indexed rent reviews",
+          "Unexpired lease term (WAULT) of 9.2 years on commercial components",
+          "Permitted development rights for upper volume expansion"
+        ]
+      },
+      {
+        "category": "Residential Specifications",
+        "items": [
+          "12 air-conditioned lateral apartments fully leased",
+          "Bespoke designer kitchens and porcelain en-suites",
+          "Keyless video access control and resident concierge",
+          "Cycle storage and parcel delivery lockers"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5201,
+      "lng": -0.1512
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.842126789412!2d-0.15342242317137373!3d51.520119971818435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ad17ef1bbf5%3A0xb35e3fbdb874cb18!2sMarylebone%20High%20St%2C%20London%20W1U!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Baker Street Station (5 Tube Lines)",
+        "distance": "0.25 miles (5 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Regent's Park (Inner Circle)",
+        "distance": "0.3 miles (6 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "The Wallace Collection & Manchester Square",
+        "distance": "0.15 miles (3 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "London City Airport (Private / Business)",
+        "distance": "10 miles (30 mins)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Fully leased prime high-street commercial retail anchor",
+      "12 luxury residential apartments on upper floors with strong rental yields",
+      "Total current passing roll: £1,840,000 per annum (5.75% Net Yield)",
+      "Unimplemented planning consent for rooftop penthouse extension",
+      "Institutional covenant strength across all retail leases"
+    ],
+    "description": "A flagship prime Central London mixed-use asset situated in one of the capital's most resilient village locations. Providing immediate diversified income combined with tangible asset management upside through permitted development additions.",
+    "extendedOverview": [
+      "Situated along the bustling, internationally renowned Marylebone High Street, this substantial freehold holding combines blue-chip retail covenants on the lower floors with 12 high-yielding residential apartments.",
+      "The asset benefits from active planning permissions to add two duplex penthouses to the rooftop level, adding significant square footage and capital value.",
+      "Management and rent collection can be fully retained by Berkeley Square Capital's Asset Management division post-acquisition."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 68% LTV",
+      "estimatedBridgingRate": "from 0.50% pm",
+      "facilityType": "Commercial Senior Debt & Mezzanine Facility"
+    },
+    "featured": true
+  },
+  {
+    "id": "bsc-prop-05",
+    "referenceCode": "BSQ-CIT-0522",
+    "title": "City of London Commercial Office Freehold",
+    "slug": "city-of-london-commercial-freehold",
+    "price": 45000000,
+    "priceDisplay": "£45,000,000",
+    "priceType": "Guide Price",
+    "status": "Available",
+    "category": "Commercial Freehold",
+    "location": "Finsbury Square / Moorgate",
+    "addressLine": "Finsbury Square, City of London",
+    "city": "London",
+    "postcode": "EC2A 1HD",
+    "featuredImage": "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 6,
+      "bathrooms": 8,
+      "areaSqFt": 34500,
+      "tenure": "Freehold",
+      "epcRating": "A",
+      "councilTaxBand": "Commercial Rateable Value £1.42M"
+    },
+    "amenities": [
+      "BREEAM 'Excellent' & EPC 'A' Sustainability",
+      "Column-Free Open Plan Floorplates",
+      "Communal Landscaped Rooftop Terrace",
+      "Four 16-Person High-Speed Passenger Lifts",
+      "Four-Pipe Fan Coil Air Conditioning",
+      "Executive End-of-Trip Showers & 120 Cycle Racks",
+      "Full 24/7 Commissionaire & Access Gates",
+      "Dual Power Feed & Dedicated Backup Generator",
+      "Fully Multi-Let with 7.8 Year WAULT",
+      "Raised Access Flooring with 150mm Void"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Building Specifications",
+        "items": [
+          "6 upper commercial office floors with 2.85m clear ceiling heights",
+          "Floor-to-ceiling high-performance solar control glazing",
+          "Dedicated basement cycle hub with dry rooms and towel service",
+          "Dual fiber telecom points of presence (PoP)"
+        ]
+      },
+      {
+        "category": "ESG & Wellness",
+        "items": [
+          "BREEAM Excellent certification with smart BMS monitoring",
+          "Green roof garden with biodiverse planting and skyline views",
+          "WiredScore Platinum rated digital infrastructure",
+          "100% renewable electricity grid interconnection"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5209,
+      "lng": -0.0864
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.782126789412!2d-0.08862242317127373!3d51.520919971819435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761cb17ef1bbf5%3A0xb35e3fbdb874cb18!2sFinsbury%20Sq%2C%20London%20EC2A!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Moorgate Station (Elizabeth, Northern, Circle)",
+        "distance": "0.15 miles (3 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Liverpool Street Mainline & Stansted Express",
+        "distance": "0.3 miles (6 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Bank of England / Royal Exchange",
+        "distance": "0.45 miles (9 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "London City Airport",
+        "distance": "6.5 miles (20 mins via DLR)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Grade-A modern office specification with BREEAM Excellent rating",
+      "Prime proximity to Elizabeth Line & Moorgate Interchange",
+      "Multi-let to international fintech and corporate legal tenants",
+      "Weighted Average Unexpired Lease Term (WAULT) of 7.8 years",
+      "Communal landscaped roof terrace with City skyline vistas"
+    ],
+    "description": "A premium commercial asset in the heart of London's financial district. Ideal for international institutions, sovereign capital funds, and family offices seeking capital preservation and steady inflation-hedged yields.",
+    "extendedOverview": [
+      "Prominently located on the northern boundary of the Square Mile, this modern commercial headquarters provides flexible, column-free office accommodation.",
+      "The building is currently let to three prime multinational tenants on institutional full repairing and insuring (FRI) leases.",
+      "The rooftop terrace offers panoramic views over Finsbury Square, the City cluster, and Shoreditch."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 65% LTV",
+      "estimatedBridgingRate": "from 0.48% pm",
+      "facilityType": "Syndicated Commercial Debt Package"
+    },
+    "featured": false
+  },
+  {
+    "id": "bsc-prop-06",
+    "referenceCode": "BSQ-DXB-0608",
+    "title": "Palm Jumeirah Water-Front Sky Mansion",
+    "slug": "palm-jumeirah-waterfront-sky-mansion",
+    "price": 21500000,
+    "priceDisplay": "£21,500,000",
+    "priceType": "Price on Application",
+    "status": "Available",
+    "category": "Prime Residential",
+    "location": "Palm Jumeirah Crescent",
+    "addressLine": "The Crescent, Palm Jumeirah, Dubai",
+    "city": "Dubai",
+    "postcode": "UAE",
+    "featuredImage": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 5,
+      "bathrooms": 6,
+      "areaSqFt": 8650,
+      "tenure": "Freehold",
+      "epcRating": "A",
+      "councilTaxBand": "Tax-Free Jurisdiction"
+    },
+    "amenities": [
+      "Private Cantilevered Infinity Pool",
+      "Direct Private White-Sand Beach Access",
+      "Private Superyacht Mooring Rights",
+      "Zero UAE Income & Capital Gains Tax",
+      "Full-Floor Master Penthouse Suite",
+      "Japanese-Engineered Smart Solar Glazing",
+      "Private Spa with Hammam & Cold Plunge",
+      "Show & Wet Chef's Kitchens (Boffi)",
+      "Automated 4-Car Climate Showcase Garage",
+      "Cross-Border Escrow & Sharia Structuring"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Waterfront & Wellness",
+        "items": [
+          "Private infinity pool suspended over the Arabian Gulf",
+          "Direct private beach with private cabanas and fire pits",
+          "Superyacht berth accommodating vessels up to 40 meters",
+          "Private wellness pavilion with massage suites"
+        ]
+      },
+      {
+        "category": "Ultra-Luxury Living",
+        "items": [
+          "Double-height 7-meter living salon with Gulf panorama",
+          "Full custom Boffi kitchens with Sub-Zero refrigeration",
+          "Dedicated staff quarters with independent entrance",
+          "Full biometric security and remote villa control"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 25.1124,
+      "lng": 55.139
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.441466487178!2d55.1368265231718!3d25.11239997181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f152d9a6c7ec9%3A0x6a0c5cbb7a1dfa0!2sPalm%20Jumeirah%2C%20Dubai!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Atlantis The Royal & Nobu",
+        "distance": "0.8 miles (3 mins drive)",
+        "type": "landmark"
+      },
+      {
+        "name": "Dubai Marina & Yacht Club",
+        "distance": "4 miles (10 mins)",
+        "type": "shopping"
+      },
+      {
+        "name": "Dubai International Airport (DXB VIP Terminal)",
+        "distance": "22 miles (28 mins)",
+        "type": "airport"
+      },
+      {
+        "name": "Al Maktoum International Airport (DWC)",
+        "distance": "25 miles (30 mins)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Private infinity pool suspended over the Arabian Gulf",
+      "Direct private beach access and superyacht mooring rights",
+      "High-spec automation with Japanese-engineered zero-glare glazing",
+      "Zero UAE income or capital gains tax environment",
+      "Cross-border structuring via Berkeley Square Capital Dubai & Mayfair"
+    ],
+    "description": "Exclusive waterfront mansion offering unrestricted skyline vistas of Dubai Marina. Facilitated through our London Mayfair & Dubai regional desks with bespoke cross-border mortgage and escrow structuring.",
+    "extendedOverview": [
+      "Positioned on the prestigious Crescent of Palm Jumeirah, this architectural trophy offers unprecedented privacy, panoramic open sea views, and private beach frontage.",
+      "Engineered with double-height frameless glass walls, travertine stone finishes, and fully integrated smart home automation.",
+      "Purchasers benefit from seamless transaction execution and UAE Golden Visa facilitation through our Dubai and London offices."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 70% LTV",
+      "estimatedBridgingRate": "from 0.58% pm",
+      "facilityType": "International HNWI Mortgage / Cross-Border Line"
+    },
+    "featured": true
+  },
+  {
+    "id": "bsc-prop-07",
+    "referenceCode": "BSQ-KEN-0715",
+    "title": "Kensington Palace Green Garden Villa",
+    "slug": "kensington-palace-green-garden-villa",
+    "price": 16800000,
+    "priceDisplay": "£16,800,000",
+    "priceType": "Guide Price",
+    "status": "Recently Completed",
+    "category": "Super-Prime Mayfair",
+    "location": "Kensington Palace Gardens Vicinity",
+    "addressLine": "Palace Green, Kensington, London",
+    "city": "London",
+    "postcode": "W8 4PX",
+    "featuredImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "areaSqFt": 5800,
+      "tenure": "Freehold",
+      "epcRating": "B",
+      "councilTaxBand": "Band H (Kensington & Chelsea)"
+    },
+    "amenities": [
+      "Secluded 90ft Landscaped Garden",
+      "Private Garden Pavilion & Orangery",
+      "Underground Garage with Turntable",
+      "Private Wellness Spa & Gymnasium",
+      "Temperature-Controlled Wine Cellar",
+      "Subtle Diplomatic Security Grade Gates",
+      "Direct Adjacency to Kensington Gardens",
+      "Full Underfloor Heating & Comfort Cooling",
+      "Keyless Biometric Access Control",
+      "Bespoke Smallbone of Devizes Kitchen"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Gardens & Outbuildings",
+        "items": [
+          "90ft south-west facing private walled lawn",
+          "Detached heated garden studio / home office",
+          "Automated irrigation and night illumination system",
+          "Outdoor dining loggia with fireplace"
+        ]
+      },
+      {
+        "category": "Luxury Living",
+        "items": [
+          "Principal suite with dual dressing rooms and terrace",
+          "Hand-carved French limestone fireplace mantels",
+          "Integrated sound system across all interior and exterior zones",
+          "Secure underground parking with vehicle lift"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5038,
+      "lng": -0.1912
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.541466487178!2d-0.1934265231718!3d51.50389997181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876054d9a6c7ec9%3A0x6a0c5cbb7a1dfa0!2sKensington%20Palace%20Gardens%2C%20London%20W8!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "High Street Kensington Underground",
+        "distance": "0.3 miles (6 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Kensington Palace & Gardens",
+        "distance": "0.1 miles (2 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "Whole Foods & Kensington High Street",
+        "distance": "0.35 miles (7 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "Heathrow Airport",
+        "distance": "13.5 miles (25 mins)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Discreet location adjacent to Royal Parks",
+      "Secluded 90ft landscaped private rear garden with pavilion",
+      "Underground secure garage with automotive turntable",
+      "Private spa, gym, and temperature-controlled wine cellar",
+      "Successfully funded and completed via Berkeley Square Capital bridging facility"
+    ],
+    "description": "A completed prime residence structured and transacted through Berkeley Square Capital. Illustrating our end-to-end capability from fast-track acquisition funding to final asset realization.",
+    "extendedOverview": [
+      "Located in an exclusive enclave bordering Kensington Palace Gardens, this detached villa represents a masterclass in discrete luxury living.",
+      "The residence was acquired and refinanced through a bespoke bridging-to-term debt package structured by Berkeley Square Capital.",
+      "Features a private 90ft landscaped lawn, underground vehicular access, and diplomatic-grade security protocols."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Completed Transaction",
+      "estimatedBridgingRate": "Fully Deployed",
+      "facilityType": "7-Day Bridging Facility into Term Refinance"
+    },
+    "featured": false
+  },
+  {
+    "id": "bsc-prop-08",
+    "referenceCode": "BSQ-MAY-0820",
+    "title": "Berkeley Square Boutique Office & Gallery",
+    "slug": "berkeley-square-boutique-office",
+    "price": 19500000,
+    "priceDisplay": "£19,500,000",
+    "priceType": "Guide Price",
+    "status": "Available",
+    "category": "Commercial Freehold",
+    "location": "Berkeley Square, Mayfair",
+    "addressLine": "Berkeley Square, Mayfair, London",
+    "city": "London",
+    "postcode": "W1J 6BD",
+    "featuredImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "areaSqFt": 6200,
+      "tenure": "Freehold",
+      "epcRating": "A",
+      "councilTaxBand": "Commercial Freehold Rateable"
+    },
+    "amenities": [
+      "Prime Berkeley Square Frontage & Address",
+      "Ground Floor Art Gallery / Showcase",
+      "Private Landscaped Executive Terrace",
+      "Passenger Lift Serving All 5 Floors",
+      "Dedicated Server Room with Dark Fiber",
+      "Air Conditioning & Precision Air Handling",
+      "Shower Facilities & Executive Dressing",
+      "Full Vacant Possession upon Completion",
+      "Period Georgian Fireplaces & Plasterwork",
+      "Direct Proximity to Annabel's & Mayfair Clubs"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Corporate Headquarters Infrastructure",
+        "items": [
+          "Boutique self-contained Mayfair townhouse headquarters",
+          "Ground floor gallery suitable for luxury retail or VIP reception",
+          "Executive boardrooms with integrated video conferencing",
+          "Private terrace overlooking landscaped Mayfair mews"
+        ]
+      },
+      {
+        "category": "Heritage & Technical",
+        "items": [
+          "Restored Grade II listed Georgian paneling and chandeliers",
+          "Cat-6A cabling with dedicated unthrottled gigabit fiber line",
+          "Zoned security access with smart card reader system",
+          "Executive kitchen and private dining salon"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5098,
+      "lng": -0.1444
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3541466487178!2d-0.1466265231718!3d51.50980427181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876055b43b33925%3A0x4430be4640c547d4!2sBerkeley%20Square%20House%2C%20Berkeley%20Square%2C%20London%20W1J%206BD!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Green Park Underground (Jubilee, Piccadilly, Victoria)",
+        "distance": "0.25 miles (5 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Annabel's, Sexy Fish & Mount Street Dining",
+        "distance": "0.05 miles (1 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "Bond Street & New Bond Street Boutiques",
+        "distance": "0.2 miles (4 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "RAF Northolt / Farnborough Jet Terminals",
+        "distance": "15 miles (35 mins)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Self-contained Mayfair commercial headquarters",
+      "Ground floor art gallery / flagship client showcase",
+      "Terrace overlooking private Mayfair gardens",
+      "High-speed fiber connectivity & CAT-6A structured cabling",
+      "Rare Mayfair freehold opportunity with full vacant possession"
+    ],
+    "description": "A boutique commercial asset positioned on London's most prestigious square. Suitable for private wealth managers, family offices, luxury brands, and institutional headquarters seeking an unrepeatable Central London address.",
+    "extendedOverview": [
+      "Offering one of the rarest commercial freehold opportunities in Mayfair, this self-contained Georgian building commands direct views across the plane trees of Berkeley Square.",
+      "The layout provides an exceptional blend of formal entertaining and presentation galleries on the ground floor with high-specification modern office suites on the upper floors.",
+      "Available with full vacant possession, presenting immediate owner-occupier prestige or exceptional rental yield potential."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 72% LTV",
+      "estimatedBridgingRate": "from 0.53% pm",
+      "facilityType": "Commercial Acquisition & Refurbishment Debt"
+    },
+    "featured": true
+  },
+  {
+    "id": "bsc-prop-09",
+    "referenceCode": "BSQ-CHE-0925",
+    "title": "Chelsea Embankment Riverside Penthouse",
+    "slug": "chelsea-embankment-riverside-penthouse",
+    "price": 13500000,
+    "priceDisplay": "£13,500,000",
+    "priceType": "Guide Price",
+    "status": "Available",
+    "category": "Prime Residential",
+    "location": "Cheyne Walk, Chelsea",
+    "addressLine": "Cheyne Walk, Chelsea, London",
+    "city": "London",
+    "postcode": "SW3 5LN",
+    "featuredImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "areaSqFt": 3950,
+      "tenure": "Long Leasehold (999 yrs)",
+      "epcRating": "B",
+      "councilTaxBand": "Band H (Kensington & Chelsea)"
+    },
+    "amenities": [
+      "Direct Thames River Frontage & Albert Bridge Views",
+      "2 Secure Underground Parking Bays + EV Charger",
+      "24-Hour Uniformed Porterage & Concierge",
+      "Residents' Health Club & Spa Facilities",
+      "Private Riverfront Terrace (650 sq ft)",
+      "Direct Keyed Lift Access into Foyer",
+      "Bespoke Minotti Luxury Furnishing Package",
+      "Zoned Air Conditioning & Underfloor Heating",
+      "Automated Motorized Sheer & Blackout Drapes",
+      "Custom Italian Marble Fireplace"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Riverside Living & Views",
+        "items": [
+          "Unobstructed panoramic Thames vistas towards Battersea Park",
+          "650 sq ft riverfront terrace with frameless glass balustrades",
+          "Triple-aspect floor-to-ceiling sliding acoustic glass doors"
+        ]
+      },
+      {
+        "category": "Building Amenities",
+        "items": [
+          "24-hour concierge desk with secure parcel reception",
+          "Private wellness suite with resistance pool and sauna",
+          "Two secure subterranean parking spaces with automated gates"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.4837,
+      "lng": -0.1704
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.541466487178!2d-0.1726265231718!3d51.48379997181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876056d9a6c7ec9%3A0x6a0c5cbb7a1dfa0!2sCheyne%20Walk%2C%20London%20SW3!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Sloane Square & King's Road Chelsea",
+        "distance": "0.6 miles (12 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "Battersea Park (Peace Pagoda Bridge)",
+        "distance": "0.2 miles (4 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "South Kensington Underground",
+        "distance": "0.8 miles (15 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "London Heliport (Battersea)",
+        "distance": "1.2 miles (5 mins drive)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Direct south-facing river frontage and Albert Bridge views",
+      "Expansive reception with floor-to-ceiling frameless glazing",
+      "2 Secure underground parking spaces with EV charging",
+      "Private residents' riverfront health club and concierge",
+      "Offered with complete bespoke Minotti interior furniture package"
+    ],
+    "description": "A lateral riverfront residence situated on historical Cheyne Walk. Combining iconic views across the Thames with refined contemporary interiors and 24-hour porterage.",
+    "extendedOverview": [
+      "Set against the historic backdrop of Cheyne Walk, this penthouse offers an immersive riverfront perspective.",
+      "The open-concept living area flows directly onto an expansive private terrace equipped with bespoke outdoor heating.",
+      "Designed for turnkey living, the property is offered with bespoke Italian furnishings and high-grade audio-visual systems."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 75% LTV",
+      "estimatedBridgingRate": "from 0.54% pm",
+      "facilityType": "Prime Residential Bridge"
+    },
+    "featured": false
+  },
+  {
+    "id": "bsc-prop-10",
+    "referenceCode": "BSQ-REG-1030",
+    "title": "Regent's Park Nash Crescent Villa",
+    "slug": "regents-park-nash-crescent-villa",
+    "price": 29500000,
+    "priceDisplay": "£29,500,000",
+    "priceType": "Guide Price",
+    "status": "Off-Market Exclusive",
+    "category": "Super-Prime Mayfair",
+    "location": "Cumberland Terrace, Regent's Park",
+    "addressLine": "Cumberland Terrace, Regent's Park, London",
+    "city": "London",
+    "postcode": "NW1 4HS",
+    "featuredImage": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 7,
+      "bathrooms": 8,
+      "areaSqFt": 9800,
+      "tenure": "Crown Estate Leasehold (125 yrs)",
+      "epcRating": "C",
+      "councilTaxBand": "Band H (Camden)"
+    },
+    "amenities": [
+      "Monumental John Nash Architecture",
+      "Direct Views into Regent's Park Parkland",
+      "Separate Self-Contained Staff Mews",
+      "Private Cinema Screening Room (10 Seats)",
+      "Sommelier Temperature Tasting Cellar",
+      "Passenger Lift Serving All 5 Floors",
+      "Private Double Garage + Off-Street Carriage Drive",
+      "Restored Neoclassical Plasterwork & Marble",
+      "Diplomatic Grade Perimeter Security",
+      "Private Rear Courtyard Garden"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Royal Parkland & Heritage",
+        "items": [
+          "Unrivalled views directly across Regent's Park royal lawns",
+          "John Nash monumental colonnade and neoclassical façade",
+          "Formal state entertaining rooms with 4.2m ceiling volumes",
+          "Private carriage drive with electronic security gates"
+        ]
+      },
+      {
+        "category": "Entertainment & Leisure",
+        "items": [
+          "Acoustically isolated 4K Dolby Atmos cinema room",
+          "Climatically regulated wine tasting vault for 2,000 bottles",
+          "Private gymnasium and sauna suite",
+          "Separate 2-bedroom staff mews with private garage"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5312,
+      "lng": -0.1448
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.3541466487178!2d-0.1470265231718!3d51.53120427181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b6d9a6c7ec9%3A0x6a0c5cbb7a1dfa0!2sCumberland%20Terrace%2C%20London%20NW1!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Regent's Park Underground (Bakerloo Line)",
+        "distance": "0.35 miles (7 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Marylebone High Street Shopping & Dining",
+        "distance": "0.5 miles (10 min walk)",
+        "type": "shopping"
+      },
+      {
+        "name": "Great Portland Street Station",
+        "distance": "0.4 miles (8 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Euston / King's Cross St Pancras (Eurostar)",
+        "distance": "1.1 miles (8 mins drive)",
+        "type": "transport"
+      }
+    ],
+    "highlights": [
+      "Monumental John Nash neoclassical architecture",
+      "Private frontage looking directly into Regent's Park royal lawns",
+      "Separate staff mews apartment and double garage",
+      "Private cinema screening room and temperature wine tasting room",
+      "Discreet security access with high perimeter fencing"
+    ],
+    "description": "One of Regent's Park's grandest private crescent houses. Restored to sovereign diplomatic standards, offering monumental neoclassical entertaining salons and parkland views.",
+    "extendedOverview": [
+      "Commissioned by the Prince Regent and designed by master architect John Nash, Cumberland Terrace stands as one of the world's most spectacular neoclassical residential compositions.",
+      "This palatial private house has been comprehensively restored, fusing historical grandeur with state-of-the-art climate control, lift access, and private cinema.",
+      "Complete with a separate mews house providing dedicated staff quarters and secure garaging."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 70% LTV",
+      "estimatedBridgingRate": "from 0.50% pm",
+      "facilityType": "HNWI Crown Leasehold Facility"
+    },
+    "featured": true
+  },
+  {
+    "id": "bsc-prop-11",
+    "referenceCode": "BSQ-STJ-1135",
+    "title": "St. James's Heritage Freehold Mansion",
+    "slug": "st-jamess-heritage-freehold-mansion",
+    "price": 22000000,
+    "priceDisplay": "£22,000,000",
+    "priceType": "Guide Price",
+    "status": "Under Offer",
+    "category": "Mixed-Use Development",
+    "location": "King Street, St. James's",
+    "addressLine": "King Street, St. James's, London",
+    "city": "London",
+    "postcode": "SW1Y 6QU",
+    "featuredImage": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 8,
+      "bathrooms": 9,
+      "areaSqFt": 8400,
+      "tenure": "Freehold",
+      "epcRating": "B",
+      "councilTaxBand": "Commercial / Residential Mixed"
+    },
+    "amenities": [
+      "Rare St. James's Freehold Tenure",
+      "Planning for 4 Prime Lateral Residences",
+      "Original Adam-Style Marble Fireplaces",
+      "Private Rear Lightwell & Courtyards",
+      "Dual Passenger & Service Elevator Shafts",
+      "Holding Rental Income with Vacant Option",
+      "Direct Proximity to Christie's & St. James's Club",
+      "Subterranean Vaults & Safe Storage",
+      "Three Independent Street Entrances",
+      "High Floor-to-Ceiling Classical Proportions"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Development Potential",
+        "items": [
+          "Full planning consent for prime residential redevelopment",
+          "Architectural schemes for 4 luxury lateral apartments",
+          "Potential for private single-occupancy palace restoration",
+          "Substantial capital appreciation upside upon project completion"
+        ]
+      },
+      {
+        "category": "Heritage Architecture",
+        "items": [
+          "Restored 18th-century Portland stone façade",
+          "Historic grand cantilevered stone staircase",
+          "Ornate ceiling moldings and decorative plaster friezes"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 51.5065,
+      "lng": -0.1374
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.4541466487178!2d-0.1396265231718!3d51.50650427181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d19a6c7ec9%3A0x6a0c5cbb7a1dfa0!2sKing%20St%2C%20London%20SW1Y!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Green Park Station (Jubilee/Piccadilly/Victoria)",
+        "distance": "0.2 miles (4 min walk)",
+        "type": "transport"
+      },
+      {
+        "name": "Christie's International Auction House",
+        "distance": "0.05 miles (1 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "St. James's Square & Royal Parks",
+        "distance": "0.1 miles (2 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "Jermyn Street Tailors & Fortnum & Mason",
+        "distance": "0.15 miles (3 min walk)",
+        "type": "shopping"
+      }
+    ],
+    "highlights": [
+      "Unrepeatable St. James's core location near Christie's",
+      "Planning consent for conversion into 4 ultra-prime lateral residences",
+      "Current commercial holding income with vacant possession option",
+      "Original Adam-style fireplaces and ornate plasterwork",
+      "Structured through Berkeley Square Capital bridging facility"
+    ],
+    "description": "A distinguished freehold building in historical St. James's. Providing tremendous value-add potential through consented residential luxury conversion.",
+    "extendedOverview": [
+      "St. James's represents the aristocrat of Central London enclaves, renowned for private member clubs, art galleries, and historic palaces.",
+      "This freehold property is currently arranged over six levels with full planning permission to convert into high-specification luxury apartments.",
+      "Transacted and structured with an acquisition bridging loan by Berkeley Square Capital."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 72% LTV",
+      "estimatedBridgingRate": "from 0.53% pm",
+      "facilityType": "Value-Add Conversion Facility"
+    },
+    "featured": false
+  },
+  {
+    "id": "bsc-prop-12",
+    "referenceCode": "BSQ-DXB-1240",
+    "title": "Dubai Hills Royal Fairway Villa",
+    "slug": "dubai-hills-royal-fairway-villa",
+    "price": 15400000,
+    "priceDisplay": "£15,400,000",
+    "priceType": "Guide Price",
+    "status": "Available",
+    "category": "Prime Residential",
+    "location": "Dubai Hills Golf Club, Dubai Hills",
+    "addressLine": "Fairway Vistas, Dubai Hills Estate, Dubai",
+    "city": "Dubai",
+    "postcode": "UAE",
+    "featuredImage": "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=85",
+    "gallery": [
+      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+    ],
+    "specs": {
+      "bedrooms": 6,
+      "bathrooms": 7,
+      "areaSqFt": 11200,
+      "tenure": "Freehold",
+      "epcRating": "A",
+      "councilTaxBand": "Tax-Free Jurisdiction"
+    },
+    "amenities": [
+      "Direct Frontline 18-Hole Championship Golf Course",
+      "Private Resort-Style Swimming Pool & Jacuzzi",
+      "Full Entertainment Floor with 2-Lane Bowling",
+      "Private Cinema & Video Game Simulator Suite",
+      "Smart Solar Grid & Zero Energy Waste Architecture",
+      "Underground Climate-Controlled 6-Car Garage",
+      "Double-Height Entrance Foyer with Water Feature",
+      "Fully Furnished by Italian Luxury Design Studio",
+      "24/7 Gated Community Security Patrols",
+      "Zero UAE Income, Wealth & Capital Gains Taxes"
+    ],
+    "amenityCategories": [
+      {
+        "category": "Golf & Resort Living",
+        "items": [
+          "Direct frontline panoramic golf course vistas to Downtown skyline",
+          "Infinity-edge temperature-controlled swimming pool and sunken fire pit",
+          "Outdoor barbecue kitchen and poolside dining gazebo"
+        ]
+      },
+      {
+        "category": "Entertainment & Automation",
+        "items": [
+          "Private 2-lane bowling alley in basement entertainment floor",
+          "Dolby Atmos private cinema and full golf simulator room",
+          "Automated smart home climate, shading, and security systems",
+          "6-car showcase garage with glass showroom viewing wall"
+        ]
+      }
+    ],
+    "coordinates": {
+      "lat": 25.1098,
+      "lng": 55.2412
+    },
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.841466487178!2d55.2388265231718!3d25.10989997181467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6e2d9a6c7ec9%3A0x6a0c5cbb7a1dfa0!2sDubai%20Hills%20Estate%2C%20Dubai!5e0!3m2!1sen!2suk!4v1710000000000!5m2!1sen!2suk",
+    "nearbyPoints": [
+      {
+        "name": "Dubai Hills Golf Clubhouse & Dining",
+        "distance": "0.2 miles (3 min walk)",
+        "type": "landmark"
+      },
+      {
+        "name": "Dubai Hills Mall & Luxury Retail",
+        "distance": "1.5 miles (4 mins drive)",
+        "type": "shopping"
+      },
+      {
+        "name": "Downtown Dubai & Burj Khalifa",
+        "distance": "8 miles (12 mins drive)",
+        "type": "landmark"
+      },
+      {
+        "name": "Dubai International Airport (DXB)",
+        "distance": "14 miles (18 mins drive)",
+        "type": "airport"
+      }
+    ],
+    "highlights": [
+      "Direct frontline golf course views overlooking Championship course",
+      "Private swimming pool, Jacuzzi, and sunken fire pit lounge",
+      "Full basement entertainment floor with bowling alley and gym",
+      "Smart-home automation with private solar energy generation",
+      "Full cross-border tax and escrow structuring by Berkeley Square Capital"
+    ],
+    "description": "A modern architectural masterpiece situated in prestigious Dubai Hills. Backing directly onto the championship golf course with uninterrupted views of the Downtown skyline.",
+    "extendedOverview": [
+      "Commanding an unrepeatable frontline position overlooking the fairways of Dubai Hills Golf Club, this newly constructed villa represents modern architectural luxury.",
+      "The residence offers expansive double-height living areas, floor-to-ceiling minimal glazing, and an entertainment basement complete with bowling alley and cinema.",
+      "Facilitated with cross-border wealth structuring and currency hedging via Berkeley Square Capital London and Dubai offices."
+    ],
+    "indicativeFinance": {
+      "maxLtv": "Up to 70% LTV",
+      "estimatedBridgingRate": "from 0.56% pm",
+      "facilityType": "International HNWI Mortgage Line"
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "notif-1",
+    "type": "application",
+    "title": "New Property Application: The Grosvenor Penthouse",
+    "message": "Lord Alexander Kensington submitted an acquisition offer of £18,500,000 (Ref: BSQ-APP-2026-8821).",
+    "referenceId": "BSQ-APP-2026-8821",
+    "link": "/admin/applications",
+    "timestamp": "2026-09-01T10:27:13.730Z",
+    "isRead": false
+  },
+  {
+    "id": "notif-2",
+    "type": "application",
+    "title": "New Tenancy Application: Knightsbridge Private Villa",
+    "message": "Elena Rostova submitted a prime tenancy application (Ref: BSQ-APP-2026-5190).",
+    "referenceId": "BSQ-APP-2026-5190",
+    "link": "/admin/applications",
+    "timestamp": "2026-08-31T12:27:13.730Z",
+    "isRead": true
+  }
+]

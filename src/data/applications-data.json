@@ -1,0 +1,89 @@
+[
+  {
+    "id": "app-1",
+    "referenceId": "BSQ-APP-2026-8821",
+    "propertySlug": "grosvenor-penthouse-sky-garden",
+    "propertyTitle": "The Grosvenor Penthouse & Sky Garden",
+    "propertyLocation": "Grosvenor Square, Mayfair",
+    "propertyRef": "BSQ-MAY-0101",
+    "applicationType": "Purchase Acquisition",
+    "offerPrice": "18500000",
+    "targetCompletionDate": "2026-11-15",
+    "solicitorInfo": "Forsters LLP (Partner: Robert Vance)",
+    "applicantName": "Lord Alexander Kensington",
+    "applicantEmail": "alexander@kensington-estates.co.uk",
+    "applicantPhone": "+44 7930 472993",
+    "currentAddress": "14 Chesterfield Hill, Mayfair, London W1J 5BN",
+    "nationality": "United Kingdom",
+    "applicantType": "Private Individual",
+    "sourceOfFunds": "Cash Reserves",
+    "equityDeposit": "18500000",
+    "bankName": "Coutts & Co Mayfair",
+    "documents": [
+      {
+        "id": "d1",
+        "name": "passport_scan_kensington.pdf",
+        "size": "2.4 MB",
+        "category": "id"
+      },
+      {
+        "id": "d2",
+        "name": "coutts_proof_of_funds_statement.pdf",
+        "size": "3.1 MB",
+        "category": "funds"
+      },
+      {
+        "id": "d3",
+        "name": "council_tax_mayfair.pdf",
+        "size": "1.2 MB",
+        "category": "address"
+      }
+    ],
+    "status": "Pending",
+    "submittedAt": "2026-09-01T10:27:13.730Z",
+    "isRead": false,
+    "internalNotes": [
+      {
+        "id": "note-1788267790849",
+        "text": "Legal pack dispatched to Forsters LLP. Vendor review scheduled.",
+        "author": "Senior Partner Mayfair",
+        "timestamp": "2026-09-01T13:03:10.849Z"
+      }
+    ]
+  },
+  {
+    "id": "app-2",
+    "referenceId": "BSQ-APP-2026-5190",
+    "propertySlug": "knightsbridge-private-villa-mews",
+    "propertyTitle": "Knightsbridge Private Villa & Mews",
+    "propertyLocation": "Ennismore Gardens, Knightsbridge",
+    "propertyRef": "BSQ-KBG-0204",
+    "applicationType": "Prime Tenancy",
+    "offerPrice": "12000000",
+    "targetCompletionDate": "2026-10-01",
+    "applicantName": "Elena Rostova",
+    "applicantEmail": "elena.rostova@geneva-wealth.ch",
+    "applicantPhone": "+41 22 730 4000",
+    "currentAddress": "Geneva, Switzerland",
+    "nationality": "Switzerland",
+    "applicantType": "Private Individual",
+    "sourceOfFunds": "Liquid Securities",
+    "documents": [
+      {
+        "id": "d4",
+        "name": "swiss_passport_scan.pdf",
+        "size": "1.8 MB",
+        "category": "id"
+      },
+      {
+        "id": "d5",
+        "name": "ubs_wealth_verification_letter.pdf",
+        "size": "2.2 MB",
+        "category": "funds"
+      }
+    ],
+    "status": "Approved",
+    "submittedAt": "2026-08-31T12:27:13.730Z",
+    "isRead": true
+  }
+]
