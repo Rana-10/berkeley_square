@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ServiceGroupSection } from "@/components/cards/ServiceCard";
-import { SectionHeading } from "@/components/sections/SectionHeading";
+import { PageHero } from "@/components/editorial/PageHero";
+import { images } from "@/data/images";
 import { serviceGroups } from "@/data/services";
 
 export const metadata: Metadata = {
@@ -8,16 +9,20 @@ export const metadata: Metadata = {
   description: "Loan, property, and construction services from Berkeley Square Capital."
 };
 
+const groupImages = [images.portlandStone, images.victorianStoneCorner, images.thamesTownhouses];
+
 export default function ServicesPage() {
   return (
-    <main className="pt-32 [html.light_&]:bg-[#F7F5F2] min-h-screen">
-      <section className="container pb-20">
-        <SectionHeading eyebrow="Services" title="Specialist services across every BSQ division." description="Structured content keeps services simple to maintain while preserving a premium public presence." />
-        <div className="grid gap-6">
-          {serviceGroups.map((group) => (
-            <ServiceGroupSection key={group.division} group={group} />
-          ))}
-        </div>
+    <main className="min-h-screen select-none bg-theme-page">
+      <PageHero
+        eyebrow="Services"
+        title="Specialist services across every BSQ division."
+        intro="Finance, property transactions and asset management, each led by dedicated specialists and delivered from our Mayfair office."
+      />
+      <section className="container pb-24">
+        {serviceGroups.map((group, idx) => (
+          <ServiceGroupSection key={group.division} group={group} image={groupImages[idx % groupImages.length]} index={idx} />
+        ))}
       </section>
     </main>
   );

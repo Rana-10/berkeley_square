@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/editorial/PageHero";
 import { LoanWizard } from "@/components/loan/LoanWizard";
-import { SectionHeading } from "@/components/sections/SectionHeading";
 
 export const metadata: Metadata = {
   title: "Loan Application",
@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 
 export default function LoanApplicationPage() {
   return (
-    <main className="pt-32 [html.light_&]:bg-[#F7F5F2] min-h-screen">
-      <section className="container pb-20">
-        <SectionHeading
-          eyebrow="Loan application"
-          title="A shorter, simpler loan enquiry."
-          description="Share your personal details and the security property connected to a purchase or refinance."
-        />
+    <main className="min-h-screen select-none bg-theme-page">
+      <PageHero
+        eyebrow="Loan application"
+        title="A shorter, simpler loan enquiry."
+        intro="Share your personal details and the security property connected to a purchase or refinance."
+      />
+      <section className="container py-16 md:py-20">
         <LoanWizard />
       </section>
     </main>

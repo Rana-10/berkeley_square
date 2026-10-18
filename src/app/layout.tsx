@@ -3,9 +3,10 @@ import type { ReactNode } from "react";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { SiteChrome } from "@/components/layout/SiteChrome";
-import { CookieConsentBanner } from "@/components/layout/CookieConsentBanner";
-import { ScrollEnergyProgress } from "@/components/animations/ScrollEnergyProgress";
+import { LazyWidgets } from "@/components/layout/LazyWidgets";
 import { SiteLoader } from "@/components/animations/SiteLoader";
+import { RouteTransition } from "@/components/animations/RouteTransition";
+import { ScrollEnergyProgress } from "@/components/animations/ScrollEnergyProgress";
 import { ThemeProvider } from "@/components/theme/ThemeContext";
 import "./globals.css";
 
@@ -62,11 +63,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="font-sans antialiased selection:bg-legacy-red/40 selection:text-white" suppressHydrationWarning>
         <ThemeProvider>
           <SiteLoader />
+          <RouteTransition />
           <ScrollEnergyProgress />
           <Header />
-          <CookieConsentBanner />
           {children}
           <SiteChrome />
+          <LazyWidgets />
         </ThemeProvider>
       </body>
     </html>

@@ -1,17 +1,27 @@
-import Image from "next/image";
 import { galleryImages } from "@/data/gallery";
+import { Photo } from "@/components/editorial/Photo";
 import { GalleryLightboxProvider, GalleryLightboxTrigger } from "./GalleryLightbox";
 
+/**
+ * Photographs keep their natural proportions in a column flow, captions beneath.
+ * No overlays, no badges: the category is set as small caps in the caption line.
+ */
 export function GalleryGrid() {
   return (
     <GalleryLightboxProvider>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {galleryImages.map((image) => (
-          <GalleryLightboxTrigger key={image.src} image={image}>
-            <Image src={image.src} alt={image.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover saturate-[.8] transition duration-700 group-hover:scale-105 group-hover:saturate-100" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-black/50 px-3 py-1 text-xs text-white">{image.category}</span>
-          </GalleryLightboxTrigger>
+      <div className="columns-1 gap-8 sm:columns-2 lg:columns-3 [&>*]:mb-10">
+        {galleryImages.map((image, index) => (
+          <div key={image.src} className="break-inside-avoid">
+            <GalleryLightboxTrigger image={image}>
+              <Photo
+                image={image}
+                ratio={image.orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+                caption={`${image.category} — ${image.caption}`}
+                priority={index < 3}
+              />
+            </GalleryLightboxTrigger>
+          </div>
         ))}
       </div>
     </GalleryLightboxProvider>

@@ -44,14 +44,14 @@ export function FundingCompletionsSection() {
 
       {/* 3. Filterable Completed Transactions Showcase */}
       <div>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 [html.light_&]:border-[#E4DFD4] pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 [html.light_&]:border-[#C6D3C0] pb-6">
           <div>
             <span className="eyebrow">Verified Track Record</span>
             <h2 className="display mt-2 text-2xl md:text-3xl lg:text-4xl font-bold text-white [html.light_&]:text-[#121316]">Selected Facility Completions</h2>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap gap-1.5 rounded-full border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.03] [html.light_&]:bg-[#FAF8F5] p-1.5">
+          <div className="flex flex-wrap gap-1.5 rounded-full border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-[#F4F7F0] p-1.5">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -76,7 +76,7 @@ export function FundingCompletionsSection() {
                 <div>
                   {/* Card Header */}
                   <div className="flex items-center justify-between">
-                    <span className="rounded-full border border-white/15 [html.light_&]:border-[#E4DFD4] bg-white/5 [html.light_&]:bg-[#FAF8F5] px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-300 [html.light_&]:text-[#444444]">
+                    <span className="rounded-full border border-white/15 [html.light_&]:border-[#C6D3C0] bg-white/5 [html.light_&]:bg-[#F4F7F0] px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-300 [html.light_&]:text-[#444444]">
                       {deal.type}
                     </span>
                     <span className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-emerald-400 [html.light_&]:text-emerald-700">
@@ -100,7 +100,7 @@ export function FundingCompletionsSection() {
                 </div>
 
                 {/* Card Specs */}
-                <div className="mt-6 border-t border-white/[0.08] [html.light_&]:border-[#E4DFD4] pt-4 space-y-2.5 text-sm">
+                <div className="mt-6 border-t border-white/[0.08] [html.light_&]:border-[#C6D3C0] pt-4 space-y-2.5 text-sm">
                   <div className="flex justify-between text-slate-400 [html.light_&]:text-[#706D68]">
                     <span>LTV / Facility Structure</span>
                     <span className="font-bold text-white [html.light_&]:text-[#121316]">{deal.ltv}</span>

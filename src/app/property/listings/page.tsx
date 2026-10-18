@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, Building2, Sparkles } from "lucide-react";
+import { PageHero } from "@/components/editorial/PageHero";
 import { PropertyListingsHub } from "@/components/property/PropertyListingsHub";
 
 export const metadata: Metadata = {
@@ -10,19 +9,14 @@ export const metadata: Metadata = {
 
 export default function PropertyListingsPage() {
   return (
-    <main className="pt-32 pb-24 select-none">
-      <div className="container">
-        {/* Back navigation */}
-        <div className="mb-6">
-          <Link
-            href="/property"
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-colors"
-          >
-            <ArrowLeft size={14} /> Back to Property Overview
-          </Link>
-        </div>
-
-        {/* Listings Hub */}
+    <main className="min-h-screen select-none bg-theme-page">
+      <PageHero
+        eyebrow="Property portfolio"
+        title="Available properties."
+        intro="Browse live property records, compare core specifications, and apply directly from each listing."
+        actions={[{ href: "/property", label: "Property overview" }]}
+      />
+      <div className="container py-12 md:py-16">
         <PropertyListingsHub />
       </div>
     </main>

@@ -10,11 +10,11 @@ export function LiveFundingTicker() {
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden border-y border-white/10 bg-gradient-to-r from-[#070709] via-[#0e0e13] to-[#070709] py-3.5 select-none backdrop-blur-md [html.light_&]:bg-[#FAF8F5] [html.light_&]:border-[#E8E5E0]"
+      className="relative overflow-hidden border-y border-white/10 bg-gradient-to-r from-[#070709] via-[#0e0e13] to-[#070709] py-3.5 select-none backdrop-blur-md [html.light_&]:bg-[#F4F7F0] [html.light_&]:border-[#E8E5E0]"
     >
       {/* Edge Gradient Fade Masks */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-[#070709] to-transparent [html.light_&]:from-[#FAF8F5]" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-[#070709] to-transparent [html.light_&]:from-[#FAF8F5]" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-[#070709] to-transparent [html.light_&]:from-[#F4F7F0]" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-[#070709] to-transparent [html.light_&]:from-[#F4F7F0]" />
 
       {/* Ticker Track */}
       <div

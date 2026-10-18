@@ -1,13 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, CalendarCheck, Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { ButtonLink } from "@/components/ui/Button";
+import { useEffect, useState } from "react";
 import { BSQLogo } from "@/components/ui/BSQLogo";
-import { useTheme } from "@/components/theme/ThemeContext";
+import { company } from "@/data/company";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -21,146 +19,122 @@ const navItems = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const { theme } = useTheme();
-  const { scrollY } = useScroll();
-  // The backdrop fades in with scroll distance instead of flipping at a fixed threshold.
-  const backdropOpacity = useTransform(scrollY, [24, 120], [0, 1]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => setOpen(false), [pathname]);
 
   if (pathname.startsWith("/admin")) return null;
 
-  return (
-    <header className="fixed inset-x-0 top-0 z-50 p-3 sm:p-4" suppressHydrationWarning>
-      <nav
-        suppressHydrationWarning
-        className="relative isolate mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-5 py-2.5"
-      >
-        {/* Backdrop pill: fades in on scroll so the nav never changes size or position */}
-        <motion.div
-          aria-hidden="true"
-          style={{ opacity: backdropOpacity }}
-          className="pointer-events-none absolute inset-0 -z-10 rounded-full border border-white/15 bg-black/90 shadow-[0_16px_40px_rgba(0,0,0,0.7),0_0_30px_rgba(225,18,45,0.12)] backdrop-blur-2xl [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-[#F7F5F2]/95 [html.light_&]:shadow-[0_16px_40px_rgba(24,24,24,0.06),0_0_20px_rgba(225,18,45,0.06)]"
-        />
-        {/* Brand Logo with BSQ Emblem */}
-        <Link
-          href="/"
-          className="focus-ring group flex items-center shrink-0"
-          onClick={() => setOpen(false)}
-          suppressHydrationWarning
-        >
-          <BSQLogo variant="horizontal" theme={theme} size="md" priority />
-        </Link>
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
-        {/* Desktop Navigation with Animated Active Pill */}
-        <div
-          className="hidden items-center gap-0.5 xl:gap-1 rounded-full border border-white/[0.08] bg-white/[0.03] p-1 backdrop-blur-md xl:flex shrink [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-[#ECE7DE]/75"
-          suppressHydrationWarning
-        >
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 bg-[#EEF2EA]" suppressHydrationWarning>
+      {/* Utility strip: the UK-agency convention of address, phone and a standing enquiry link */}
+      <div
+        className={cn(
+          "overflow-hidden bg-[#1F4030] text-[11px] text-white/75 transition-[max-height] duration-300",
+          scrolled ? "max-h-0" : "max-h-10"
+        )}
+      >
+        <div className="container flex h-9 items-center justify-between gap-6">
+          <p className="hidden truncate tracking-wide sm:block">Berkeley Square Capital</p>
+          <div className="flex items-center gap-5 font-medium tracking-wide">
+            <a href={`tel:${company.phone}`} className="transition-colors hover:text-white">
+              {company.phoneDisplay}
+            </a>
+            <a href={`mailto:${company.email}`} className="hidden transition-colors hover:text-white md:inline">
+              {company.email}
+            </a>
+            <Link href="/appointment" className="border-b border-white/40 pb-px uppercase tracking-[0.16em] transition-colors hover:border-white hover:text-white">
+              Book an appointment
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <nav
+        className={cn("border-b border-[#181818]/15 transition-shadow", scrolled && "shadow-[0_1px_0_rgba(24,24,24,0.06)]")}
+        aria-label="Primary"
+      >
+        <div className="container flex items-center justify-between gap-6 py-3">
+          <Link href="/" className="focus-ring flex shrink-0 items-center" suppressHydrationWarning>
+            <BSQLogo variant="horizontal" theme="light" size="md" priority />
+          </Link>
+
+          <div className="hidden items-center gap-7 xl:flex">
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                suppressHydrationWarning
+                aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
-                  "focus-ring relative rounded-full px-2.5 xl:px-3 py-1 text-xs font-semibold tracking-wide transition-colors duration-300 whitespace-nowrap",
-                  isActive
-                    ? "text-white [html.light_&]:text-[#181818]"
-                    : "text-white/70 hover:text-white [html.light_&]:text-[#4A4844] [html.light_&]:hover:text-[#181818]"
+                  "focus-ring border-b-2 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors",
+                  isActive(item.href)
+                    ? "border-legacy-red text-[#181818]"
+                    : "border-transparent text-[#4A4844] hover:border-[#181818]/40 hover:text-[#181818]"
                 )}
               >
-                {isActive && (
-                  <motion.span
-                    layoutId="activeNavPill"
-                    className="absolute inset-0 rounded-full border border-legacy-red/40 bg-legacy-red/20 shadow-[0_0_12px_rgba(225,18,45,0.3)] [html.light_&]:border-legacy-red/35 [html.light_&]:bg-legacy-red/10 [html.light_&]:shadow-[0_0_8px_rgba(225,18,45,0.12)]"
-                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{item.label}</span>
+                {item.label}
               </Link>
-            );
-          })}
-        </div>
+            ))}
+          </div>
 
-        {/* Right Action CTA Buttons */}
-        <div className="hidden items-center gap-2 shrink-0 xl:flex" suppressHydrationWarning>
-          <ButtonLink
-            href="/appointment"
-            variant="secondary"
-            className="min-h-8 px-3 xl:px-3.5 py-1 text-xs font-bold uppercase tracking-wider whitespace-nowrap [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-[#ECE7DE] [html.light_&]:text-[#181818] [html.light_&]:shadow-sm [html.light_&]:hover:bg-[#E4DFD4]"
-          >
-            APPOINTMENT <CalendarCheck size={12} />
-          </ButtonLink>
-          <ButtonLink
-            href="/loan-application"
-            className="min-h-8 px-3.5 xl:px-4 py-1 text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-[0_0_15px_rgba(225,18,45,0.4)]"
-          >
-            GET FUNDED <ArrowUpRight size={12} />
-          </ButtonLink>
-        </div>
+          <div className="hidden xl:block">
+            <Link
+              href="/loan-application"
+              className="focus-ring inline-flex items-center border border-[#1F4030] bg-[#1F4030] px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-legacy-red hover:bg-legacy-red"
+            >
+              Loan enquiry
+            </Link>
+          </div>
 
-        {/* Mobile Menu & Toggle Controls */}
-        <div className="flex items-center gap-2 xl:hidden">
           <button
+            type="button"
             suppressHydrationWarning
-            className="focus-ring inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white xl:hidden [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-white [html.light_&]:text-[#181818] [html.light_&]:shadow-sm"
+            className="focus-ring inline-flex h-10 w-10 items-center justify-center text-[#181818] xl:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
-            {open ? <X size={18} /> : <Menu size={18} />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       {open ? (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="absolute inset-x-4 top-24 rounded-2xl border border-white/20 bg-black/95 p-5 shadow-2xl backdrop-blur-2xl xl:hidden [html.light_&]:bg-[#FAF8F5]/98 [html.light_&]:border-[#E4DFD4] [html.light_&]:shadow-[0_20px_50px_rgba(24,24,24,0.12)]"
-        >
-          <div className="grid gap-1">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "focus-ring flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-colors",
-                    isActive
-                      ? "bg-legacy-red/20 text-white [html.light_&]:bg-legacy-red/10 [html.light_&]:text-[#181818]"
-                      : "text-white/80 hover:bg-white/5 [html.light_&]:text-[#4A4844] [html.light_&]:hover:bg-[#ECE7DE]/60 [html.light_&]:hover:text-[#181818]"
-                  )}
-                  onClick={() => setOpen(false)}
-                >
-                  <span>{item.label}</span>
-                  {isActive && <Sparkles size={14} className="text-legacy-red" />}
-                </Link>
-              );
-            })}
-
-            <div className="mt-3 grid gap-2 border-t border-white/10 [html.light_&]:border-[#E4DFD4] pt-3">
-              <ButtonLink
-                href="/appointment"
-                variant="secondary"
-                className="w-full justify-center text-xs font-bold uppercase [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-[#ECE7DE] [html.light_&]:text-[#181818] [html.light_&]:hover:bg-[#E4DFD4]"
-                onClick={() => setOpen(false)}
+        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-b border-[#181818]/15 bg-[#EEF2EA] xl:hidden">
+          <div className="container py-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex items-center justify-between border-b border-[#181818]/10 py-4 font-[family-name:var(--font-display)] text-2xl",
+                  isActive(item.href) ? "text-legacy-red" : "text-[#181818]"
+                )}
               >
-                Book Appointment <CalendarCheck size={14} />
-              </ButtonLink>
-              <ButtonLink
-                href="/loan-application"
-                className="w-full justify-center text-xs font-bold uppercase shadow-[0_0_15px_rgba(225,18,45,0.4)]"
-                onClick={() => setOpen(false)}
-              >
-                Get Funded <ArrowUpRight size={14} />
-              </ButtonLink>
+                {item.label}
+                <span className="font-mono text-xs text-[#706D68]">→</span>
+              </Link>
+            ))}
+            <div className="grid gap-3 py-5 sm:grid-cols-2">
+              <Link href="/appointment" className="border border-[#181818]/70 px-5 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[#181818]">
+                Book an appointment
+              </Link>
+              <Link href="/loan-application" className="border border-[#1F4030] bg-[#1F4030] px-5 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
+                Loan enquiry
+              </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       ) : null}
     </header>
   );

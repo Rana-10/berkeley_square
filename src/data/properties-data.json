@@ -13,13 +13,13 @@
     "addressLine": "Grosvenor Square, Mayfair, London",
     "city": "London",
     "postcode": "W1K 2HP",
-    "featuredImage": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/stucco-sash-windows.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/stucco-sash-windows.webp",
+      "/images/uk/wrought-iron-lamp.webp",
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/garden-and-brick.webp"
     ],
     "specs": {
       "bedrooms": 4,
@@ -124,11 +124,11 @@
     "areaSqFt": 4850,
     "tenure": "Share of Freehold (999 yr lease)",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/stucco-sash-windows.webp",
+      "/images/uk/wrought-iron-lamp.webp",
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/garden-and-brick.webp"
     ]
   },
   {
@@ -145,13 +145,12 @@
     "addressLine": "Ennismore Gardens, Knightsbridge, London",
     "city": "London",
     "postcode": "SW7 1AA",
-    "featuredImage": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/brick-mullion-windows.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/brick-mullion-windows.webp",
+      "/images/uk/crest-doorway.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/wrought-iron-lamp.webp"
     ],
     "specs": {
       "bedrooms": 6,
@@ -247,7 +246,13 @@
       "estimatedBridgingRate": "from 0.49% pm",
       "facilityType": "Acquisition Debt / Lombard Facility"
     },
-    "featured": true
+    "featured": true,
+    "galleryImages": [
+      "/images/uk/brick-mullion-windows.webp",
+      "/images/uk/crest-doorway.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/wrought-iron-lamp.webp"
+    ]
   },
   {
     "id": "bsc-prop-03",
@@ -263,12 +268,12 @@
     "addressLine": "Chester Square, Belgravia, London",
     "city": "London",
     "postcode": "SW1W 9HR",
-    "featuredImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/stucco-sash-windows.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/stucco-sash-windows.webp",
+      "/images/uk/gothic-doorway.webp",
+      "/images/uk/wrought-iron-lamp.webp",
+      "/images/uk/portland-stone-portico.webp"
     ],
     "specs": {
       "bedrooms": 5,
@@ -355,7 +360,13 @@
       "estimatedBridgingRate": "from 0.55% pm",
       "facilityType": "Auction & Fast Acquisition Bridge"
     },
-    "featured": false
+    "featured": false,
+    "galleryImages": [
+      "/images/uk/stucco-sash-windows.webp",
+      "/images/uk/gothic-doorway.webp",
+      "/images/uk/wrought-iron-lamp.webp",
+      "/images/uk/portland-stone-portico.webp"
+    ]
   },
   {
     "id": "bsc-prop-04",
@@ -371,12 +382,12 @@
     "addressLine": "Marylebone High Street, London",
     "city": "London",
     "postcode": "W1U 5JU",
-    "featuredImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/brick-corner-terrace.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/brick-corner-terrace.webp",
+      "/images/uk/eton-high-street.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/wrought-iron-lamp.webp"
     ],
     "specs": {
       "bedrooms": 12,
@@ -463,7 +474,13 @@
       "estimatedBridgingRate": "from 0.50% pm",
       "facilityType": "Commercial Senior Debt & Mezzanine Facility"
     },
-    "featured": true
+    "featured": true,
+    "galleryImages": [
+      "/images/uk/brick-corner-terrace.webp",
+      "/images/uk/eton-high-street.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/wrought-iron-lamp.webp"
+    ]
   },
   {
     "id": "bsc-prop-05",
@@ -479,12 +496,12 @@
     "addressLine": "Finsbury Square, City of London",
     "city": "London",
     "postcode": "EC2A 1HD",
-    "featuredImage": "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/portland-stone-portico.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/victorian-stone-corner.webp",
+      "/images/uk/victorian-terracotta-corner.webp",
+      "/images/uk/brick-bay-window.webp"
     ],
     "specs": {
       "bedrooms": 6,
@@ -571,7 +588,13 @@
       "estimatedBridgingRate": "from 0.48% pm",
       "facilityType": "Syndicated Commercial Debt Package"
     },
-    "featured": false
+    "featured": false,
+    "galleryImages": [
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/victorian-stone-corner.webp",
+      "/images/uk/victorian-terracotta-corner.webp",
+      "/images/uk/brick-bay-window.webp"
+    ]
   },
   {
     "id": "bsc-prop-06",
@@ -587,12 +610,12 @@
     "addressLine": "The Crescent, Palm Jumeirah, Dubai",
     "city": "Dubai",
     "postcode": "UAE",
-    "featuredImage": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/thames-townhouses.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/thames-townhouses.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/wrought-iron-lamp.webp"
     ],
     "specs": {
       "bedrooms": 5,
@@ -679,7 +702,13 @@
       "estimatedBridgingRate": "from 0.58% pm",
       "facilityType": "International HNWI Mortgage / Cross-Border Line"
     },
-    "featured": true
+    "featured": true,
+    "galleryImages": [
+      "/images/uk/thames-townhouses.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/wrought-iron-lamp.webp"
+    ]
   },
   {
     "id": "bsc-prop-07",
@@ -695,11 +724,11 @@
     "addressLine": "Palace Green, Kensington, London",
     "city": "London",
     "postcode": "W8 4PX",
-    "featuredImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/brick-mullion-windows.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/brick-mullion-windows.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/crest-doorway.webp"
     ],
     "specs": {
       "bedrooms": 5,
@@ -786,7 +815,12 @@
       "estimatedBridgingRate": "Fully Deployed",
       "facilityType": "7-Day Bridging Facility into Term Refinance"
     },
-    "featured": false
+    "featured": false,
+    "galleryImages": [
+      "/images/uk/brick-mullion-windows.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/crest-doorway.webp"
+    ]
   },
   {
     "id": "bsc-prop-08",
@@ -802,12 +836,12 @@
     "addressLine": "Berkeley Square, Mayfair, London",
     "city": "London",
     "postcode": "W1J 6BD",
-    "featuredImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/victorian-stone-corner.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/victorian-stone-corner.webp",
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/victorian-terracotta-corner.webp",
+      "/images/uk/wrought-iron-lamp.webp"
     ],
     "specs": {
       "bedrooms": 4,
@@ -894,7 +928,13 @@
       "estimatedBridgingRate": "from 0.53% pm",
       "facilityType": "Commercial Acquisition & Refurbishment Debt"
     },
-    "featured": true
+    "featured": true,
+    "galleryImages": [
+      "/images/uk/victorian-stone-corner.webp",
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/victorian-terracotta-corner.webp",
+      "/images/uk/wrought-iron-lamp.webp"
+    ]
   },
   {
     "id": "bsc-prop-09",
@@ -910,11 +950,11 @@
     "addressLine": "Cheyne Walk, Chelsea, London",
     "city": "London",
     "postcode": "SW3 5LN",
-    "featuredImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/thames-townhouses.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/thames-townhouses.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/wrought-iron-lamp.webp"
     ],
     "specs": {
       "bedrooms": 4,
@@ -999,7 +1039,12 @@
       "estimatedBridgingRate": "from 0.54% pm",
       "facilityType": "Prime Residential Bridge"
     },
-    "featured": false
+    "featured": false,
+    "galleryImages": [
+      "/images/uk/thames-townhouses.webp",
+      "/images/uk/brick-bay-window.webp",
+      "/images/uk/wrought-iron-lamp.webp"
+    ]
   },
   {
     "id": "bsc-prop-10",
@@ -1015,11 +1060,11 @@
     "addressLine": "Cumberland Terrace, Regent's Park, London",
     "city": "London",
     "postcode": "NW1 4HS",
-    "featuredImage": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/stucco-sash-windows.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/stucco-sash-windows.webp",
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/garden-and-brick.webp"
     ],
     "specs": {
       "bedrooms": 7,
@@ -1106,7 +1151,12 @@
       "estimatedBridgingRate": "from 0.50% pm",
       "facilityType": "HNWI Crown Leasehold Facility"
     },
-    "featured": true
+    "featured": true,
+    "galleryImages": [
+      "/images/uk/stucco-sash-windows.webp",
+      "/images/uk/portland-stone-portico.webp",
+      "/images/uk/garden-and-brick.webp"
+    ]
   },
   {
     "id": "bsc-prop-11",
@@ -1122,11 +1172,11 @@
     "addressLine": "King Street, St. James's, London",
     "city": "London",
     "postcode": "SW1Y 6QU",
-    "featuredImage": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/victorian-terracotta-corner.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/victorian-terracotta-corner.webp",
+      "/images/uk/crest-doorway.webp",
+      "/images/uk/gothic-doorway.webp"
     ],
     "specs": {
       "bedrooms": 8,
@@ -1212,7 +1262,12 @@
       "estimatedBridgingRate": "from 0.53% pm",
       "facilityType": "Value-Add Conversion Facility"
     },
-    "featured": false
+    "featured": false,
+    "galleryImages": [
+      "/images/uk/victorian-terracotta-corner.webp",
+      "/images/uk/crest-doorway.webp",
+      "/images/uk/gothic-doorway.webp"
+    ]
   },
   {
     "id": "bsc-prop-12",
@@ -1228,12 +1283,12 @@
     "addressLine": "Fairway Vistas, Dubai Hills Estate, Dubai",
     "city": "Dubai",
     "postcode": "UAE",
-    "featuredImage": "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=85",
+    "featuredImage": "/images/uk/thames-townhouses.webp",
     "gallery": [
-      "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+      "/images/uk/thames-townhouses.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/wrought-iron-lamp.webp",
+      "/images/uk/brick-bay-window.webp"
     ],
     "specs": {
       "bedrooms": 6,
@@ -1319,6 +1374,12 @@
       "estimatedBridgingRate": "from 0.56% pm",
       "facilityType": "International HNWI Mortgage Line"
     },
-    "featured": false
+    "featured": false,
+    "galleryImages": [
+      "/images/uk/thames-townhouses.webp",
+      "/images/uk/garden-and-brick.webp",
+      "/images/uk/wrought-iron-lamp.webp",
+      "/images/uk/brick-bay-window.webp"
+    ]
   }
 ]

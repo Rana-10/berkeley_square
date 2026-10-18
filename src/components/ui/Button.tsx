@@ -12,19 +12,19 @@ type ButtonProps = ComponentPropsWithoutRef<"button"> & {
 
 const styles = {
   primary:
-    "relative overflow-hidden rounded-full border border-red-500/40 bg-gradient-to-r from-legacy-deepRed via-legacy-red to-[#ff2b4e] text-white shadow-[0_0_25px_rgba(225,18,45,0.35),inset_0_1px_0_rgba(255,255,255,0.35)] hover:shadow-[0_0_35px_rgba(225,18,45,0.55)] hover:border-red-400/70 active:scale-[0.98]",
+    "border border-[#1F4030] bg-[#1F4030] text-white uppercase tracking-[0.14em] hover:border-legacy-red hover:bg-legacy-red active:translate-y-px",
   secondary:
-    "relative overflow-hidden rounded-full border border-white/15 bg-gradient-to-b from-white/[0.08] to-white/[0.02] text-slate-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_8px_24px_rgba(0,0,0,0.5)] backdrop-blur-xl hover:border-white/35 hover:bg-white/[0.12] hover:text-white active:scale-[0.98]",
+    "border border-[#181818]/70 bg-transparent text-[#181818] uppercase tracking-[0.14em] hover:bg-[#1F4030] hover:text-white active:translate-y-px",
   silver:
-    "relative overflow-hidden rounded-full border border-slate-300/30 bg-gradient-to-r from-slate-200 via-white to-slate-300 text-black font-bold shadow-[0_0_25px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.9)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] active:scale-[0.98]",
+    "border border-[#1F4030] bg-[#DCE6D6] text-[#181818] uppercase tracking-[0.14em] hover:bg-[#1F4030] hover:text-white active:translate-y-px",
   ghost:
-    "relative overflow-hidden rounded-full text-slate-300 hover:bg-white/[0.08] hover:text-white active:scale-[0.98]"
+    "bg-transparent text-[#181818] underline decoration-[#181818]/40 underline-offset-4 hover:decoration-legacy-red hover:text-legacy-red"
 };
 
 export function Button({
   className,
   variant = "primary",
-  magnetic = true,
+  magnetic = false,
   children,
   ...props
 }: ButtonProps) {
@@ -45,20 +45,12 @@ export function Button({
       onPointerMove={handlePointerMove}
       suppressHydrationWarning
       className={cn(
-        "group focus-ring inline-flex min-h-11 items-center justify-center gap-2 px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300",
+        "group focus-ring inline-flex min-h-11 items-center justify-center gap-2 px-6 py-3 text-xs font-semibold transition-colors duration-300",
         styles[variant],
         className
       )}
       {...props}
     >
-      {/* Dynamic ambient cursor sheen highlight via stylesheet classes */}
-      <span
-        aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute -inset-px rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100",
-          variant === "primary" ? "btn-sheen-primary" : "btn-sheen-secondary"
-        )}
-      />
       <span className="relative z-10 inline-flex items-center gap-2" suppressHydrationWarning>
         {children}
       </span>
@@ -74,7 +66,7 @@ export function ButtonLink({
   href,
   children,
   variant = "primary",
-  magnetic = true,
+  magnetic = false,
   className,
   ...props
 }: {
@@ -102,20 +94,12 @@ export function ButtonLink({
       onPointerMove={handlePointerMove}
       suppressHydrationWarning
       className={cn(
-        "group focus-ring inline-flex min-h-11 items-center justify-center gap-2 px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300",
+        "group focus-ring inline-flex min-h-11 items-center justify-center gap-2 px-6 py-3 text-xs font-semibold transition-colors duration-300",
         styles[variant],
         className
       )}
       {...props}
     >
-      {/* Dynamic ambient cursor sheen highlight via stylesheet classes */}
-      <span
-        aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute -inset-px rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100",
-          variant === "primary" ? "btn-sheen-primary" : "btn-sheen-secondary"
-        )}
-      />
       <span className="relative z-10 inline-flex items-center gap-2" suppressHydrationWarning>
         {children}
       </span>

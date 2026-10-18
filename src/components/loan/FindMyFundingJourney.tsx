@@ -472,7 +472,7 @@ export function FindMyFundingJourney() {
 
               {/* Navigation Back Button */}
               {currentStep > 0 && (
-                <div className="mt-8 flex justify-start border-t border-white/10 [html.light_&]:border-[#E4DFD4] pt-4">
+                <div className="mt-8 flex justify-start border-t border-white/10 [html.light_&]:border-[#C6D3C0] pt-4">
                   <button
                     type="button"
                     onClick={handleBack}

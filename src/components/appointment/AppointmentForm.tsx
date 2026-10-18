@@ -25,7 +25,7 @@ function Field({ label, name, register, type = "text", error }: { label: string;
       <input
         {...register(name)}
         type={type}
-        className="focus-ring min-h-12 rounded-xl border border-white/15 bg-black/40 px-4 text-base text-white placeholder:text-slate-500 [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-white [html.light_&]:text-[#121316] [html.light_&]:placeholder:text-[#9E9B94]"
+        className="focus-ring min-h-12 rounded-none border-0 border-b border-[#181818]/50 bg-transparent px-0 text-base text-[#181818] placeholder:text-[#9E9B94] transition-colors focus:border-legacy-red"
         aria-invalid={Boolean(error)}
       />
       {error ? <span className="text-sm font-normal text-red-400">{error}</span> : null}
@@ -63,8 +63,8 @@ export function AppointmentForm() {
 
   if (result) {
     return (
-      <div className="rounded-3xl border border-legacy-border bg-white/[0.04] p-8 text-center [html.light_&]:bg-white [html.light_&]:border-[#E4DFD4] [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)]">
-        <CheckCircle2 size={40} className="mx-auto text-legacy-red" />
+      <div className="border-y border-[#181818]/70 py-10">
+        <CheckCircle2 size={32} className="text-legacy-red" />
         <h2 className="display mt-4 text-2xl text-white [html.light_&]:text-[#121316] font-bold">Request received</h2>
         <p className="mt-3 text-base leading-6 text-white/70 [html.light_&]:text-[#555d6b]">
           Thank you — we have received your appointment request
@@ -76,7 +76,7 @@ export function AppointmentForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6 rounded-3xl border border-white/10 bg-black/40 p-6 md:p-8 backdrop-blur-xl [html.light_&]:bg-white [html.light_&]:border-[#E4DFD4] [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)]">
+    <form onSubmit={handleSubmit(onSubmit)} className="grid gap-8 border-t border-[#181818]/70 pt-8">
       <Field label="Full name" name="name" register={register} error={errors.name?.message} />
       <Field label="Email" name="email" type="email" register={register} error={errors.email?.message} />
       <Field label="Phone number" name="phone" type="tel" register={register} error={errors.phone?.message} />
@@ -86,7 +86,7 @@ export function AppointmentForm() {
         <select
           {...register("service")}
           className={cn(
-            "focus-ring min-h-12 rounded-xl border border-white/15 bg-black/80 px-4 text-base text-white [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-white [html.light_&]:text-[#121316]",
+            "focus-ring min-h-12 rounded-none border-0 border-b border-[#181818]/50 bg-transparent px-0 text-base text-[#181818] placeholder:text-[#9E9B94] transition-colors focus:border-legacy-red",
             !errors.service ? "" : "border-red-400"
           )}
         >
@@ -102,7 +102,7 @@ export function AppointmentForm() {
 
       {error ? <p className="text-sm text-red-400">{error}</p> : null}
 
-      <Button type="submit" disabled={submitting} className="w-full justify-center py-4 text-base">
+      <Button type="submit" disabled={submitting} className="w-full justify-center py-4">
         {submitting ? "Sending…" : "Book Appointment"} <CalendarCheck size={18} />
       </Button>
     </form>

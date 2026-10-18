@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Cookie, FileText, Lock, ShieldCheck, Sparkles } from "lucide-react";
+import { PageHero } from "@/components/editorial/PageHero";
 import { company } from "@/data/company";
 
 export const metadata: Metadata = {
@@ -10,29 +11,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="pt-32 pb-24 min-h-screen bg-[#0E0E12] [html.light_&]:bg-[#F7F5F2] text-slate-200 [html.light_&]:text-[#222222]">
-      <div className="container max-w-4xl px-4 sm:px-6">
-        {/* Back Link */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 hover:text-white [html.light_&]:text-[#666460] [html.light_&]:hover:text-[#181818] transition-colors mb-8"
-        >
-          <ArrowLeft size={14} /> Back to Homepage
-        </Link>
-
-        {/* Header */}
-        <div className="border-b border-white/10 [html.light_&]:border-[#E4DFD4] pb-8">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/40 [html.light_&]:bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white/80 [html.light_&]:text-[#222222] backdrop-blur-md">
-            <ShieldCheck size={14} className="text-legacy-red" /> UK GDPR & DPA 2018 Compliant
-          </div>
-          <h1 className="display text-3xl sm:text-4xl md:text-5xl text-white [html.light_&]:text-[#181818] font-bold leading-tight">
-            Privacy Notice & Data Policy
-          </h1>
-          <p className="mt-4 text-sm font-mono text-slate-400 [html.light_&]:text-[#666460]">
-            Last Updated: August 2026 · Effective for <span className="text-white [html.light_&]:text-[#181818] font-bold">{company.legalName}</span>
-          </p>
-        </div>
-
+    <main className="min-h-screen select-none bg-theme-page text-[#3D3A36]">
+      <PageHero eyebrow="UK GDPR & DPA 2018 compliant" title="Privacy Notice & Data Policy" intro={<>Last updated August 2026 · Effective for {company.legalName}</>} />
+      <div className="container max-w-4xl px-4 py-14 sm:px-6 md:py-20">
         {/* Policy Content */}
         <div className="mt-12 space-y-10 text-slate-300 [html.light_&]:text-[#3D3A36] text-sm leading-relaxed font-sans">
           {/* Section 1 */}
@@ -56,7 +37,7 @@ export default function PrivacyPage() {
             <p>
               If you have any questions about this notice or how your personal information is handled, please contact our Data Governance Officer:
             </p>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 font-mono text-xs text-slate-300 space-y-1.5">
+            <div className="font-mono text-xs text-slate-300 space-y-1.5 border-t border-[#181818]/25 py-5">
               <p><strong className="text-white [html.light_&]:text-[#181818]">Entity:</strong> {company.legalName}</p>
               <p><strong className="text-white [html.light_&]:text-[#181818]">Trading HQ:</strong> {company.tradingAddress}</p>
               <p><strong className="text-white [html.light_&]:text-[#181818]">Registered Address:</strong> {company.registeredAddress}</p>
@@ -149,7 +130,7 @@ export default function PrivacyPage() {
           </section>
 
           {/* Section 9 (Verbatim from User Document) */}
-          <section className="rounded-2xl border border-legacy-red/30 bg-gradient-to-br from-[#18080a]/90 via-[#10080a]/90 to-[#080808]/90 [html.light_&]:bg-none [html.light_&]:bg-white [html.light_&]:border-legacy-red/40 [html.light_&]:shadow-md p-6 md:p-8 space-y-3 shadow-lg">
+          <section className="space-y-3 border-t border-[#181818]/25 py-5">
             <h2 className="text-xl font-bold text-white [html.light_&]:text-[#181818] uppercase tracking-wider font-mono flex items-center gap-2">
               <Cookie size={18} className="text-legacy-red" />
               <span>9. Cookies</span>
@@ -168,7 +149,7 @@ export default function PrivacyPage() {
           </section>
 
           {/* Section 10 (Verbatim from User Document) */}
-          <section className="rounded-2xl border border-white/15 [html.light_&]:border-[#E4DFD4] bg-white/[0.03] [html.light_&]:bg-white [html.light_&]:shadow-sm p-6 md:p-8 space-y-3">
+          <section className="space-y-3 border-t border-[#181818]/25 py-5">
             <h2 className="text-xl font-bold text-white [html.light_&]:text-[#181818] uppercase tracking-wider font-mono flex items-center gap-2">
               <FileText size={18} className="text-legacy-red" />
               <span>10. Changes to this notice</span>

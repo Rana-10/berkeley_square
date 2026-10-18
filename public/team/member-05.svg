@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 533" width="400" height="533">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#e0d6c0"/><stop offset="1" stop-color="#c1b290"/></linearGradient>
+<radialGradient id="v" cx="0.5" cy="0.4" r="0.8"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.28"/></radialGradient>
+<filter id="n" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="t"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.16"/></feComponentTransfer></filter>
+</defs>
+<rect width="400" height="533" fill="url(#g)"/>
+<path d="M-20 533 L-20 335 Q-20 300 50 290 L126 278 Q200 260 274 278 L350 290 Q420 300 420 335 L420 533Z" fill="#2c2a25"/>
+<path d="M150 266 L200 360 L250 266 L232 260 L200 300 L168 260Z" fill="#f3eee0"/>
+<path d="M176 278 h48 v52 q-24 18 -48 0z" fill="#8c6f5a" opacity="0.85"/>
+<ellipse cx="200" cy="208" rx="62" ry="78" fill="#a98468"/>
+<path d="M138 194 Q140 116 200 116 Q262 116 262 194 Q246 150 200 150 Q154 150 138 194Z" fill="#4a4038"/>
+<rect width="400" height="533" fill="url(#v)"/>
+<rect width="400" height="533" filter="url(#n)"/>
+</svg>

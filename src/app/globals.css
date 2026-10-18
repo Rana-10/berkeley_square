@@ -14,20 +14,20 @@ html.light {
   --accent-red-glow: rgba(225, 18, 45, 0.22);
 
   /* Backgrounds */
-  --bg-page: #F7F5F2;
-  --bg-page-alt: #FAF8F5;
+  --bg-page: #EEF2EA;
+  --bg-page-alt: #F4F7F0;
   --bg-surface: #FFFFFF;
   --bg-surface-elevated: #FFFFFF;
-  --bg-subtle: #ECE7DE;
+  --bg-subtle: #DCE6D6;
   --bg-subtle-alpha: rgba(236, 231, 222, 0.65);
   --bg-glass: rgba(255, 255, 255, 0.88);
   --bg-overlay: rgba(24, 24, 24, 0.65);
 
   /* Borders */
-  --border-default: #E4DFD4;
-  --border-subtle: #EFECE6;
+  --border-default: #C6D3C0;
+  --border-subtle: #D6E0D1;
   --border-accent: rgba(225, 18, 45, 0.35);
-  --border-glass: #E4DFD4;
+  --border-glass: #C6D3C0;
 
   /* Typography */
   --text-primary: #181818;
@@ -37,7 +37,7 @@ html.light {
 
   /* Inputs & Controls */
   --input-bg: #FFFFFF;
-  --input-border: #E4DFD4;
+  --input-border: #C6D3C0;
   --input-focus-border: #e1122d;
 
   /* Shadows */
@@ -53,8 +53,8 @@ html.light {
   --text-main: var(--text-primary);
   --card-bg: var(--bg-surface);
   --card-border: var(--border-default);
-  --section-offwhite: #F7F5F2;
-  --section-stone: #ECE7DE;
+  --section-offwhite: #EEF2EA;
+  --section-stone: #DCE6D6;
 }
 
 html.dark {
@@ -107,8 +107,8 @@ html.dark {
   --text-main: var(--text-primary);
   --card-bg: var(--bg-surface);
   --card-border: var(--border-default);
-  --section-offwhite: #F7F5F2;
-  --section-stone: #ECE7DE;
+  --section-offwhite: #EEF2EA;
+  --section-stone: #DCE6D6;
 }
 
 * {
@@ -128,38 +128,15 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--bg-page);
-  background: radial-gradient(circle at 80% 0%, rgba(225, 18, 45, 0.07), transparent 34rem),
-    radial-gradient(circle at 15% 35%, rgba(226, 232, 240, 0.025), transparent 30rem),
-    linear-gradient(180deg, #070709 0%, #0d0d12 45%, #070709 100%);
+  background: var(--bg-page);
   color: var(--text-primary);
   font-family: var(--font-sans), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 html.light body {
-  background-color: var(--bg-page);
-  background: radial-gradient(circle at 80% 0%, rgba(225, 18, 45, 0.035), transparent 34rem),
-    radial-gradient(circle at 15% 35%, rgba(0, 0, 0, 0.02), transparent 30rem),
-    linear-gradient(180deg, var(--bg-page) 0%, var(--bg-page-alt) 50%, var(--bg-page) 100%);
+  background: var(--bg-page);
   color: var(--text-primary);
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: .12;
-  background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, black, transparent 70%);
-}
-
-html.light body::before {
-  opacity: .05;
-  background-image: linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px);
 }
 
 body > * {
@@ -612,3 +589,49 @@ html.light .wizard-step-dot {
   .site-loader { display: none; }
   .ticker-track { animation: none; }
 }
+
+/* Editorial reset: the former glass-card helpers render flat so no boxed panel can reappear. */
+.surface,
+html.light .surface,
+.glass,
+html.light .glass {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  backdrop-filter: none;
+  overflow: visible;
+}
+.surface::before,
+.surface::after,
+.glass::before,
+.glass::after {
+  display: none;
+}
+.surface:hover,
+.glass:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Scroll-reveal items (see components/animations/Reveal.tsx): opacity + transform only. */
+.reveal-item {
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="hidden"] .reveal-item {
+  opacity: 0;
+  transform: translateY(16px);
+}
+[data-reveal="shown"] .reveal-item:nth-child(2) { transition-delay: 0.06s; }
+[data-reveal="shown"] .reveal-item:nth-child(3) { transition-delay: 0.12s; }
+[data-reveal="shown"] .reveal-item:nth-child(4) { transition-delay: 0.18s; }
+[data-reveal="shown"] .reveal-item:nth-child(5) { transition-delay: 0.24s; }
+[data-reveal="shown"] .reveal-item:nth-child(n + 6) { transition-delay: 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal-item { transition: none; }
+  [data-reveal="hidden"] .reveal-item { opacity: 1; transform: none; }
+}
+
+.loader-bar { animation: loader-line .85s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .loader-bar { animation: none; } }

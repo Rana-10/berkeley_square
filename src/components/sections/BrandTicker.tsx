@@ -18,11 +18,11 @@ export function BrandTicker() {
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden border-y border-white/10 bg-black/40 py-4 select-none backdrop-blur-md [html.light_&]:bg-[#F7F5F2] [html.light_&]:border-[#E8E5E0]"
+      className="relative overflow-hidden border-y border-white/10 bg-black/40 py-4 select-none backdrop-blur-md [html.light_&]:bg-[#EEF2EA] [html.light_&]:border-[#E8E5E0]"
     >
       {/* Edge Gradient Fade Masks */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#080808] to-transparent [html.light_&]:from-[#F7F5F2]" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#080808] to-transparent [html.light_&]:from-[#F7F5F2]" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#080808] to-transparent [html.light_&]:from-[#EEF2EA]" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#080808] to-transparent [html.light_&]:from-[#EEF2EA]" />
 
       <div
         className="flex w-max animate-[ticker_35s_linear_infinite] hover:[animation-play-state:paused]"

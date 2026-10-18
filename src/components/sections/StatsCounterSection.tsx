@@ -86,7 +86,7 @@ export function StatsCounterSection({
                     </div>
                   </div>
 
-                  <p className="mt-5 border-t border-white/[0.08] [html.light_&]:border-[#E4DFD4] pt-4 text-sm leading-6 text-legacy-muted [html.light_&]:text-[#555d6b]">
+                  <p className="mt-5 border-t border-white/[0.08] [html.light_&]:border-[#C6D3C0] pt-4 text-sm leading-6 text-legacy-muted [html.light_&]:text-[#555d6b]">
                     {stat.description}
                   </p>
                 </TiltCard>

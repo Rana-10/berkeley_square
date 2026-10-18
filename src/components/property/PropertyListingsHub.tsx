@@ -3,17 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Bath,
-  Bed,
-  Building2,
-  ChevronLeft,
-  ChevronRight,
-  LayoutGrid,
-  List,
-  MapPin,
-  Maximize2,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { propertyMarketOptions, type PropertyMarketOption } from "@/lib/property-markets";
 import { propertyService } from "@/lib/property-service";
 import {
@@ -24,8 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { PropertyStatus } from "@/schema/property.enums";
 
-const fallbackImage =
-  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80";
+const fallbackImage = "/images/uk/victorian-terracotta-corner.webp";
 
 type SortMode = "created-desc" | "price-desc" | "price-asc" | "area-desc";
 
@@ -104,59 +93,50 @@ export function PropertyListingsHub() {
   }
 
   return (
-    <div ref={listingsContainerRef} className="select-none font-sans">
-      <div className="flex flex-col justify-between gap-6 border-b border-white/10 [html.light_&]:border-black/10 pb-8 lg:flex-row lg:items-end">
-        <div>
-          <p className="eyebrow mb-2">Property Portfolio</p>
-          <h2 className="display text-4xl text-white [html.light_&]:text-[#121316] md:text-6xl">Available Properties</h2>
-          <p className="mt-4 max-w-2xl text-base text-slate-300 [html.light_&]:text-[#555d6b]">
-            Browse live property records, compare core specifications, and apply directly from each listing.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-1 rounded-xl border border-white/15 bg-black/40 p-1 backdrop-blur-md [html.light_&]:border-black/10 [html.light_&]:bg-black/[0.04] sm:flex">
-            <IconButton active={viewMode === "grid"} label="Grid view" onClick={() => setViewMode("grid")}>
-              <LayoutGrid size={16} />
-            </IconButton>
-            <IconButton active={viewMode === "list"} label="List view" onClick={() => setViewMode("list")}>
-              <List size={16} />
-            </IconButton>
+    <div ref={listingsContainerRef} className="select-none">
+      <div className="flex flex-col justify-end gap-6 border-b border-theme-border pb-6 lg:flex-row lg:items-end">
+        <div className="flex items-center gap-6 text-[11px] font-bold uppercase tracking-[0.18em]">
+          <div className="hidden items-center gap-4 sm:flex" role="group" aria-label="View">
+            <ViewToggle active={viewMode === "grid"} onClick={() => setViewMode("grid")}>
+              Grid
+            </ViewToggle>
+            <ViewToggle active={viewMode === "list"} onClick={() => setViewMode("list")}>
+              List
+            </ViewToggle>
           </div>
-          <div className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 font-mono text-xs text-slate-300 [html.light_&]:border-black/10 [html.light_&]:bg-black/[0.04] [html.light_&]:text-[#181818]">
-            <span className="font-bold text-white [html.light_&]:text-[#121316]">{filteredProperties.length}</span> properties
-          </div>
+          <span className="text-theme-muted">
+            <span className="display text-2xl font-semibold normal-case tracking-normal text-theme-primary">{filteredProperties.length}</span> properties
+          </span>
         </div>
       </div>
 
-      <div className="mt-8 grid gap-5 rounded-2xl border border-white/10 bg-black/40 p-5 backdrop-blur-2xl [html.light_&]:border-[#E8E5E0] [html.light_&]:bg-white [html.light_&]:shadow-sm">
-        <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col gap-4 border-b border-theme-border py-5 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
           {propertyMarketOptions.map((market) => (
-            <FilterChip
-              key={market}
-              active={selectedMarket === market}
-              onClick={() => setSelectedMarket(market)}
-            >
+            <FilterChip key={market} active={selectedMarket === market} onClick={() => setSelectedMarket(market)}>
               {market === "All" ? "All markets" : market}
             </FilterChip>
           ))}
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto]">
-          <select
-            value={sortBy}
-            onChange={(event) => setSortBy(event.target.value as SortMode)}
-            className="focus-ring rounded-2xl border border-white/15 bg-black px-4 py-3 text-sm text-white [html.light_&]:border-black/15 [html.light_&]:bg-white [html.light_&]:text-[#181818]"
-          >
-            <option value="created-desc">Newest first</option>
-            <option value="price-desc">Price high to low</option>
-            <option value="price-asc">Price low to high</option>
-            <option value="area-desc">Largest area</option>
-          </select>
+        <div className="flex items-center gap-5">
+          <label className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-theme-muted">
+            Sort
+            <select
+              value={sortBy}
+              onChange={(event) => setSortBy(event.target.value as SortMode)}
+              className="focus-ring border-0 border-b border-[#181818]/60 bg-transparent py-1 pr-6 text-sm font-medium normal-case tracking-normal text-theme-primary"
+            >
+              <option value="created-desc">Newest first</option>
+              <option value="price-desc">Price high to low</option>
+              <option value="price-asc">Price low to high</option>
+              <option value="area-desc">Largest area</option>
+            </select>
+          </label>
           <button
             type="button"
             onClick={resetFilters}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:border-legacy-red [html.light_&]:border-black/15 [html.light_&]:bg-black/[0.03] [html.light_&]:text-[#181818]"
+            className="focus-ring text-[11px] font-bold uppercase tracking-[0.18em] text-theme-primary underline decoration-[#181818]/40 underline-offset-4 transition-colors hover:text-legacy-red"
           >
             Reset
           </button>
@@ -170,13 +150,13 @@ export function PropertyListingsHub() {
       ) : paginatedProperties.length === 0 ? (
         <StatePanel title="No properties found" text="No properties match the selected criteria. Please adjust your filters or contact our Mayfair desk for off-market opportunities." />
       ) : viewMode === "grid" ? (
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {paginatedProperties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
+        <div className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {paginatedProperties.map((property, index) => (
+            <PropertyEntry key={property.id} property={property} priority={index < 3} />
           ))}
         </div>
       ) : (
-        <div className="mt-10 grid gap-4">
+        <div className="mt-4 border-t border-[#181818]/70">
           {paginatedProperties.map((property) => (
             <PropertyListRow key={property.id} property={property} />
           ))}
@@ -199,30 +179,26 @@ export function PropertyListingsHub() {
   );
 }
 
-function PropertyCard({ property }: { property: PropertyViewModel }) {
+/** Image first; price, address and facts are set beneath it as plain type. */
+function PropertyEntry({ property, priority = false }: { property: PropertyViewModel; priority?: boolean }) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c12]/95 shadow-xl transition hover:border-legacy-red/40 [html.light_&]:bg-white [html.light_&]:border-[#E8E5E0] [html.light_&]:shadow-[0_10px_30px_rgba(0,0,0,0.03)] [html.light_&]:hover:border-legacy-red/40 [html.light_&]:hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
-      <PropertyImage property={property} className="aspect-[16/10]" />
-      <div className="p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="font-display text-2xl font-bold text-white [html.light_&]:text-[#121316]">{property.priceDisplay}</p>
-            <h3 className="mt-2 line-clamp-1 text-base font-bold text-white group-hover:text-legacy-red [html.light_&]:text-[#121316]">
-              {property.title}
-            </h3>
-          </div>
-          <StatusBadge status={property.status} />
+    <article className="group">
+      <Link href={`/property/${property.id}`} className="focus-ring block">
+        <PropertyImage property={property} className="aspect-[4/3]" priority={priority} />
+      </Link>
+      <div className="mt-4 border-t border-[#181818]/70 pt-4">
+        <div className="flex items-baseline justify-between gap-4">
+          <p className="display text-2xl font-semibold text-theme-primary">{property.priceDisplay}</p>
+          <StatusLabel status={property.status} />
         </div>
-        <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-400 [html.light_&]:text-[#555d6b]">
-          <MapPin size={13} className="text-legacy-red" />
-          <span className="line-clamp-1">{property.addressLabel || "Location available on request"}</span>
-        </p>
-        <SpecGrid property={property} />
-        <div className="mt-5 grid grid-cols-2 gap-2">
+        <h3 className="mt-2 line-clamp-1 text-base font-semibold text-theme-primary transition-colors group-hover:text-legacy-red">
+          <Link href={`/property/${property.id}`}>{property.title}</Link>
+        </h3>
+        <p className="mt-1 line-clamp-1 text-sm text-theme-secondary">{property.addressLabel || "Location available on request"}</p>
+        <SpecLine property={property} />
+        <div className="mt-4 flex gap-6 text-[11px] font-bold uppercase tracking-[0.18em]">
           <CardLink href={`/property/${property.id}`}>View</CardLink>
-          <CardLink href={`/property/${property.id}#apply`} primary>
-            Apply
-          </CardLink>
+          <CardLink href={`/property/${property.id}#apply`}>Apply</CardLink>
         </div>
       </div>
     </article>
@@ -231,113 +207,94 @@ function PropertyCard({ property }: { property: PropertyViewModel }) {
 
 function PropertyListRow({ property }: { property: PropertyViewModel }) {
   return (
-    <article className="grid gap-4 rounded-2xl border border-white/10 bg-[#0c0c12]/95 p-4 md:grid-cols-[240px_1fr_auto] md:items-center [html.light_&]:bg-white [html.light_&]:border-[#E8E5E0] [html.light_&]:shadow-sm">
-      <PropertyImage property={property} className="aspect-[16/10] rounded-xl" />
+    <article className="group grid gap-5 border-b border-theme-border py-7 md:grid-cols-[260px_1fr_auto] md:items-center md:gap-10">
+      <Link href={`/property/${property.id}`} className="focus-ring block">
+        <PropertyImage property={property} className="aspect-[4/3]" />
+      </Link>
       <div>
-        <div className="flex flex-wrap items-center gap-2">
-          <StatusBadge status={property.status} />
-          <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300 [html.light_&]:border-black/10 [html.light_&]:text-[#555d6b]">
-            {property.propertyType}
-          </span>
-        </div>
-        <h3 className="mt-3 text-lg font-bold text-white [html.light_&]:text-[#121316]">{property.title}</h3>
-        <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-400 [html.light_&]:text-[#555d6b]">
-          <MapPin size={13} className="text-legacy-red" />
-          {property.addressLabel || "Location available on request"}
-        </p>
-        <SpecGrid property={property} />
+        <StatusLabel status={property.status} />
+        <h3 className="display mt-2 text-2xl font-semibold text-theme-primary transition-colors group-hover:text-legacy-red">{property.title}</h3>
+        <p className="mt-1 text-sm text-theme-secondary">{property.addressLabel || "Location available on request"}</p>
+        <SpecLine property={property} />
       </div>
-      <div className="flex items-center justify-between gap-4 md:block md:text-right">
-        <p className="font-display text-2xl font-bold text-white [html.light_&]:text-[#121316]">{property.priceDisplay}</p>
-        <div className="mt-0 flex gap-2 md:mt-4">
+      <div className="flex items-center justify-between gap-6 md:block md:text-right">
+        <p className="display text-3xl font-semibold text-theme-primary">{property.priceDisplay}</p>
+        <div className="flex gap-6 text-[11px] font-bold uppercase tracking-[0.18em] md:mt-4 md:justify-end">
           <CardLink href={`/property/${property.id}`}>View</CardLink>
-          <CardLink href={`/property/${property.id}#apply`} primary>
-            Apply
-          </CardLink>
+          <CardLink href={`/property/${property.id}#apply`}>Apply</CardLink>
         </div>
       </div>
     </article>
   );
 }
 
-function PropertyImage({ property, className }: { property: PropertyViewModel; className: string }) {
+function PropertyImage({ property, className, priority = false }: { property: PropertyViewModel; className: string; priority?: boolean }) {
+  const src = property.featuredImage ?? fallbackImage;
   return (
-    <div className={cn("relative w-full overflow-hidden bg-black/60", className)}>
-      <Image
-        src={property.featuredImage ?? fallbackImage}
-        alt={property.title}
-        fill
-        sizes="(max-width: 768px) 100vw, 33vw"
-        className="object-cover transition duration-700 group-hover:scale-105"
-        unoptimized
-      />
-      <div className="absolute bottom-3 left-3 rounded-md border border-white/15 bg-black/75 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-        {property.propertyType}
+    <figure className="m-0">
+      <div className={cn("relative w-full overflow-hidden bg-[#C6D3C0]", className)}>
+        <Image
+          src={src}
+          alt={property.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+          quality={75}
+          priority={priority}
+          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+          unoptimized={!src.startsWith("/")}
+        />
       </div>
-    </div>
+      <figcaption className="mt-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-theme-muted">{property.propertyType}</figcaption>
+    </figure>
   );
 }
 
-function SpecGrid({ property }: { property: PropertyViewModel }) {
+/** Beds, baths and area as a single ruled line of facts. */
+function SpecLine({ property }: { property: PropertyViewModel }) {
+  const facts = [
+    ["Beds", property.bedrooms.toString()],
+    ["Baths", property.bathrooms.toString()],
+    ["Area", `${property.area.toLocaleString()} sq ft`]
+  ];
   return (
-    <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-center text-xs font-mono [html.light_&]:border-[#E8E5E0] [html.light_&]:bg-[#FAF8F5]">
-      <Spec icon={<Bed size={14} />} label="Beds" value={property.bedrooms.toString()} />
-      <Spec icon={<Bath size={14} />} label="Baths" value={property.bathrooms.toString()} />
-      <Spec icon={<Maximize2 size={13} />} label="Area" value={`${property.area.toLocaleString()} sq ft`} />
-    </div>
+    <dl className="mt-4 grid grid-cols-3 divide-x divide-theme-border border-y border-theme-border text-sm">
+      {facts.map(([term, value], idx) => (
+        <div key={term} className={cn("py-2.5", idx > 0 && "pl-4")}>
+          <dt className="text-[10px] font-bold uppercase tracking-[0.18em] text-theme-muted">{term}</dt>
+          <dd className="mt-0.5 font-semibold text-theme-primary">{value}</dd>
+        </div>
+      ))}
+    </dl>
   );
 }
 
-function Spec({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
+function StatusLabel({ status }: { status: PropertyStatus }) {
+  const available =
+    status === PropertyStatus.AVAILABLE ||
+    status === PropertyStatus.AVAILABLE_FOR_SALE ||
+    status === PropertyStatus.AVAILABLE_FOR_RENT;
   return (
-    <div className="min-w-0">
-      <span className="block text-[10px] font-bold uppercase text-slate-400 [html.light_&]:text-[#7a828e]">{label}</span>
-      <span className="mt-1 flex items-center justify-center gap-1 text-xs font-bold text-white [html.light_&]:text-[#121316]">
-        <span className="text-legacy-red">{icon}</span>
-        <span className="truncate">{value}</span>
-      </span>
-    </div>
-  );
-}
-
-function StatusBadge({ status }: { status: PropertyStatus }) {
-  const className =
-    status === PropertyStatus.AVAILABLE
-    || status === PropertyStatus.AVAILABLE_FOR_SALE
-    || status === PropertyStatus.AVAILABLE_FOR_RENT
-      ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300 [html.light_&]:text-emerald-700 [html.light_&]:bg-emerald-50"
-      : status === PropertyStatus.SOLD
-        ? "border-slate-400/30 bg-slate-500/10 text-slate-300 [html.light_&]:text-slate-600 [html.light_&]:bg-slate-100"
-        : "border-amber-500/40 bg-amber-500/10 text-amber-300 [html.light_&]:text-amber-700 [html.light_&]:bg-amber-50";
-
-  return (
-    <span className={cn("shrink-0 rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-wider", className)}>
+    <span
+      className={cn(
+        "shrink-0 text-[11px] font-bold uppercase tracking-[0.18em]",
+        available ? "text-[#2F5D46]" : status === PropertyStatus.SOLD ? "text-theme-muted" : "text-legacy-red"
+      )}
+    >
       {status}
     </span>
   );
 }
 
-function IconButton({
-  active,
-  children,
-  label,
-  onClick,
-}: {
-  active: boolean;
-  children: ReactNode;
-  label: string;
-  onClick: () => void;
-}) {
+function ViewToggle({ active, children, onClick }: { active: boolean; children: ReactNode; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={cn(
-        "grid h-9 w-9 place-items-center rounded-lg transition-all",
-        active ? "bg-legacy-red text-white" : "text-slate-400 hover:text-white [html.light_&]:text-slate-600 [html.light_&]:hover:text-slate-950",
+        "focus-ring border-b-2 pb-0.5 transition-colors",
+        active ? "border-legacy-red text-theme-primary" : "border-transparent text-theme-muted hover:text-theme-primary"
       )}
-      aria-label={label}
-      title={label}
     >
       {children}
     </button>
@@ -350,10 +307,8 @@ function FilterChip({ active, children, onClick }: { active: boolean; children: 
       type="button"
       onClick={onClick}
       className={cn(
-        "rounded-full border px-3 py-1.5 text-xs font-semibold transition",
-        active
-          ? "border-legacy-red bg-legacy-red/20 text-white [html.light_&]:bg-legacy-red [html.light_&]:text-white"
-          : "border-white/10 bg-white/[0.03] text-slate-300 hover:text-white [html.light_&]:border-black/10 [html.light_&]:bg-black/[0.03] [html.light_&]:text-[#555d6b] [html.light_&]:hover:text-slate-900",
+        "focus-ring border-b-2 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] transition-colors",
+        active ? "border-legacy-red text-theme-primary" : "border-transparent text-theme-muted hover:text-theme-primary"
       )}
     >
       {children}
@@ -361,28 +316,22 @@ function FilterChip({ active, children, onClick }: { active: boolean; children: 
   );
 }
 
-function CardLink({ children, href, primary = false }: { children: ReactNode; href: string; primary?: boolean }) {
+function CardLink({ children, href }: { children: ReactNode; href: string }) {
   return (
     <Link
       href={href}
-      className={cn(
-        "rounded-xl py-2.5 text-center text-xs font-bold uppercase tracking-wider text-white transition",
-        primary
-          ? "bg-legacy-red hover:bg-legacy-deepRed text-white"
-          : "border border-white/15 bg-white/5 hover:border-legacy-red [html.light_&]:border-black/15 [html.light_&]:bg-black/[0.03] [html.light_&]:text-[#121316]",
-      )}
+      className="focus-ring border-b border-theme-primary pb-0.5 text-theme-primary transition-colors hover:border-legacy-red hover:text-legacy-red"
     >
-      {children}
+      {children} →
     </Link>
   );
 }
 
 function StatePanel({ title, text }: { title: string; text: string }) {
   return (
-    <div className="mt-12 rounded-2xl border border-white/10 bg-black/40 p-12 text-center [html.light_&]:border-[#E8E5E0] [html.light_&]:bg-white">
-      <Building2 size={36} className="mx-auto mb-4 text-slate-500 [html.light_&]:text-slate-400" />
-      <h3 className="text-lg font-bold text-white [html.light_&]:text-[#121316]">{title}</h3>
-      <p className="mx-auto mt-2 max-w-md text-sm text-slate-400 [html.light_&]:text-[#555d6b]">{text}</p>
+    <div className="mt-12 border-y border-theme-border py-16">
+      <h3 className="display text-2xl font-semibold text-theme-primary">{title}</h3>
+      <p className="mt-2 max-w-md text-theme-secondary">{text}</p>
     </div>
   );
 }
@@ -406,36 +355,36 @@ function Pagination({
   totalPages: number;
   onPageChange: (page: number) => void;
 }) {
+  const nav = "focus-ring grid h-9 w-9 place-items-center text-theme-primary transition-colors hover:text-legacy-red disabled:opacity-30";
   return (
-    <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/40 p-4 backdrop-blur-2xl sm:flex-row [html.light_&]:border-[#E8E5E0] [html.light_&]:bg-white">
-      <div className="text-xs font-mono text-slate-400 [html.light_&]:text-[#555d6b]">
-        Showing <strong className="text-white [html.light_&]:text-[#121316]">{startRecord}</strong>-<strong className="text-white [html.light_&]:text-[#121316]">{endRecord}</strong> of{" "}
-        <strong className="text-white [html.light_&]:text-[#121316]">{filteredCount}</strong>
-      </div>
-      <div className="flex items-center gap-1.5">
-        <IconButton active={false} label="Previous page" onClick={() => onPageChange(currentPage - 1)}>
+    <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[#181818]/70 pt-5 sm:flex-row">
+      <p className="text-sm text-theme-secondary">
+        Showing <strong className="text-theme-primary">{startRecord}</strong>–<strong className="text-theme-primary">{endRecord}</strong> of{" "}
+        <strong className="text-theme-primary">{filteredCount}</strong>
+      </p>
+      <div className="flex items-center gap-1">
+        <button type="button" className={nav} aria-label="Previous page" disabled={currentPage === 1} onClick={() => onPageChange(currentPage - 1)}>
           <ChevronLeft size={16} />
-        </IconButton>
+        </button>
         {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
           <button
             key={page}
             type="button"
             onClick={() => onPageChange(page)}
+            aria-current={currentPage === page ? "page" : undefined}
             className={cn(
-              "grid h-9 w-9 place-items-center rounded-xl text-xs font-bold",
-              currentPage === page
-                ? "bg-legacy-red text-white"
-                : "border border-white/10 bg-white/5 text-slate-400 hover:text-white [html.light_&]:border-black/10 [html.light_&]:bg-black/[0.03] [html.light_&]:text-[#555d6b]",
+              "focus-ring grid h-9 w-9 place-items-center border-b-2 text-sm font-semibold transition-colors",
+              currentPage === page ? "border-legacy-red text-theme-primary" : "border-transparent text-theme-muted hover:text-theme-primary"
             )}
           >
             {page}
           </button>
         ))}
-        <IconButton active={false} label="Next page" onClick={() => onPageChange(currentPage + 1)}>
+        <button type="button" className={nav} aria-label="Next page" disabled={currentPage === totalPages} onClick={() => onPageChange(currentPage + 1)}>
           <ChevronRight size={16} />
-        </IconButton>
+        </button>
       </div>
-      <div className="hidden items-center gap-2 font-mono text-xs text-slate-400 [html.light_&]:text-[#555d6b] lg:flex">
+      <div className="hidden items-center gap-4 text-[11px] font-bold uppercase tracking-[0.18em] text-theme-muted lg:flex">
         <span>Per page</span>
         {[6, 9, 12].map((size) => (
           <button
@@ -443,10 +392,8 @@ function Pagination({
             type="button"
             onClick={() => setItemsPerPage(size)}
             className={cn(
-              "rounded-lg px-2.5 py-1 text-[11px] font-bold",
-              itemsPerPage === size
-                ? "bg-white/20 text-white [html.light_&]:bg-black/10 [html.light_&]:text-[#121316]"
-                : "text-slate-500 hover:text-slate-300 [html.light_&]:text-slate-400 [html.light_&]:hover:text-slate-800",
+              "focus-ring border-b-2 pb-0.5 transition-colors",
+              itemsPerPage === size ? "border-legacy-red text-theme-primary" : "border-transparent hover:text-theme-primary"
             )}
           >
             {size}

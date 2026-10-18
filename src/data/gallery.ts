@@ -1,8 +1,38 @@
-export const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80", alt: "Premium residential property exterior", category: "Property" },
-  { src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80", alt: "Modern commercial building", category: "Commercial" },
-  { src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80", alt: "Construction team on site", category: "Construction" },
-  { src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80", alt: "High-end home interior", category: "Residential" },
-  { src: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80", alt: "Property transaction concept", category: "Investment" },
-  { src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=80", alt: "Building development work", category: "Development" }
+import { images, type ImageKey } from "@/data/images";
+
+export type GalleryImage = {
+  src: string;
+  alt: string;
+  caption: string;
+  category: string;
+  orientation: "landscape" | "portrait";
+};
+
+const entries: [ImageKey, string][] = [
+  ["etonHighStreet", "Streetscape"],
+  ["unionFlagPediment", "Red brick"],
+  ["thamesTownhouses", "Riverside"],
+  ["gothicDoorway", "Stone & Gothic"],
+  ["victorianStoneCorner", "Victorian stone"],
+  ["stuccoSash", "Stucco & sash"],
+  ["etonChapel", "Ecclesiastical"],
+  ["brickMullions", "Red brick"],
+  ["crestDoorway", "Red brick"],
+  ["terracottaCorner", "Victorian stone"],
+  ["portlandStone", "Portland stone"],
+  ["etonGatehouse", "Red brick"],
+  ["chapelGolden", "Ecclesiastical"],
+  ["brickBay", "Red brick"],
+  ["stoneGable", "Stone & Gothic"],
+  ["brickCorner", "Streetscape"],
+  ["ironLamp", "Detail"],
+  ["gardenBrick", "Detail"]
 ];
+
+export const galleryImages: GalleryImage[] = entries.map(([key, category]) => ({
+  src: images[key].src,
+  alt: images[key].alt,
+  caption: images[key].caption,
+  orientation: images[key].orientation,
+  category
+}));

@@ -1,28 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Building2, Cookie, Globe2, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { BSQLogo } from "@/components/ui/BSQLogo";
+import { Photo } from "@/components/editorial/Photo";
+import { images } from "@/data/images";
 import { company, divisions } from "@/data/company";
 
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Financial Services", href: "/loans" },
-  { label: "Property Transactions", href: "/property" },
   { label: "Property Listings", href: "/property/listings" },
   { label: "Asset & Portfolio Management", href: "/construction" },
-  { label: "About Berkeley Square Capital", href: "/about" },
-  { label: "Loan Application", href: "/loan-application" },
-  { label: "Book Appointment", href: "/appointment" },
-  { label: "Contact London Office", href: "/contact" }
+  { label: "About us", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Loan application", href: "/loan-application" },
+  { label: "Book an appointment", href: "/appointment" },
+  { label: "Contact", href: "/contact" }
 ];
 
-const legalLinks = [
-  { label: "Privacy Notice", href: "/privacy" },
-  { label: "Cookie Policy", href: "/cookies" }
-];
+// A different architectural photograph per area so the footer band never repeats the page above it.
+function footerImage(pathname: string) {
+  if (pathname === "/") return images.thamesTownhouses;
+  if (pathname.startsWith("/loans")) return images.etonChapel;
+  if (pathname.startsWith("/property/listings")) return images.etonChapel;
+  if (pathname.startsWith("/about")) return images.etonHighStreet;
+  if (pathname.startsWith("/gallery")) return images.victorianStoneCorner;
+  if (pathname.startsWith("/contact")) return images.terracottaCorner;
+  return images.etonHighStreet;
+}
 
 export function Footer() {
+  const pathname = usePathname() ?? "/";
   function handleOpenCookieSettings(e: React.MouseEvent) {
     e.preventDefault();
     if (typeof window !== "undefined") {
@@ -30,211 +39,123 @@ export function Footer() {
     }
   }
 
+  const colTitle = "text-[11px] font-bold uppercase tracking-[0.22em] text-[#E8B7A8]";
+  const link = "text-sm text-white/70 transition-colors hover:text-white";
+
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 [html.light_&]:border-[#D8D3C8] bg-gradient-to-b from-[#18181D] via-[#121216] to-[#0D0D11] [html.light_&]:from-[#1F2024] [html.light_&]:via-[#16171A] [html.light_&]:to-[#111114] pt-20 pb-12 select-none text-slate-300" suppressHydrationWarning>
-      {/* Top Hairline Metallic Silver Laser Stream */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 h-0.5 w-1/3 bg-gradient-to-r from-transparent via-legacy-red to-transparent shadow-[0_0_12px_#e1122d] animate-[laser-stream_5s_linear_infinite]"
-      />
-
-      {/* Subtle architectural ambient glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-32 left-1/4 h-64 w-96 rounded-full bg-legacy-red/10 blur-[120px]"
-      />
-
-      <div className="container grid gap-12 lg:grid-cols-[1.3fr_0.85fr_0.85fr] relative z-10">
-        {/* Brand, Tagline & London Addresses */}
-        <div>
-          <Link href="/" className="inline-flex items-center">
-            <BSQLogo variant="horizontal" size="lg" />
-          </Link>
-
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-slate-300">
-            {company.slogan}
-          </p>
-
-          {/* Established Date & Legal Name */}
-          <div className="mt-5 text-xs text-white/50 font-mono">
-            <span className="text-legacy-red font-bold">Est. 2015</span> · {company.legalName}
+    <footer className="select-none bg-[#15291F] text-white/75" suppressHydrationWarning>
+      {/* Image band: one more look at the architecture before the legal small print */}
+      <div className="container pt-16 md:pt-24">
+        <div className="grid items-end gap-8 md:grid-cols-[1.6fr_1fr] md:gap-12">
+          <div className="group [&_figcaption]:border-white/25 [&_figcaption]:text-white/55">
+            <Photo image={footerImage(pathname)} ratio="aspect-[21/9]" sizes="(max-width: 768px) 100vw, 70vw" position="object-[50%_62%]" />
           </div>
-
-          {/* Trading & Registered Addresses & Direct Contact */}
-          <div className="mt-6 space-y-3 text-xs text-slate-400 font-mono">
-            <div className="flex items-start gap-2.5 text-slate-300">
-              <MapPin size={15} className="text-legacy-red shrink-0 mt-0.5" />
-              <div>
-                <span className="text-white font-bold block">Trading Office (HQ):</span>
-                <a
-                  href={company.mapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white hover:underline transition-colors block text-slate-300"
-                >
-                  {company.tradingAddress}
-                </a>
-                <a
-                  href={company.mapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold text-legacy-red hover:underline block"
-                >
-                  <span>Open in Google Maps</span>
-                  <ArrowUpRight size={11} />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-2.5 text-slate-400">
-              <Building2 size={15} className="text-legacy-red/70 shrink-0 mt-0.5" />
-              <div>
-                <span className="text-slate-300 font-semibold block">Registered Office:</span>
-                <span>{company.registeredAddress}</span>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 border-t border-white/[0.08]">
-              <div className="flex items-center gap-2">
-                <Phone size={14} className="text-legacy-red shrink-0" />
-                <a href={`tel:${company.phone}`} className="hover:text-white transition-colors text-slate-300 font-bold">
-                  {company.phoneDisplay}
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <MessageCircle size={14} className="text-legacy-red shrink-0" />
-                <a
-                  href={company.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors text-slate-300 font-bold"
-                >
-                  WhatsApp: {company.phoneDisplay}
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Mail size={14} className="text-legacy-red shrink-0" />
-                <a href={`mailto:${company.email}`} className="hover:text-white transition-colors text-slate-300 font-bold">
-                  {company.email}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Divisions */}
-        <div>
-          <p className="eyebrow mb-4">Divisions</p>
-          <div className="space-y-3.5">
-            {divisions.map((division) => (
-              <Link
-                key={division.name}
-                href={division.href}
-                className="group flex items-center justify-between text-sm text-slate-300 transition-colors hover:text-white"
-              >
-                <span>{division.name}</span>
-                <ArrowUpRight size={14} className="text-legacy-red opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
-            ))}
-          </div>
-
-          {/* Global Footprint Hubs Badge */}
-          <div className="mt-8 rounded-2xl border border-white/10 [html.light_&]:border-white/15 bg-white/[0.04] p-4 text-xs text-slate-300 backdrop-blur-md">
-            <div className="flex items-center gap-2 text-white font-bold uppercase tracking-wider mb-2">
-              <Globe2 size={14} className="text-legacy-red" />
-              <span>Global Footprint</span>
-            </div>
-            <div className="flex flex-wrap gap-1.5 text-[11px] text-slate-400 font-mono">
-              {company.globalHubs.map((hub) => (
-                <span key={hub.country} className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.06] px-2 py-1 text-slate-200">
-                  <FlagImages country={hub.country} flags={hub.flags} />
-                  <span>{hub.country}</span>
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Platform Navigation & Legal Links */}
-        <div>
-          <p className="eyebrow mb-4">Navigation</p>
-          <div className="grid grid-cols-1 gap-2 text-sm">
-            {quickLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-slate-400 transition-colors hover:text-white text-xs font-medium"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          <p className="eyebrow mt-6 mb-3">Governance & Compliance</p>
-          <div className="flex flex-col gap-2 text-xs">
-            {legalLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-slate-400 transition-colors hover:text-white text-xs font-medium flex items-center gap-1.5"
-              >
-                <ShieldCheck size={12} className="text-legacy-red shrink-0" />
-                <span>{item.label}</span>
-              </Link>
-            ))}
-            <button
-              type="button"
-              onClick={handleOpenCookieSettings}
-              className="text-left text-slate-400 transition-colors hover:text-white text-xs font-medium flex items-center gap-1.5"
+          <div>
+            <p className={colTitle}>Berkeley Square Capital</p>
+            <p className="display mt-4 text-3xl font-semibold leading-tight text-white md:text-4xl">
+              Bring your opportunity, and we&rsquo;ll make it happen.
+            </p>
+            <Link
+              href="/contact"
+              className="focus-ring mt-6 inline-flex items-center gap-2 border-b border-white pb-1 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#E8B7A8] hover:text-[#E8B7A8]"
             >
-              <Cookie size={12} className="text-legacy-red shrink-0" />
-              <span>Cookie Settings & Preferences</span>
-            </button>
+              Speak with our Mayfair team →
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Footer Legal & Regulatory Footnote */}
-      <div className="container mt-16 border-t border-white/[0.08] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-          <p>© 2026 {company.legalName}. All rights reserved.</p>
-          <span className="hidden sm:inline text-white/20">|</span>
-          <div className="flex items-center gap-3 font-mono text-[11px]">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Notice</Link>
-            <span>·</span>
-            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <span>·</span>
-            <button type="button" onClick={handleOpenCookieSettings} className="hover:text-white transition-colors">Cookies</button>
-          </div>
+      <div className="container mt-16 grid gap-12 border-t border-white/15 pt-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div>
+          <Link href="/" className="inline-block rounded-sm bg-[#EEF2EA] px-3 py-2">
+            <BSQLogo variant="horizontal" theme="light" size="md" />
+          </Link>
+          <address className="mt-6 text-sm not-italic leading-relaxed text-white/70">
+            <span className="block font-semibold text-white">Trading office</span>
+            <a href={company.mapsLink} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+              {company.tradingAddress}
+            </a>
+            <span className="mt-4 block font-semibold text-white">Registered office</span>
+            {company.registeredAddress}
+          </address>
+          <p className="mt-6 text-sm leading-relaxed">
+            <a href={`tel:${company.phone}`} className="font-semibold text-white transition-colors hover:text-[#E8B7A8]">
+              {company.phoneDisplay}
+            </a>
+            <br />
+            <a href={`mailto:${company.email}`} className="transition-colors hover:text-white">
+              {company.email}
+            </a>
+            <br />
+            <a href={company.whatsapp} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
+              WhatsApp
+            </a>
+          </p>
         </div>
 
-        <p className="max-w-xl text-[11px] leading-relaxed text-slate-400 text-center md:text-right">
-          Berkeley Square Capital delivers integrated real estate acquisition, bridging finance, investment advisory, and property management solutions across the UK, Middle East, Europe, and South Asia.
-        </p>
+        <div>
+          <p className={colTitle}>Divisions</p>
+          <ul className="mt-5 space-y-3">
+            {divisions.map((division) => (
+              <li key={division.name}>
+                <Link href={division.href} className={link}>
+                  {division.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className={`${colTitle} mt-8`}>Where we work</p>
+          <p className="mt-4 text-sm leading-relaxed text-white/70">
+            {company.globalHubs.map((hub) => hub.country).join(" · ")}
+          </p>
+        </div>
+
+        <div>
+          <p className={colTitle}>Site</p>
+          <ul className="mt-5 space-y-3">
+            {quickLinks.map((item) => (
+              <li key={item.label}>
+                <Link href={item.href} className={link}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <p className={colTitle}>Governance</p>
+          <ul className="mt-5 space-y-3">
+            <li>
+              <Link href="/privacy" className={link}>
+                Privacy notice
+              </Link>
+            </li>
+            <li>
+              <Link href="/cookies" className={link}>
+                Cookie policy
+              </Link>
+            </li>
+            <li>
+              <button type="button" onClick={handleOpenCookieSettings} className={link}>
+                Cookie settings
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="container mt-14 border-t border-white/15 py-8">
+        <div className="grid gap-6 text-xs leading-relaxed text-white/55 lg:grid-cols-[1fr_1fr]">
+          <p>
+            © 2026 {company.legalName}. Registered office: {company.registeredAddress}. Established {company.establishedYear}.
+          </p>
+          <p>
+            Berkeley Square Capital delivers integrated real estate acquisition, bridging finance, investment advisory, and property management solutions across the UK, Middle East, Europe, and South Asia.
+            Regulatory status and lending disclosures to be confirmed by the company&rsquo;s compliance adviser before publication.
+          </p>
+        </div>
       </div>
     </footer>
-  );
-}
-
-function FlagImages({ country, flags }: { country: string; flags: string[] }) {
-  return (
-    <span className="inline-flex items-center -space-x-1">
-      {flags.map((flag) => (
-        <img
-          key={flag}
-          src={`https://flagcdn.com/w20/${flag}.png`}
-          srcSet={`https://flagcdn.com/w40/${flag}.png 2x`}
-          alt={`${country} flag`}
-          className="h-3 w-4 rounded-[1px] border border-white/20 object-cover"
-          loading="lazy"
-        />
-      ))}
-    </span>
   );
 }

@@ -248,7 +248,7 @@ export const divisions = [
     icon: Landmark,
     summary:
       "Tailor-made bridging finance, structured development lending, and international mortgage solutions for fast, flexible transaction execution.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/uk/portland-stone-portico.webp",
     services: [
       "Bridging Loan Specialist (Auction, Distressed, Fast Liquidity)",
       "Commercial Finance Specialist (Offices, Retail, Mixed-Use & Portfolios)",
@@ -263,7 +263,7 @@ export const divisions = [
     icon: Building2,
     summary:
       "Strategic acquisition sourcing and market-aligned sales & disposal for prime residential, commercial, and investment assets.",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/uk/victorian-terracotta-corner.webp",
     services: [
       "Acquisition (Strategic Sourcing & End-to-End Support)",
       "Sales & Disposal (Valuation & Rapid Completion Management)",
@@ -277,7 +277,7 @@ export const divisions = [
     icon: ShieldCheck,
     summary:
       "Full rental management, tenant vetting, maintenance care, regulatory compliance, and strategic multi-market portfolio rebalancing.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/uk/thames-townhouses.webp",
     services: [
       "Rental Management (Tenant Vetting, Rent Collection & Care)",
       "Portfolio Management (Performance Monitoring & Asset Rebalancing)",

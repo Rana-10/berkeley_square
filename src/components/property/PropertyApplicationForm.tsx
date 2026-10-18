@@ -62,10 +62,10 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
   }
 
   return (
-    <form id="apply" onSubmit={handleSubmit} className="rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-black/40 [html.light_&]:bg-white [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)] p-6">
+    <form id="apply" onSubmit={handleSubmit} className="scroll-mt-40 border-t border-[#181818]/70 pt-6">
       <div className="mb-5">
         <p className="eyebrow">Online Application</p>
-        <h2 className="mt-2 text-2xl font-bold text-white [html.light_&]:text-[#121316]">Apply for this property</h2>
+        <h2 className="display mt-2 text-3xl font-semibold text-[#181818]">Apply for this property</h2>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
@@ -75,7 +75,7 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
         <Input name="guest_phone_number" placeholder="Phone number" required />
       </div>
 
-      <div className="mt-3 rounded-xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-black/30 [html.light_&]:bg-[#FAF8F5] p-3.5">
+      <div className="mt-3 border-y border-[#181818]/15 py-3.5">
         <label className="text-xs font-semibold uppercase tracking-wider text-white/70 [html.light_&]:text-[#2A2927]">
           Postcode Address Finder (Optional)
         </label>
@@ -85,7 +85,7 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
             value={postcode}
             onChange={(e) => handlePostcodeChange(e.target.value)}
             placeholder="Enter postcode (e.g. W1J 6BD)"
-            className="focus-ring flex-1 rounded-xl border border-white/15 [html.light_&]:border-[#E4DFD4] bg-white/5 [html.light_&]:bg-white px-4 py-2.5 text-sm text-white [html.light_&]:text-[#121316] placeholder:text-slate-500 [html.light_&]:placeholder:text-[#9E9B94] uppercase"
+            className="focus-ring flex-1 rounded-none border-0 border-b border-[#181818]/50 bg-transparent px-0 py-2.5 text-sm text-[#181818] placeholder:text-[#9E9B94] uppercase focus:border-legacy-red"
           />
         </div>
         {addresses.length > 0 && (
@@ -103,7 +103,7 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
                   setCurrentAddress(`${found.address.line1}, ${found.address.town}, ${found.address.postcode}`);
                 }
               }}
-              className="focus-ring rounded-xl border border-white/15 [html.light_&]:border-[#E4DFD4] bg-black/80 [html.light_&]:bg-white px-3 py-2.5 text-sm text-white [html.light_&]:text-[#121316]"
+              className="focus-ring rounded-none border-0 border-b border-[#181818]/50 bg-transparent px-0 py-2.5 text-sm text-[#181818]"
             >
               <option value="">-- Select street address from list --</option>
               {addresses.map((a) => (
@@ -126,7 +126,7 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
       <Textarea name="message_from_applicant" placeholder="Message to landlord/admin" />
 
       {message && (
-        <p className={formState === "error" ? "mt-4 text-sm text-red-300" : "mt-4 text-sm text-emerald-300"}>
+        <p className={formState === "error" ? "mt-4 text-sm text-legacy-red" : "mt-4 text-sm text-[#2F5D46]"}>
           {message}
         </p>
       )}
@@ -134,7 +134,7 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
       <button
         type="submit"
         disabled={formState === "submitting"}
-        className="mt-5 inline-flex items-center gap-2 rounded-xl bg-legacy-red px-5 py-3 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-legacy-deepRed disabled:opacity-60"
+        className="mt-6 inline-flex items-center gap-2 border border-[#1F4030] bg-[#1F4030] px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-legacy-red hover:bg-legacy-red disabled:opacity-60"
       >
         <Send size={15} />
         {formState === "submitting" ? "Submitting" : "Submit application"}
@@ -147,7 +147,7 @@ function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
       {...props}
-      className="focus-ring rounded-xl border border-white/15 [html.light_&]:border-[#E4DFD4] bg-white/5 [html.light_&]:bg-white px-4 py-3 text-sm text-white [html.light_&]:text-[#121316] placeholder:text-slate-500 [html.light_&]:placeholder:text-[#9E9B94]"
+      className="focus-ring rounded-none border-0 border-b border-[#181818]/50 bg-transparent px-0 py-3 text-sm text-[#181818] placeholder:text-[#9E9B94] focus:border-legacy-red"
     />
   );
 }
@@ -157,7 +157,7 @@ function Textarea(props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
     <textarea
       {...props}
       rows={4}
-      className="focus-ring mt-3 w-full rounded-xl border border-white/15 [html.light_&]:border-[#E4DFD4] bg-white/5 [html.light_&]:bg-white px-4 py-3 text-sm text-white [html.light_&]:text-[#121316] placeholder:text-slate-500 [html.light_&]:placeholder:text-[#9E9B94]"
+      className="focus-ring mt-3 w-full rounded-none border-0 border-b border-[#181818]/50 bg-transparent px-0 py-3 text-sm text-[#181818] placeholder:text-[#9E9B94] focus:border-legacy-red"
     />
   );
 }

@@ -17,7 +17,7 @@ export default async function PropertyApplyPage({
   const propertyId = Number((await searchParams).property) || 0;
 
   return (
-    <main className="pt-28 pb-24 select-none">
+    <main className="pt-36 md:pt-44 pb-24 select-none">
       <div className="container max-w-4xl">
         {/* Navigation Breadcrumb */}
         <Link
@@ -28,8 +28,8 @@ export default async function PropertyApplyPage({
         </Link>
 
         {/* Page Header */}
-        <div className="mb-10 border-b border-white/10 [html.light_&]:border-[#E4DFD4] pb-8">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/40 [html.light_&]:bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white/80 [html.light_&]:text-[#222222] backdrop-blur-md">
+        <div className="mb-10 border-b border-white/10 [html.light_&]:border-[#C6D3C0] pb-8">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-legacy-red">
             <Sparkles size={14} className="text-legacy-red" /> Direct Deal Desk Application
           </div>
           <p className="eyebrow mb-2">Prime Real Estate Acquisition &amp; Tenancy</p>
@@ -44,7 +44,7 @@ export default async function PropertyApplyPage({
         {/* Application Form with Suspense Wrapper */}
         <Suspense
           fallback={
-            <div className="rounded-3xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-black/40 [html.light_&]:bg-white p-12 text-center text-slate-400 [html.light_&]:text-[#666460] font-mono text-xs">
+            <div className="text-center text-slate-400 [html.light_&]:text-[#666460] font-mono text-xs border-t border-[#181818]/25 py-5">
               Loading Application Desk...
             </div>
           }

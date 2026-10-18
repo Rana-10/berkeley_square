@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Cookie } from "lucide-react";
+import { PageHero } from "@/components/editorial/PageHero";
 import { company } from "@/data/company";
 import { CookiePreferencesManager } from "@/components/cookies/CookiePreferencesManager";
 
@@ -35,30 +36,9 @@ const cookieCategories = [
 
 export default function CookiesPage() {
   return (
-    <main className="pt-32 pb-24 min-h-screen bg-[#0E0E12] [html.light_&]:bg-[#F7F5F2] text-slate-200 [html.light_&]:text-[#222222]">
-      <div className="container max-w-4xl px-4 sm:px-6">
-        {/* Back Link */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 hover:text-white [html.light_&]:text-[#666460] [html.light_&]:hover:text-[#181818] transition-colors mb-8"
-        >
-          <ArrowLeft size={14} /> Back to Homepage
-        </Link>
-
-        {/* Header */}
-        <div className="border-b border-white/10 [html.light_&]:border-[#E4DFD4] pb-8">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/40 [html.light_&]:bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white/80 [html.light_&]:text-[#222222] backdrop-blur-md">
-            <Cookie size={14} className="text-legacy-red" /> UK PECR &amp; GDPR Compliant
-          </div>
-          <h1 className="display text-3xl sm:text-4xl md:text-5xl text-white [html.light_&]:text-[#181818] font-bold leading-tight tracking-tight">
-            Cookie Policy
-          </h1>
-          <p className="mt-4 text-sm font-mono text-slate-400 [html.light_&]:text-[#666460]">
-            Last Updated: August 2026 · Official Notice for{" "}
-            <span className="text-white [html.light_&]:text-[#181818] font-bold">{company.legalName}</span>
-          </p>
-        </div>
-
+    <main className="min-h-screen select-none bg-theme-page text-[#3D3A36]">
+      <PageHero eyebrow="UK PECR & GDPR compliant" title="Cookie Policy" intro={<>Last updated August 2026 · Official notice for {company.legalName}</>} />
+      <div className="container max-w-4xl px-4 py-14 sm:px-6 md:py-20">
         {/* Interactive Manager */}
         <div className="mt-10">
           <CookiePreferencesManager />
@@ -87,7 +67,7 @@ export default function CookiesPage() {
               {cookieCategories.map((category) => (
                 <div
                   key={category.name}
-                  className="rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.02] [html.light_&]:bg-white [html.light_&]:shadow-sm p-6 backdrop-blur-xl transition-all hover:border-white/20 [html.light_&]:hover:border-[#CFC9BC]"
+                  className="border-t border-[#181818]/25 py-5"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <h3 className="font-bold text-base text-white [html.light_&]:text-[#181818] flex items-center gap-2.5">
@@ -98,7 +78,7 @@ export default function CookiesPage() {
                       className={`self-start sm:self-auto rounded-full px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider border ${
                         category.required
                           ? "border-legacy-red/40 bg-legacy-red/10 text-legacy-red [html.light_&]:bg-legacy-red/10"
-                          : "border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-[#FAF8F5] text-slate-300 [html.light_&]:text-[#4A4844]"
+                          : "border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-[#F4F7F0] text-slate-300 [html.light_&]:text-[#4A4844]"
                       }`}
                     >
                       {category.required ? "Strictly Necessary" : "Optional"}
@@ -112,7 +92,7 @@ export default function CookiesPage() {
                     {category.examples.map((ex) => (
                       <code
                         key={ex}
-                        className="rounded bg-white/5 [html.light_&]:bg-[#ECE7DE] [html.light_&]:border [html.light_&]:border-[#D8D3C8] px-2.5 py-0.5 text-legacy-red font-semibold"
+                        className="rounded bg-white/5 [html.light_&]:bg-[#DCE6D6] [html.light_&]:border [html.light_&]:border-[#D8D3C8] px-2.5 py-0.5 text-legacy-red font-semibold"
                       >
                         {ex}
                       </code>
@@ -132,19 +112,19 @@ export default function CookiesPage() {
               Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. Please note that disabling essential cookies may impact the operation of our secure financial application forms.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="rounded-xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.02] [html.light_&]:bg-white p-4 text-xs font-mono">
+              <div className="text-xs font-mono border-t border-[#181818]/25 py-5">
                 <span className="font-bold text-white [html.light_&]:text-[#181818] block mb-1">Google Chrome</span>
                 <span className="text-slate-400 [html.light_&]:text-[#666460]">Settings &rarr; Privacy and security &rarr; Third-party cookies</span>
               </div>
-              <div className="rounded-xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.02] [html.light_&]:bg-white p-4 text-xs font-mono">
+              <div className="text-xs font-mono border-t border-[#181818]/25 py-5">
                 <span className="font-bold text-white [html.light_&]:text-[#181818] block mb-1">Apple Safari</span>
                 <span className="text-slate-400 [html.light_&]:text-[#666460]">Preferences &rarr; Privacy &rarr; Manage Website Data</span>
               </div>
-              <div className="rounded-xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.02] [html.light_&]:bg-white p-4 text-xs font-mono">
+              <div className="text-xs font-mono border-t border-[#181818]/25 py-5">
                 <span className="font-bold text-white [html.light_&]:text-[#181818] block mb-1">Mozilla Firefox</span>
                 <span className="text-slate-400 [html.light_&]:text-[#666460]">Settings &rarr; Privacy &amp; Security &rarr; Enhanced Tracking</span>
               </div>
-              <div className="rounded-xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.02] [html.light_&]:bg-white p-4 text-xs font-mono">
+              <div className="text-xs font-mono border-t border-[#181818]/25 py-5">
                 <span className="font-bold text-white [html.light_&]:text-[#181818] block mb-1">Microsoft Edge</span>
                 <span className="text-slate-400 [html.light_&]:text-[#666460]">Settings &rarr; Cookies and site permissions</span>
               </div>
@@ -152,7 +132,7 @@ export default function CookiesPage() {
           </section>
 
           {/* Contact Section */}
-          <section className="rounded-2xl border border-white/15 [html.light_&]:border-[#E4DFD4] bg-black/60 [html.light_&]:bg-white [html.light_&]:shadow-md p-6 sm:p-8 font-mono text-xs space-y-3 mt-10">
+          <section className="font-mono text-xs space-y-3 mt-10 border-t border-[#181818]/25 py-5">
             <p className="text-white [html.light_&]:text-[#181818] font-bold uppercase text-sm">
               Questions Regarding Cookie Management &amp; Privacy?
             </p>

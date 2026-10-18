@@ -3,20 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  Bath,
-  Bed,
-  CheckCircle2,
-  MapPin,
-  Maximize2,
-} from "lucide-react";
 import { PropertyApplicationForm } from "@/components/property/PropertyApplicationForm";
 import { propertyService } from "@/lib/property-service";
 import { mapPropertyToViewModel, type PropertyViewModel } from "@/lib/property-view-model";
+import { cn } from "@/lib/utils";
 
-const fallbackImage =
-  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80";
+const fallbackImage = "/images/uk/victorian-terracotta-corner.webp";
 
 export function PropertyDetailView({ propertyId }: { propertyId: number }) {
   const [property, setProperty] = useState<PropertyViewModel | null>(null);
@@ -45,104 +37,113 @@ export function PropertyDetailView({ propertyId }: { propertyId: number }) {
     return property.images.length > 0 ? property.images : [fallbackImage];
   }, [property]);
 
-  if (error) {
+  if (error || !property) {
     return (
-      <main className="container min-h-screen pt-32 text-white [html.light_&]:text-[#121316] [html.light_&]:bg-[#F7F5F2]">
+      <main className="container min-h-screen select-none bg-theme-page pt-36 md:pt-44">
         <BackLink />
-        <div className="mt-8 rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-black/40 [html.light_&]:bg-white [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)] p-10">
-          <h1 className="text-2xl font-bold text-white [html.light_&]:text-[#121316]">Property unavailable</h1>
-          <p className="mt-2 text-slate-400 [html.light_&]:text-[#706D68]">{error}</p>
+        <div className="mt-8 border-y border-theme-border py-16">
+          <h1 className="display text-3xl font-semibold text-theme-primary">{error ? "Property unavailable" : "Loading property"}</h1>
+          <p className="mt-2 text-theme-secondary">{error ?? "Loading property details."}</p>
         </div>
       </main>
     );
   }
 
-  if (!property) {
-    return (
-      <main className="container min-h-screen pt-32 text-white [html.light_&]:text-[#121316] [html.light_&]:bg-[#F7F5F2]">
-        <BackLink />
-        <div className="mt-8 rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-black/40 [html.light_&]:bg-white [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)] p-10 text-slate-300 [html.light_&]:text-[#555d6b]">
-          Loading property details.
-        </div>
-      </main>
-    );
-  }
+  const facts: [string, string][] = [
+    ["Bedrooms", property.bedrooms.toString()],
+    ["Bathrooms", property.bathrooms.toString()],
+    ["Area", `${property.area.toLocaleString()} sq ft`],
+    ["Type", property.propertyType]
+  ];
 
   return (
-    <main className="pt-32 pb-24 [html.light_&]:bg-[#F7F5F2]">
+    <main className="select-none bg-theme-page pb-24 pt-36 md:pt-44">
       <div className="container">
         <BackLink />
-        <section className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-black">
+
+        {/* Photograph first, then price and address as plain type */}
+        <section className="mt-8">
+          <figure className="m-0">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#C6D3C0] md:aspect-[16/9]">
               <Image
                 src={gallery[activeImage]}
                 alt={property.title}
                 fill
-                sizes="(max-width: 1024px) 100vw, 55vw"
+                sizes="(max-width: 1240px) 100vw, 1180px"
                 className="object-cover"
                 priority
-                unoptimized
+                unoptimized={!gallery[activeImage].startsWith("/")}
               />
             </div>
-            {gallery.length > 1 && (
-              <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-                {gallery.map((image, index) => (
-                  <button
-                    key={image}
-                    type="button"
-                    onClick={() => setActiveImage(index)}
-                    className="relative h-20 w-28 shrink-0 overflow-hidden rounded-xl border border-white/15 [html.light_&]:border-[#E4DFD4] opacity-70 transition hover:opacity-100"
-                  >
-                    <Image src={image} alt="" fill sizes="112px" className="object-cover" unoptimized />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+            <figcaption className="mt-2.5 flex items-baseline justify-between border-t border-[#181818]/20 pt-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-theme-muted">
+              <span>{property.title}</span>
+              <span>
+                {activeImage + 1} / {gallery.length}
+              </span>
+            </figcaption>
+          </figure>
 
-          <div>
-            <span className="rounded-full border border-legacy-red/40 bg-legacy-red/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white [html.light_&]:bg-legacy-red/10 [html.light_&]:border-legacy-red/30 [html.light_&]:text-legacy-red">
-              {property.status}
-            </span>
-            <h1 className="display mt-4 text-4xl text-white [html.light_&]:text-[#121316] font-bold md:text-5xl">{property.title}</h1>
-            <p className="mt-3 flex items-start gap-2 text-sm text-slate-300 [html.light_&]:text-[#555d6b]">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-legacy-red" />
-              {property.addressLabel || "Location available on request"}
-            </p>
-            <p className="mt-6 font-display text-4xl font-bold text-white [html.light_&]:text-[#121316]">{property.priceDisplay}</p>
-
-            <div className="mt-6 grid grid-cols-3 gap-3 rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.03] [html.light_&]:bg-white [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)] p-4 text-center">
-              <Spec icon={<Bed size={16} />} label="Bedrooms" value={property.bedrooms.toString()} />
-              <Spec icon={<Bath size={16} />} label="Bathrooms" value={property.bathrooms.toString()} />
-              <Spec icon={<Maximize2 size={15} />} label="Area" value={`${property.area.toLocaleString()} sq ft`} />
+          {gallery.length > 1 && (
+            <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
+              {gallery.map((image, index) => (
+                <button
+                  key={image}
+                  type="button"
+                  onClick={() => setActiveImage(index)}
+                  aria-label={`Show photograph ${index + 1}`}
+                  aria-current={index === activeImage}
+                  className={cn(
+                    "focus-ring relative h-20 w-28 shrink-0 overflow-hidden border-b-2 transition-opacity",
+                    index === activeImage ? "border-legacy-red opacity-100" : "border-transparent opacity-60 hover:opacity-100"
+                  )}
+                >
+                  <Image src={image} alt="" fill sizes="112px" className="object-cover" unoptimized={!image.startsWith("/")} />
+                </button>
+              ))}
             </div>
+          )}
+        </section>
+
+        <section className="mt-14 grid gap-10 border-t border-theme-border pt-10 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">{property.status}</p>
+            <h1 className="display mt-4 text-4xl font-semibold leading-tight text-theme-primary md:text-6xl">{property.title}</h1>
+            <p className="mt-3 text-lg text-theme-secondary">{property.addressLabel || "Location available on request"}</p>
+          </div>
+          <div className="lg:text-right">
+            <p className="display text-4xl font-semibold text-theme-primary md:text-5xl">{property.priceDisplay}</p>
           </div>
         </section>
 
-        <section className="mt-10 grid gap-8 lg:grid-cols-[1fr_360px]">
-          <div className="space-y-8">
-            <Panel title="Description">
-              <p className="text-sm leading-7 text-slate-300 [html.light_&]:text-[#555d6b]">{property.description}</p>
-            </Panel>
+        <dl className="mt-10 grid border-y border-[#181818]/70 sm:grid-cols-2 lg:grid-cols-4">
+          {facts.map(([term, value], idx) => (
+            <div key={term} className={cn("py-6", idx > 0 && "border-t border-theme-border sm:border-t-0 sm:pl-6 lg:border-l", idx % 2 === 0 && "sm:pl-0 lg:pl-6", idx === 0 && "lg:pl-0")}>
+              <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-legacy-red">{term}</dt>
+              <dd className="display mt-2 text-3xl font-semibold text-theme-primary">{value}</dd>
+            </div>
+          ))}
+        </dl>
 
-            <Panel title="Amenities">
-              {property.amenities.length > 0 ? (
-                <ul className="grid gap-2 sm:grid-cols-2">
-                  {property.amenities.map((amenity) => (
-                    <li key={amenity} className="flex items-start gap-2 text-sm text-slate-300 [html.light_&]:text-[#555d6b]">
-                      <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-legacy-red" />
-                      {amenity}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-sm text-slate-400 [html.light_&]:text-[#706D68]">Amenities have not been added yet.</p>
-              )}
-            </Panel>
+        <section className="mt-14 grid gap-12 lg:grid-cols-[1fr_380px] lg:gap-20">
+          <div>
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-legacy-red">Description</h2>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-theme-secondary">{property.description}</p>
+
+            <h2 className="mt-14 text-[11px] font-bold uppercase tracking-[0.2em] text-legacy-red">Amenities</h2>
+            {property.amenities.length > 0 ? (
+              <ul className="mt-4 grid gap-x-10 border-t border-[#181818]/70 sm:grid-cols-2">
+                {property.amenities.map((amenity) => (
+                  <li key={amenity} className="border-b border-theme-border py-3 text-sm text-theme-secondary">
+                    {amenity}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-4 text-sm text-theme-muted">Amenities have not been added yet.</p>
+            )}
           </div>
 
-          <aside className="space-y-6">
+          <aside>
             <PropertyApplicationForm propertyId={property.id} />
           </aside>
         </section>
@@ -155,29 +156,9 @@ function BackLink() {
   return (
     <Link
       href="/property/listings"
-      className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400 [html.light_&]:text-[#706D68] hover:text-white [html.light_&]:hover:text-[#121316]"
+      className="focus-ring inline-block border-b border-theme-primary pb-0.5 text-[11px] font-bold uppercase tracking-[0.18em] text-theme-primary transition-colors hover:border-legacy-red hover:text-legacy-red"
     >
-      <ArrowLeft size={14} />
-      Back to listings
+      ← Back to listings
     </Link>
-  );
-}
-
-function Panel({ children, title }: { children: React.ReactNode; title: string }) {
-  return (
-    <section className="rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-black/40 [html.light_&]:bg-white [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)] p-6">
-      <h2 className="mb-4 text-lg font-bold text-white [html.light_&]:text-[#121316]">{title}</h2>
-      {children}
-    </section>
-  );
-}
-
-function Spec({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
-  return (
-    <div>
-      <span className="mx-auto flex justify-center text-legacy-red">{icon}</span>
-      <span className="mt-1 block text-[10px] font-bold uppercase text-slate-400 [html.light_&]:text-[#706D68]">{label}</span>
-      <strong className="mt-1 block text-sm text-white [html.light_&]:text-[#121316] font-bold">{value}</strong>
-    </div>
   );
 }

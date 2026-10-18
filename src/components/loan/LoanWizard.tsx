@@ -67,9 +67,9 @@ export function LoanWizard() {
         initial={{ opacity: 0, scale: 0.96, y: 16 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-legacy-border bg-white/[0.045] p-8 text-center shadow-glow"
+        className="mx-auto max-w-3xl border-y border-[#181818]/70 py-12"
       >
-        <CheckCircle2 className="mx-auto h-14 w-14 text-legacy-red" />
+        <CheckCircle2 className="h-10 w-10 text-legacy-red" />
         <h1 className="mt-5 text-3xl font-semibold">Application Submitted</h1>
         <p className="mt-3 text-legacy-muted">Thank you. Your application has been successfully received.</p>
         <p className="mt-5 border border-legacy-border bg-black/30 p-3 text-sm text-white/70">Reference: {result.reference}</p>
@@ -96,10 +96,10 @@ export function LoanWizard() {
       }}
       className="mx-auto grid max-w-4xl gap-6"
     >
-      <div className="surface p-5 md:p-6 [html.light_&]:bg-white [html.light_&]:border-[#E4DFD4] [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)]">
+      <div className="border-t border-[#181818]/70 pt-6">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
           <div className="flex items-start gap-4">
-            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-legacy-red/35 bg-legacy-red/10 text-legacy-red">
+            <div className="grid h-12 w-12 shrink-0 place-items-center text-legacy-red">
               {step === 0 ? <User size={24} /> : step === 1 ? <Home size={24} /> : <FileText size={24} />}
             </div>
             <div>
@@ -110,9 +110,9 @@ export function LoanWizard() {
           <p className="text-sm text-legacy-muted [html.light_&]:text-[#555d6b]">About 2-3 minutes</p>
         </div>
 
-        <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-white/10 [html.light_&]:bg-black/10">
+        <div className="mt-5 h-0.5 overflow-hidden bg-[#181818]/15">
           <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-legacy-deepRed to-legacy-red"
+            className="h-0.5 bg-legacy-red"
             animate={{ width: `${progress}%` }}
             transition={{ type: "spring", stiffness: 120, damping: 22 }}
           />
@@ -122,7 +122,7 @@ export function LoanWizard() {
         </p>
       </div>
 
-      <section className="surface bg-legacy-panel p-5 md:p-7 [html.light_&]:bg-white [html.light_&]:border-[#E4DFD4] [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)]">
+      <section className="py-2">
         <AnimatePresence mode="wait">
           <motion.div key={step} {...stepMotion}>
             {step === 0 && (
@@ -166,7 +166,7 @@ export function LoanWizard() {
 
             {step === 1 && (
               <div className="grid gap-5">
-                <div className="grid gap-3 rounded-xl border border-legacy-border bg-black/40 p-4 [html.light_&]:bg-[#FAF8F5] [html.light_&]:border-[#E4DFD4]">
+                <div className="grid gap-3 border-t border-[#181818]/25 py-4">
                   <span className="text-sm text-white/78 [html.light_&]:text-[#2A2927] font-medium">Is this connected to a purchase or refinance?</span>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {(["Purchase", "Refinance"] as const).map((option) => {
@@ -177,10 +177,10 @@ export function LoanWizard() {
                           type="button"
                           onClick={() => setValue("securityInformation.transactionType", option, { shouldValidate: true, shouldDirty: true, shouldTouch: true })}
                           className={cn(
-                            "rounded-xl border px-4 py-3 text-left text-sm font-semibold transition",
+                            "rounded-none border px-4 py-3 text-left text-sm font-semibold transition",
                             isSelected
-                              ? "border-legacy-red bg-legacy-red text-white shadow-[0_0_16px_rgba(225,18,45,0.35)]"
-                              : "border-legacy-border bg-black/50 text-white/70 hover:border-white/20 hover:text-white [html.light_&]:bg-white [html.light_&]:border-[#E4DFD4] [html.light_&]:text-[#2A2927] [html.light_&]:hover:bg-black/[0.04]"
+                              ? "border-legacy-red bg-legacy-red text-white"
+                              : "border-legacy-border bg-black/50 text-white/70 hover:border-white/20 hover:text-white [html.light_&]:bg-white [html.light_&]:border-[#C6D3C0] [html.light_&]:text-[#2A2927] [html.light_&]:hover:bg-black/[0.04]"
                           )}
                         >
                           {option}
@@ -301,14 +301,14 @@ export function LoanWizard() {
 
             {step === 2 && (
               <div className="grid gap-6">
-                <div className="rounded-xl border border-legacy-border bg-black/30 p-4 text-sm leading-6 text-legacy-muted [html.light_&]:bg-[#FAF8F5] [html.light_&]:border-[#E4DFD4] [html.light_&]:text-[#555d6b]">
+                <div className="text-sm leading-6 text-legacy-muted [html.light_&]:text-[#555d6b] border-t border-[#181818]/25 py-4">
                   Please review your application summary below. Click &quot;Submit Application&quot; when ready, or use &quot;Edit&quot; to update any details.
                 </div>
 
                 {/* Structured Review Panels */}
                 <div className="grid gap-4 md:grid-cols-2">
                   {/* Personal Information Review Card */}
-                  <div className="rounded-2xl border border-white/10 bg-black/40 p-5 [html.light_&]:bg-[#FAF8F5] [html.light_&]:border-[#E4DFD4]">
+                  <div className="border-t border-[#181818]/25 py-4">
                     <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-black/10 pb-3 mb-3">
                       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white [html.light_&]:text-[#121316]">
                         <User size={14} className="text-legacy-red" />
@@ -339,7 +339,7 @@ export function LoanWizard() {
                   </div>
 
                   {/* Security & Finance Review Card */}
-                  <div className="rounded-2xl border border-white/10 bg-black/40 p-5 [html.light_&]:bg-[#FAF8F5] [html.light_&]:border-[#E4DFD4]">
+                  <div className="border-t border-[#181818]/25 py-4">
                     <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-black/10 pb-3 mb-3">
                       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white [html.light_&]:text-[#121316]">
                         <Home size={14} className="text-legacy-red" />
@@ -406,7 +406,7 @@ export function LoanWizard() {
                     error={errors.declaration?.submittedBy?.message}
                     placeholder="Your full name"
                   />
-                  <label className="flex items-start gap-3 rounded-xl border border-legacy-border bg-black/34 p-4 text-sm text-white/78 [html.light_&]:bg-[#FAF8F5] [html.light_&]:border-[#E4DFD4] [html.light_&]:text-[#2A2927] cursor-pointer hover:border-white/20 transition-colors">
+                  <label className="flex items-start gap-3 text-sm text-white/78 [html.light_&]:text-[#2A2927] cursor-pointer transition-colors border-t border-[#181818]/25 py-4">
                     <input
                       type="checkbox"
                       checked={Boolean(confirmation)}
@@ -425,12 +425,12 @@ export function LoanWizard() {
         </AnimatePresence>
       </section>
 
-      <div className="flex flex-col justify-between gap-3 border-t border-legacy-border [html.light_&]:border-[#E4DFD4] pt-6 sm:flex-row">
+      <div className="flex flex-col justify-between gap-3 border-t border-legacy-border [html.light_&]:border-[#C6D3C0] pt-6 sm:flex-row">
         {step > 0 ? (
           <button
             type="button"
             onClick={() => setStep((current) => Math.max(current - 1, 0))}
-            className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-black bg-black px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-200 hover:bg-neutral-900 active:scale-[0.98] [html.light_&]:bg-[#121316] [html.light_&]:text-white [html.light_&]:border-[#121316] [html.light_&]:hover:bg-neutral-800"
+            className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-black bg-black px-6 py-3 text-sm font-semibold tracking-wide text-white transition-all duration-200 hover:bg-neutral-900 active:scale-[0.98] [html.light_&]:bg-[#121316] [html.light_&]:text-white [html.light_&]:border-[#121316] [html.light_&]:hover:bg-neutral-800"
           >
             <ArrowLeft size={18} /> Back
           </button>

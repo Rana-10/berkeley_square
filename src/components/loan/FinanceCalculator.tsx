@@ -49,7 +49,7 @@ function LtvRing({ ltv }: { ltv: number }) {
           fill="none"
           stroke="#e1122d"
           strokeWidth="8"
-          strokeLinecap="round"
+          strokeLinecap="butt"
           strokeDasharray={circumference}
           style={{ strokeDashoffset: reduceMotion ? circumference - (Math.min(ltv, 100) / 100) * circumference : dashOffset }}
         />
@@ -118,14 +118,8 @@ export function FinanceCalculator() {
   }, [loan, value, term]);
 
   return (
-    <Reveal className="surface bg-legacy-panel p-6 md:p-8 [html.light_&]:bg-white [html.light_&]:border-[#E4DFD4] [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)]">
-      <p className="eyebrow">Indicative calculator</p>
-      <h2 className="display mt-3 text-2xl md:text-3xl font-bold text-white [html.light_&]:text-[#121316]">Start with the numbers.</h2>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-legacy-muted [html.light_&]:text-[#555d6b]">
-        Explore a simple loan-to-value illustration before speaking with the team. This is not a quote, an offer, or credit advice.
-      </p>
-
-      <div className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_.85fr]">
+    <Reveal className="text-theme-primary">
+      <div className="grid gap-8 lg:grid-cols-[1.05fr_.85fr]">
         <div className="grid gap-8">
           <RangeSlider
             label="Loan amount"
@@ -154,10 +148,10 @@ export function FinanceCalculator() {
                   key={months}
                   type="button"
                   onClick={() => setTerm(months)}
-                  className={`focus-ring min-h-11 rounded-full border px-4 py-2 text-sm font-semibold transition duration-300 ${
+                  className={`focus-ring min-h-11 border px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-300 ${
                     term === months
-                      ? "border-legacy-red bg-legacy-red text-white shadow-glow"
-                      : "border-legacy-border bg-black/30 text-white/72 hover:border-white/25 hover:bg-white/[0.06] [html.light_&]:bg-[#FAF8F5] [html.light_&]:border-[#E4DFD4] [html.light_&]:text-[#2A2927] [html.light_&]:hover:bg-black/[0.04]"
+                      ? "border-[#1F4030] bg-[#1F4030] text-white"
+                      : "border-[#181818]/30 bg-transparent text-[#181818] hover:border-[#1F4030]"
                   }`}
                 >
                   {months} mo
@@ -167,15 +161,15 @@ export function FinanceCalculator() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-white/15 bg-white/[.04] p-6 md:p-7 [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-[#FAF8F5]">
+        <div className="border-t border-[#181818]/70 pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
           <p className="text-sm text-white/60 [html.light_&]:text-[#555d6b] font-medium">Indicative loan-to-value</p>
           <div className="mt-4">
             <LtvRing ltv={displayedLtv} />
           </div>
 
-          <div className="mt-6 h-2 overflow-hidden rounded-full bg-white/10 [html.light_&]:bg-black/10">
+          <div className="mt-6 h-1 overflow-hidden bg-[#181818]/15">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-legacy-deepRed to-legacy-red"
+              className="h-full bg-legacy-red"
               animate={{ width: `${Math.min(displayedLtv, 100)}%` }}
               transition={{ type: "spring", stiffness: 120, damping: 20 }}
             />

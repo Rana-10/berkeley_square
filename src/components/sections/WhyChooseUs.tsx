@@ -1,7 +1,7 @@
-"use client";
-
-import { TiltCard } from "@/components/animations/TiltCard";
-import { SectionHeading } from "@/components/sections/SectionHeading";
+import { Reveal, RevealGroup, RevealItem } from "@/components/animations/Reveal";
+import { Photo } from "@/components/editorial/Photo";
+import { Heading, Section } from "@/components/editorial/Section";
+import { images } from "@/data/images";
 import { keyDifferentiators } from "@/data/company";
 
 // The other differentiators (flexible financing, bespoke engineering, client-centric)
@@ -13,44 +13,35 @@ const homeDifferentiators = [
   "Client-Centric Philosophy"
 ];
 
-export function WhyChooseUs() {
+const detailPhotos = [images.crestDoorway, images.stuccoSash, images.gothicDoorway];
+
+export function WhyChooseUs({ index = "03" }: { index?: string }) {
   const differentiators = keyDifferentiators.filter((diff) => homeDifferentiators.includes(diff.title));
 
   return (
-    <section className="py-20 select-none [html.light_&]:bg-[#ECE7DE]">
-      <div className="container">
-        <SectionHeading
-          eyebrow="The Berkeley Square Difference"
-          title="Why clients choose Berkeley Square."
-          description="A full-service property partner, from sourcing and funding to day-to-day asset management."
-        />
+    <Section index={index} label="The Berkeley Square difference" tone="stone">
+      <Heading intro="A full-service property partner, from sourcing and funding to day-to-day asset management.">
+        Why clients choose Berkeley Square.
+      </Heading>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {differentiators.map((diff, index) => {
-            const Icon = diff.icon;
-            return (
-              <TiltCard key={diff.title} className="flex h-full flex-col justify-between p-6">
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/40 bg-legacy-red/10 text-legacy-red transition-all duration-300 group-hover:bg-legacy-red group-hover:text-white group-hover:shadow-[0_0_20px_rgba(225,18,45,0.4)]">
-                      <Icon size={22} />
-                    </div>
-                    <span className="font-mono text-xs text-white/40 font-bold [html.light_&]:text-black/40">0{index + 1}</span>
-                  </div>
+      <RevealGroup stagger={0.08} className="mt-12 grid gap-x-8 gap-y-10 border-t border-[#181818]/70 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        {differentiators.map((diff, idx) => (
+          <RevealItem key={diff.title} className="lg:border-l lg:border-theme-border lg:pl-6 first:lg:border-l-0 first:lg:pl-0">
+            <span className="font-mono text-xs font-bold text-theme-muted">0{idx + 1}</span>
+            <h3 className="display mt-3 text-xl font-semibold leading-snug text-theme-primary">{diff.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-theme-secondary">{diff.description}</p>
+          </RevealItem>
+        ))}
+      </RevealGroup>
 
-                  <h3 className="display mt-6 text-xl text-white font-bold leading-snug [html.light_&]:text-[#121316]">
-                    {diff.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300 [html.light_&]:text-[#555d6b]">
-                    {diff.description}
-                  </p>
-                </div>
-              </TiltCard>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+      {/* Three architectural details: the character of the buildings we work around */}
+      <Reveal className="mt-16 grid grid-cols-3 gap-3 sm:gap-6">
+        {detailPhotos.map((image, idx) => (
+          <div key={image.src} className={idx === 1 ? "mt-6 sm:mt-10" : ""}>
+            <Photo image={image} ratio="aspect-[4/5]" sizes="(max-width: 768px) 33vw, 260px" zoom={false} />
+          </div>
+        ))}
+      </Reveal>
+    </Section>
   );
 }

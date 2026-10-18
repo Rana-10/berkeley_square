@@ -210,47 +210,19 @@ export function AdvisoryChatbot() {
 
   return (
     <div className="fixed bottom-4 left-3 sm:bottom-6 sm:left-6 z-50 font-sans select-none" suppressHydrationWarning>
-      {/* Floating Trigger Button */}
+      {/* Floating Trigger: a flat letterhead tab, not a glowing pill */}
       {!isOpen && (
-          <motion.button
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <button
+          type="button"
           onClick={() => setIsOpen(true)}
           suppressHydrationWarning
-          className="focus-ring group relative flex items-center gap-2 sm:gap-3 rounded-full border border-white/20 [html.light_&]:border-[#D8D3C8] bg-black/85 [html.light_&]:bg-white/95 p-1.5 sm:px-4 sm:py-3 text-white [html.light_&]:text-[#181818] shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(225,18,45,0.25)] [html.light_&]:shadow-[0_10px_25px_rgba(0,0,0,0.1),0_0_15px_rgba(225,18,45,0.1)] backdrop-blur-2xl transition-all duration-300 hover:border-legacy-red/60 hover:shadow-[0_0_35px_rgba(225,18,45,0.4)]"
+          className="focus-ring group relative flex h-11 w-11 items-center justify-center gap-3 border border-[#1F4030] bg-[#1F4030] sm:h-auto sm:w-auto sm:justify-start sm:px-4 sm:py-3 text-white transition-colors hover:border-legacy-red hover:bg-legacy-red"
           aria-label="Open Client Assistant Chatbot"
         >
-          {/* Status Glow Dot */}
-          <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0 ml-1 sm:ml-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
-          </span>
-
-          <div className="grid h-7 w-7 sm:h-8 sm:w-8 place-items-center rounded-full bg-gradient-to-br from-legacy-deepRed to-legacy-red text-white shadow-[0_0_12px_rgba(225,18,45,0.5)] shrink-0">
-            <MessageSquare size={14} className="sm:hidden" />
-            <MessageSquare size={16} className="hidden sm:block" />
-          </div>
-
-          <div className="hidden sm:block text-left pr-1">
-            <span className="block text-xs font-bold uppercase tracking-wider text-white [html.light_&]:text-[#181818] whitespace-nowrap">
-              Client Assistant
-            </span>
-            <span className="block text-[10px] text-slate-400 [html.light_&]:text-[#666460] font-mono whitespace-nowrap">
-              FAQ & Direct Support
-            </span>
-          </div>
-
-          {/* Mobile-only compact pill label */}
-          <span className="sm:hidden text-[11px] font-bold tracking-wider text-white [html.light_&]:text-[#181818] pr-1.5 font-sans">
-            Chat
-          </span>
-
-          {hasUnread && (
-            <span className="absolute -top-1 -right-1 h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full bg-legacy-red border-2 border-black" />
-          )}
-        </motion.button>
+          <MessageSquare size={15} />
+          <span className="sr-only sm:not-sr-only text-[11px] font-semibold uppercase tracking-[0.18em] whitespace-nowrap">Ask a question</span>
+          {hasUnread && <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-legacy-red border-2 border-[#EEF2EA]" />}
+        </button>
       )}
 
       {/* Chat Window Modal */}
@@ -262,10 +234,10 @@ export function AdvisoryChatbot() {
             exit={{ opacity: 0, y: 30, scale: 0.92 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             suppressHydrationWarning
-            className="fixed inset-x-3 bottom-3 sm:static sm:inset-auto flex flex-col w-auto sm:w-[410px] h-[520px] max-h-[85vh] rounded-3xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/95 [html.light_&]:bg-[#FAF8F5]/98 shadow-[0_25px_70px_rgba(0,0,0,0.95),0_0_40px_rgba(225,18,45,0.2)] [html.light_&]:shadow-[0_25px_60px_rgba(0,0,0,0.12),0_0_25px_rgba(225,18,45,0.08)] backdrop-blur-2xl overflow-hidden z-50"
+            className="fixed inset-x-3 bottom-3 sm:static sm:inset-auto flex flex-col w-auto sm:w-[410px] h-[520px] max-h-[85vh] border border-[#181818]/25 bg-[#EEF2EA] shadow-[0_18px_50px_rgba(24,24,24,0.18)] overflow-hidden z-50"
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.03] [html.light_&]:bg-white/80 px-4 sm:px-5 py-3.5">
+            <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-white/80 px-4 sm:px-5 py-3.5">
               <div className="flex items-center gap-2.5 sm:gap-3">
                 <div className="relative shrink-0">
                   <BSQLogo variant="mark" size="sm" />
@@ -303,7 +275,7 @@ export function AdvisoryChatbot() {
             </div>
 
             {/* Chat Body (Message Stream) */}
-            <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3.5 text-xs [html.light_&]:bg-[#FAF8F5]">
+            <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3.5 text-xs [html.light_&]:bg-[#F4F7F0]">
               {messages.map((msg) => {
                 const isBot = msg.sender === "bot";
                 return (
@@ -315,7 +287,7 @@ export function AdvisoryChatbot() {
                       className={cn(
                         "max-w-[88%] sm:max-w-[85%] rounded-2xl p-3 sm:p-3.5 leading-relaxed",
                         isBot
-                          ? "border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.05] [html.light_&]:bg-white text-slate-200 [html.light_&]:text-[#222222] rounded-tl-sm shadow-md"
+                          ? "border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.05] [html.light_&]:bg-white text-slate-200 [html.light_&]:text-[#222222] rounded-tl-sm shadow-md"
                           : "bg-gradient-to-r from-legacy-deepRed to-legacy-red text-white font-medium rounded-tr-sm shadow-[0_0_15px_rgba(225,18,45,0.3)]"
                       )}
                     >
@@ -338,7 +310,7 @@ export function AdvisoryChatbot() {
                               key={q}
                               type="button"
                               onClick={() => handleSelectQuestion(q)}
-                              className="focus-ring flex items-center justify-between rounded-xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.03] [html.light_&]:bg-white p-2.5 text-left text-[11px] font-semibold text-slate-300 [html.light_&]:text-[#222222] transition-all hover:border-legacy-red/50 hover:bg-legacy-red/10 [html.light_&]:hover:bg-legacy-red/5 hover:text-white [html.light_&]:hover:text-legacy-red shadow-sm"
+                              className="focus-ring flex items-center justify-between rounded-xl border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-white p-2.5 text-left text-[11px] font-semibold text-slate-300 [html.light_&]:text-[#222222] transition-all hover:border-legacy-red/50 hover:bg-legacy-red/10 [html.light_&]:hover:bg-legacy-red/5 hover:text-white [html.light_&]:hover:text-legacy-red shadow-sm"
                             >
                               <span>{q}</span>
                               <ArrowRight size={12} className="text-legacy-red shrink-0 ml-2" />
@@ -375,7 +347,7 @@ export function AdvisoryChatbot() {
 
               {/* Typing Animation Indicator */}
               {isTyping && (
-                <div className="flex items-center gap-1.5 rounded-2xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/5 [html.light_&]:bg-white px-4 py-3 w-max">
+                <div className="flex items-center gap-1.5 rounded-2xl border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/5 [html.light_&]:bg-white px-4 py-3 w-max">
                   <span className="h-1.5 w-1.5 rounded-full bg-legacy-red animate-bounce" />
                   <span className="h-1.5 w-1.5 rounded-full bg-legacy-red animate-bounce [animation-delay:0.2s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-legacy-red animate-bounce [animation-delay:0.4s]" />
@@ -386,7 +358,7 @@ export function AdvisoryChatbot() {
             </div>
 
             {/* Input Bar */}
-            <div className="border-t border-white/10 [html.light_&]:border-[#E4DFD4] bg-black/50 [html.light_&]:bg-white p-2.5 sm:p-3">
+            <div className="border-t border-white/10 [html.light_&]:border-[#C6D3C0] bg-black/50 [html.light_&]:bg-white p-2.5 sm:p-3">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -399,7 +371,7 @@ export function AdvisoryChatbot() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Type a question..."
-                  className="focus-ring flex-1 rounded-xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-white/5 [html.light_&]:bg-[#F7F5F2] px-3 py-2 text-xs text-white [html.light_&]:text-[#181818] placeholder:text-slate-500 [html.light_&]:placeholder:text-[#888580] focus:border-legacy-red focus:bg-white/10 [html.light_&]:focus:bg-white"
+                  className="focus-ring flex-1 rounded-xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-white/5 [html.light_&]:bg-[#EEF2EA] px-3 py-2 text-xs text-white [html.light_&]:text-[#181818] placeholder:text-slate-500 [html.light_&]:placeholder:text-[#888580] focus:border-legacy-red focus:bg-white/10 [html.light_&]:focus:bg-white"
                 />
                 <button
                   type="submit"

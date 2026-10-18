@@ -76,7 +76,7 @@ export function TiltCard({
           transformStyle: "preserve-3d"
         }}
         className={cn(
-          "group relative h-full overflow-hidden rounded-2xl border border-white/[0.09] bg-gradient-to-br from-[#15151c]/90 via-[#0e0e13]/90 to-[#08080b]/90 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_45px_rgba(0,0,0,0.7)] backdrop-blur-2xl transition-colors duration-300 hover:border-slate-300/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_25px_60px_rgba(0,0,0,0.8),0_0_30px_rgba(225,18,45,0.15)] [html.light_&]:bg-white [html.light_&]:bg-none [html.light_&]:border-[#E4DFD4] [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)] [html.light_&]:hover:border-slate-400/40 [html.light_&]:hover:shadow-[0_20px_45px_rgba(24,24,24,0.07),0_0_20px_rgba(225,18,45,0.06)]",
+          "group relative h-full overflow-hidden rounded-2xl border border-white/[0.09] bg-gradient-to-br from-[#15151c]/90 via-[#0e0e13]/90 to-[#08080b]/90 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_45px_rgba(0,0,0,0.7)] backdrop-blur-2xl transition-colors duration-300 hover:border-slate-300/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_25px_60px_rgba(0,0,0,0.8),0_0_30px_rgba(225,18,45,0.15)] [html.light_&]:bg-white [html.light_&]:bg-none [html.light_&]:border-[#C6D3C0] [html.light_&]:shadow-[0_10px_30px_rgba(24,24,24,0.04)] [html.light_&]:hover:border-slate-400/40 [html.light_&]:hover:shadow-[0_20px_45px_rgba(24,24,24,0.07),0_0_20px_rgba(225,18,45,0.06)]",
           className
         )}
       >

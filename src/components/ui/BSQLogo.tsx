@@ -24,7 +24,7 @@ export function BSQLogo({
   if (variant === "mark" || variant === "icon") {
     const sizeClasses = {
       sm: "h-11 sm:h-12",
-      md: "h-13 sm:h-14 lg:h-16",
+      md: "h-[3.25rem] sm:h-14 lg:h-16",
       lg: "h-16 sm:h-20 lg:h-24",
       xl: "h-24 sm:h-28 lg:h-32",
     }[size];
@@ -45,7 +45,7 @@ export function BSQLogo({
           width={200}
           height={155}
           priority={priority}
-          className="h-full w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(225,18,45,0.4)] transition-all duration-300 group-hover:drop-shadow-[0_4px_22px_rgba(225,18,45,0.6)]"
+          className="h-full w-auto object-contain"
         />
       </div>
     );
@@ -72,7 +72,7 @@ export function BSQLogo({
           width={Math.round(heightMap * 1.05)}
           height={heightMap}
           priority={priority}
-          className="h-auto w-auto max-h-[160px] object-contain transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_4px_16px_rgba(225,18,45,0.35)]"
+          className="h-auto w-auto max-h-[160px] object-contain transition-transform duration-300 hover:scale-105"
           style={{ height: `${heightMap}px` }}
         />
       </div>
@@ -82,8 +82,8 @@ export function BSQLogo({
   // Horizontal Brand Lockup (Emblem + Precision Typography)
   const emblemSize = {
     sm: "h-11 sm:h-12",
-    md: "h-13 sm:h-14 lg:h-[3.75rem]",
-    lg: "h-16 sm:h-18 lg:h-20",
+    md: "h-[3.25rem] sm:h-14 lg:h-[3.75rem]",
+    lg: "h-16 sm:h-[4.5rem] lg:h-20",
     xl: "h-20 sm:h-24 lg:h-28",
   }[size];
 
@@ -120,7 +120,7 @@ export function BSQLogo({
           width={180}
           height={140}
           priority={priority}
-          className="h-full w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(225,18,45,0.4)] transition-all duration-300 group-hover:drop-shadow-[0_4px_22px_rgba(225,18,45,0.6)]"
+          className="h-full w-auto object-contain"
         />
       </div>
 

@@ -114,7 +114,7 @@ export function BespokeFinanceOrbitSection() {
   }, [isAutoRotating]);
 
   return (
-    <section className="relative py-24 select-none overflow-hidden [html.light_&]:bg-[#ECE7DE]">
+    <section className="relative py-24 select-none overflow-hidden [html.light_&]:bg-[#DCE6D6]">
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute inset-0 bg-radial-red opacity-50 [html.light_&]:opacity-25" />
 
@@ -140,7 +140,7 @@ export function BespokeFinanceOrbitSection() {
           <div
             onMouseEnter={() => setIsAutoRotating(false)}
             onMouseLeave={() => setIsAutoRotating(true)}
-            className="relative flex items-center justify-center p-6 md:p-12 min-h-[460px] rounded-3xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-gradient-to-br from-[#121218]/90 via-[#0a0a0e]/90 to-[#070709]/90 [html.light_&]:from-white/90 [html.light_&]:via-[#FAF8F5]/90 [html.light_&]:to-[#F2EFE9]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_30px_80px_rgba(0,0,0,0.8)] [html.light_&]:shadow-[0_20px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl"
+            className="relative flex items-center justify-center p-6 md:p-12 min-h-[460px] rounded-3xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-gradient-to-br from-[#121218]/90 via-[#0a0a0e]/90 to-[#070709]/90 [html.light_&]:from-white/90 [html.light_&]:via-[#F4F7F0]/90 [html.light_&]:to-[#F2EFE9]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_30px_80px_rgba(0,0,0,0.8)] [html.light_&]:shadow-[0_20px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl"
           >
             {/* Outer Concentric Orbit Track */}
             <div className="absolute h-80 w-80 md:h-96 md:w-96 rounded-full border border-white/10 [html.light_&]:border-black/10 border-dashed animate-[spin_40s_linear_infinite]" />
@@ -218,10 +218,10 @@ export function BespokeFinanceOrbitSection() {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
-                <TiltCard className="p-8 md:p-10 flex flex-col justify-between h-full border-white/15 [html.light_&]:border-[#E4DFD4] [html.light_&]:bg-white [html.light_&]:shadow-lg">
+                <TiltCard className="p-8 md:p-10 flex flex-col justify-between h-full border-white/15 [html.light_&]:border-[#C6D3C0] [html.light_&]:bg-white [html.light_&]:shadow-lg">
                   <div>
                     {/* Header */}
-                    <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#E4DFD4] pb-4">
+                    <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#C6D3C0] pb-4">
                       <div className="flex items-center gap-3">
                         <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/50 bg-legacy-red/10 text-legacy-red shadow-[0_0_15px_rgba(225,18,45,0.25)]">
                           <Icon size={22} />
@@ -239,7 +239,7 @@ export function BespokeFinanceOrbitSection() {
                     </div>
 
                     {/* Key Metrics Strip */}
-                    <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-white/10 [html.light_&]:border-[#E4DFD4] bg-white/[0.03] [html.light_&]:bg-[#FAF8F5] p-4">
+                    <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-[#F4F7F0] p-4">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 [html.light_&]:text-[#666460]">Facility Sizing</p>
                         <p className="font-mono text-lg font-bold text-white [html.light_&]:text-[#181818] mt-0.5">{activeSolution.facilitySize}</p>
@@ -272,7 +272,7 @@ export function BespokeFinanceOrbitSection() {
                   </div>
 
                   {/* Actions & Navigation */}
-                  <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 [html.light_&]:border-[#E4DFD4] pt-6">
+                  <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 [html.light_&]:border-[#C6D3C0] pt-6">
                     <ButtonLink href="/loan-application" className="w-full sm:w-auto px-6 py-3 text-xs uppercase tracking-wider">
                       Structure This Facility <ArrowRight size={15} />
                     </ButtonLink>

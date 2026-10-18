@@ -44,3 +44,4 @@ out/
 .env
 .env.local
 *.tsbuildinfo
+bsq images/
