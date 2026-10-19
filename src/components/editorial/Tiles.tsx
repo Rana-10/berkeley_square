@@ -31,12 +31,12 @@ export function PhotoTile({
       {href ? (
         <span
           aria-hidden
-          className="absolute right-4 top-4 grid h-11 w-11 -translate-y-1 place-items-center rounded-full bg-white text-lg text-[#1F4030] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100"
+          className="absolute right-4 top-4 grid h-11 w-11 -translate-y-1 place-items-center rounded-full bg-[#FAF7F1] text-lg text-[#112A22] opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100"
         >
           ↗
         </span>
       ) : null}
-      <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1F4030] opacity-0 transition duration-500 group-hover:opacity-100">
+      <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#112A22] opacity-0 transition duration-500 group-hover:opacity-100">
         {image.caption}
       </span>
     </>
@@ -78,7 +78,7 @@ export function TintTile({ title, children, href, cta = "Explore", number, tone 
   );
   const classes = cn(
     "group flex min-h-[19rem] flex-col rounded-[10px] p-8 transition-colors duration-500 md:min-h-[23rem] md:p-10",
-    tone === "sage" ? "bg-[#DCE6D6] text-[#1F4030] hover:bg-[#1F4030] hover:text-white" : "bg-[#2C5942] text-white hover:bg-[#DCE6D6] hover:text-[#1F4030]",
+    tone === "sage" ? "bg-[#EBE5D9] text-[#112A22] hover:bg-[#112A22] hover:text-white" : "bg-[#1A3A2E] text-white hover:bg-[#EBE5D9] hover:text-[#112A22]",
     className
   );
   return href ? (

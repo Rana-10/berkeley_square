@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
-  CalendarCheck,
   Mail,
   MapPin,
   MessageCircle,
@@ -25,7 +24,7 @@ type Message = {
   sender: "bot" | "user";
   text: string;
   timestamp: string;
-  actions?: { label: string; href: string; external?: boolean; icon?: "whatsapp" | "email" | "phone" | "appointment" | "loan" }[];
+  actions?: { label: string; href: string; external?: boolean; icon?: "whatsapp" | "email" | "phone" | "loan" }[];
   chips?: string[];
 };
 
@@ -49,9 +48,9 @@ const predefinedFaqs = [
     keywords: ["client", "clients", "target", "investor", "developer", "hnwi", "who do you work with", "eligibility"]
   },
   {
-    question: "How fast can bridging finance or terms be issued?",
+    question: "How fast are indicative terms issued, and how quickly can a loan complete?",
     answer:
-      "We issue clear indicative funding proposals within 24 to 48 hours. For time-critical auction purchases, distressed sales, or broken chains, our streamlined process enables completions in as little as 7 to 10 business days.",
+      "Indicative terms (a non-binding proposal) are issued within 24 to 48 hours. Completion is separate: bridging can complete in 14 days from instruction, subject to valuation, legal work and credit approval. Refinance typically completes in 2 to 3 weeks.",
     keywords: ["fast", "speed", "timeline", "how fast", "turnaround", "completion", "hours", "days", "quick", "auction"]
   },
   {
@@ -61,9 +60,9 @@ const predefinedFaqs = [
     keywords: ["credit", "score", "profile", "impact", "search", "hard check", "soft check"]
   },
   {
-    question: "What facility sizes and leverage (LTV) do you offer?",
+    question: "What facility sizes and LTV do you offer?",
     answer:
-      "We structure facilities from £100k up to £100M+ (with larger institutional tranches by arrangement). We provide up to 80% LTV on standard bridging, up to 70% LTGDV / 88% LTC on development finance, and up to 100% purchase price with additional security.",
+      "Funding ranges are set per product. Bridging & auction debt: £100k – £100M at up to 75% LTV. Development stretch senior: £250k – £100M at up to 70% LTGDV / 88% LTC. Mezzanine: £500k – £10M at up to 90% loan-to-cost. Offshore trusts & SPVs: £1M – £40M at up to 75% LTV. Unregulated residential and commercial refinance: £100k – £100M at up to 70% LTV. Planning gain & conversion bridging: £1M – £18M at up to 70% of current use value. Bridging includes first and second charge finance. All figures are indicative maximums, subject to valuation and credit approval.",
     keywords: ["size", "sizes", "amount", "loan size", "ltv", "leverage", "ltgdv", "maximum", "minimum", "how much", "rate", "rates", "interest"]
   }
 ];
@@ -120,7 +119,6 @@ export function AdvisoryChatbot() {
           text: matchedFaq.answer,
           timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
           actions: [
-            { label: "Book Consultation", href: "/appointment", icon: "appointment" },
             { label: "WhatsApp Desk", href: company.whatsapp, external: true, icon: "whatsapp" }
           ]
         };
@@ -159,7 +157,6 @@ export function AdvisoryChatbot() {
           text: matchedFaq.answer,
           timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
           actions: [
-            { label: "Book Consultation", href: "/appointment", icon: "appointment" },
             { label: "WhatsApp Desk", href: company.whatsapp, external: true, icon: "whatsapp" }
           ]
         };
@@ -193,11 +190,6 @@ export function AdvisoryChatbot() {
           label: `Call: ${company.phoneDisplay}`,
           href: `tel:${company.phone}`,
           icon: "phone"
-        },
-        {
-          label: "Book Mayfair Appointment",
-          href: "/appointment",
-          icon: "appointment"
         }
       ]
     };
@@ -216,12 +208,12 @@ export function AdvisoryChatbot() {
           type="button"
           onClick={() => setIsOpen(true)}
           suppressHydrationWarning
-          className="focus-ring group relative flex h-11 w-11 items-center justify-center gap-3 border border-[#1F4030] bg-[#1F4030] sm:h-auto sm:w-auto sm:justify-start sm:px-4 sm:py-3 text-white transition-colors hover:border-legacy-red hover:bg-legacy-red"
+          className="focus-ring group relative flex h-11 w-11 items-center justify-center gap-3 border border-[#112A22] bg-[#112A22] sm:h-auto sm:w-auto sm:justify-start sm:px-4 sm:py-3 text-white transition-colors hover:border-legacy-red hover:bg-legacy-red"
           aria-label="Open Client Assistant Chatbot"
         >
           <MessageSquare size={15} />
           <span className="sr-only sm:not-sr-only text-[11px] font-semibold uppercase tracking-[0.18em] whitespace-nowrap">Ask a question</span>
-          {hasUnread && <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-legacy-red border-2 border-[#EEF2EA]" />}
+          {hasUnread && <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-legacy-red border-2 border-[#F3EEE4]" />}
         </button>
       )}
 
@@ -234,10 +226,10 @@ export function AdvisoryChatbot() {
             exit={{ opacity: 0, y: 30, scale: 0.92 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             suppressHydrationWarning
-            className="fixed inset-x-3 bottom-3 sm:static sm:inset-auto flex flex-col w-auto sm:w-[410px] h-[520px] max-h-[85vh] border border-[#181818]/25 bg-[#EEF2EA] shadow-[0_18px_50px_rgba(24,24,24,0.18)] overflow-hidden z-50"
+            className="fixed inset-x-3 bottom-3 sm:static sm:inset-auto flex flex-col w-auto sm:w-[410px] h-[520px] max-h-[85vh] border border-[#181818]/25 bg-[#F3EEE4] shadow-[0_18px_50px_rgba(24,24,24,0.18)] overflow-hidden z-50"
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-white/80 px-4 sm:px-5 py-3.5">
+            <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#DDD7CA] bg-white/[0.03] [html.light_&]:bg-white/80 px-4 sm:px-5 py-3.5">
               <div className="flex items-center gap-2.5 sm:gap-3">
                 <div className="relative shrink-0">
                   <BSQLogo variant="mark" size="sm" />
@@ -275,7 +267,7 @@ export function AdvisoryChatbot() {
             </div>
 
             {/* Chat Body (Message Stream) */}
-            <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3.5 text-xs [html.light_&]:bg-[#F4F7F0]">
+            <div className="flex-1 overflow-y-auto p-3.5 sm:p-4 space-y-3.5 text-xs [html.light_&]:bg-[#F6F2EA]">
               {messages.map((msg) => {
                 const isBot = msg.sender === "bot";
                 return (
@@ -287,8 +279,8 @@ export function AdvisoryChatbot() {
                       className={cn(
                         "max-w-[88%] sm:max-w-[85%] rounded-2xl p-3 sm:p-3.5 leading-relaxed",
                         isBot
-                          ? "border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.05] [html.light_&]:bg-white text-slate-200 [html.light_&]:text-[#222222] rounded-tl-sm shadow-md"
-                          : "bg-gradient-to-r from-legacy-deepRed to-legacy-red text-white font-medium rounded-tr-sm shadow-[0_0_15px_rgba(225,18,45,0.3)]"
+                          ? "border border-white/10 [html.light_&]:border-[#DDD7CA] bg-white/[0.05] [html.light_&]:bg-[#FAF7F1] text-slate-200 [html.light_&]:text-[#222222] rounded-tl-sm shadow-md"
+                          : "bg-gradient-to-r from-legacy-deepRed to-legacy-red text-white font-medium rounded-tr-sm shadow-[0_0_15px_rgba(196,58,49,0.3)]"
                       )}
                     >
                       <p>{msg.text}</p>
@@ -310,7 +302,7 @@ export function AdvisoryChatbot() {
                               key={q}
                               type="button"
                               onClick={() => handleSelectQuestion(q)}
-                              className="focus-ring flex items-center justify-between rounded-xl border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-white p-2.5 text-left text-[11px] font-semibold text-slate-300 [html.light_&]:text-[#222222] transition-all hover:border-legacy-red/50 hover:bg-legacy-red/10 [html.light_&]:hover:bg-legacy-red/5 hover:text-white [html.light_&]:hover:text-legacy-red shadow-sm"
+                              className="focus-ring flex items-center justify-between rounded-xl border border-white/10 [html.light_&]:border-[#DDD7CA] bg-white/[0.03] [html.light_&]:bg-[#FAF7F1] p-2.5 text-left text-[11px] font-semibold text-slate-300 [html.light_&]:text-[#222222] transition-all hover:border-legacy-red/50 hover:bg-legacy-red/10 [html.light_&]:hover:bg-legacy-red/5 hover:text-white [html.light_&]:hover:text-legacy-red shadow-sm"
                             >
                               <span>{q}</span>
                               <ArrowRight size={12} className="text-legacy-red shrink-0 ml-2" />
@@ -329,12 +321,11 @@ export function AdvisoryChatbot() {
                             href={act.href}
                             target={act.external ? "_blank" : undefined}
                             rel={act.external ? "noopener noreferrer" : undefined}
-                            className="focus-ring inline-flex items-center gap-1.5 rounded-xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-white px-3 py-2 text-[10.5px] sm:text-[11px] font-bold text-white [html.light_&]:text-[#181818] shadow-md transition-all hover:border-legacy-red hover:bg-legacy-red/20 [html.light_&]:hover:bg-legacy-red/10 [html.light_&]:hover:text-legacy-red"
+                            className="focus-ring inline-flex items-center gap-1.5 rounded-xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-[#FAF7F1] px-3 py-2 text-[10.5px] sm:text-[11px] font-bold text-white [html.light_&]:text-[#181818] shadow-md transition-all hover:border-legacy-red hover:bg-legacy-red/20 [html.light_&]:hover:bg-legacy-red/10 [html.light_&]:hover:text-legacy-red"
                           >
                             {act.icon === "whatsapp" && <MessageCircle size={13} className="text-emerald-400 [html.light_&]:text-emerald-600" />}
                             {act.icon === "email" && <Mail size={13} className="text-legacy-red" />}
                             {act.icon === "phone" && <Phone size={13} className="text-legacy-red" />}
-                            {act.icon === "appointment" && <CalendarCheck size={13} className="text-white [html.light_&]:text-legacy-red" />}
                             <span>{act.label}</span>
                             <ArrowUpRight size={11} className="text-slate-400 [html.light_&]:text-[#888580]" />
                           </a>
@@ -347,7 +338,7 @@ export function AdvisoryChatbot() {
 
               {/* Typing Animation Indicator */}
               {isTyping && (
-                <div className="flex items-center gap-1.5 rounded-2xl border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/5 [html.light_&]:bg-white px-4 py-3 w-max">
+                <div className="flex items-center gap-1.5 rounded-2xl border border-white/10 [html.light_&]:border-[#DDD7CA] bg-white/5 [html.light_&]:bg-[#FAF7F1] px-4 py-3 w-max">
                   <span className="h-1.5 w-1.5 rounded-full bg-legacy-red animate-bounce" />
                   <span className="h-1.5 w-1.5 rounded-full bg-legacy-red animate-bounce [animation-delay:0.2s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-legacy-red animate-bounce [animation-delay:0.4s]" />
@@ -358,7 +349,7 @@ export function AdvisoryChatbot() {
             </div>
 
             {/* Input Bar */}
-            <div className="border-t border-white/10 [html.light_&]:border-[#C6D3C0] bg-black/50 [html.light_&]:bg-white p-2.5 sm:p-3">
+            <div className="border-t border-white/10 [html.light_&]:border-[#DDD7CA] bg-black/50 [html.light_&]:bg-[#FAF7F1] p-2.5 sm:p-3">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -371,12 +362,12 @@ export function AdvisoryChatbot() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Type a question..."
-                  className="focus-ring flex-1 rounded-xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-white/5 [html.light_&]:bg-[#EEF2EA] px-3 py-2 text-xs text-white [html.light_&]:text-[#181818] placeholder:text-slate-500 [html.light_&]:placeholder:text-[#888580] focus:border-legacy-red focus:bg-white/10 [html.light_&]:focus:bg-white"
+                  className="focus-ring flex-1 rounded-xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-white/5 [html.light_&]:bg-[#F3EEE4] px-3 py-2 text-xs text-white [html.light_&]:text-[#181818] placeholder:text-slate-500 [html.light_&]:placeholder:text-[#888580] focus:border-legacy-red focus:bg-white/10 [html.light_&]:focus:bg-[#FAF7F1]"
                 />
                 <button
                   type="submit"
                   disabled={!inputValue.trim()}
-                  className="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-xl bg-legacy-red text-white transition-opacity hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_12px_rgba(225,18,45,0.4)] shrink-0"
+                  className="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-xl bg-legacy-red text-white transition-opacity hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_12px_rgba(196,58,49,0.4)] shrink-0"
                 >
                   <Send size={13} />
                 </button>

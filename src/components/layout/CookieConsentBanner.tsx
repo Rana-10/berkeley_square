@@ -65,17 +65,17 @@ export function CookieConsentBanner() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 24 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed inset-x-0 bottom-0 z-[90] border-t-2 border-legacy-red bg-[#1F4030] text-white shadow-[0_-12px_32px_rgba(0,0,0,0.18)] select-none"
+          className="fixed inset-x-0 bottom-0 z-[90] border-t-2 border-legacy-red bg-[#112A22] text-white shadow-[0_-12px_32px_rgba(0,0,0,0.18)] select-none"
           suppressHydrationWarning
         >
           <div className="container flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between md:gap-10">
             <p className="max-w-3xl text-sm leading-relaxed text-white/85">
               <span className="font-semibold text-white">We use cookies.</span> They keep the site working and help us understand how it is used. You can accept all cookies or keep only the essential ones. See our{" "}
-              <Link href="/cookies" onClick={() => setShow(false)} className="underline decoration-white/50 underline-offset-2 transition-colors hover:text-[#E8B7A8]">
+              <Link href="/cookies" onClick={() => setShow(false)} className="underline decoration-white/50 underline-offset-2 transition-colors hover:text-[#BFCBC3]">
                 Cookie Policy
               </Link>{" "}
               and{" "}
-              <Link href="/privacy" onClick={() => setShow(false)} className="underline decoration-white/50 underline-offset-2 transition-colors hover:text-[#E8B7A8]">
+              <Link href="/privacy" onClick={() => setShow(false)} className="underline decoration-white/50 underline-offset-2 transition-colors hover:text-[#BFCBC3]">
                 Privacy Notice
               </Link>
               .
@@ -85,14 +85,14 @@ export function CookieConsentBanner() {
               <button
                 type="button"
                 onClick={handleAccept}
-                className="focus-ring border border-white bg-white px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#181818] transition-colors hover:border-[#E8B7A8] hover:bg-[#E8B7A8]"
+                className="focus-ring border border-white bg-[#FAF7F1] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#181818] transition-colors hover:border-[#BFCBC3] hover:bg-[#BFCBC3]"
               >
                 Accept all
               </button>
               <button
                 type="button"
                 onClick={handleEssentialOnly}
-                className="focus-ring border border-white/60 bg-transparent px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-white hover:text-[#181818]"
+                className="focus-ring border border-white/60 bg-transparent px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-[#FAF7F1] hover:text-[#181818]"
               >
                 Essential only
               </button>

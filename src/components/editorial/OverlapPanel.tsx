@@ -10,8 +10,8 @@ export function PillLink({ href, children, tone = "light" }: { href: string; chi
       className={
         "focus-ring inline-flex items-center justify-center rounded-full border px-8 py-3.5 text-sm font-semibold transition-colors duration-300 " +
         (tone === "light"
-          ? "border-white/70 text-white hover:bg-white hover:text-[#1F4030]"
-          : "border-[#1F4030] text-[#1F4030] hover:bg-[#1F4030] hover:text-white")
+          ? "border-white/70 text-white hover:bg-[#FAF7F1] hover:text-[#112A22]"
+          : "border-[#112A22] text-[#112A22] hover:bg-[#112A22] hover:text-white")
       }
     >
       {children}
@@ -38,7 +38,7 @@ export function OverlapPanel({
     <section className={"relative z-10 " + (overlap ? "-mt-16 md:-mt-28" : "mt-0")}>
       <div className="container">
         <Reveal>
-          <div className="grid gap-8 rounded-[10px] bg-[#2C5942] px-7 py-10 text-white md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)] md:gap-16 md:px-16 md:py-14">
+          <div className="grid gap-8 rounded-[10px] bg-[#1A3A2E] px-7 py-10 text-white md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)] md:gap-16 md:px-16 md:py-14">
             <h2 className="display text-3xl font-normal leading-[1.15] md:text-[2.6rem]">{title}</h2>
             <div className="space-y-4 text-base leading-relaxed text-white/90 md:text-lg">
               {children}

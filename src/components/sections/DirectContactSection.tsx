@@ -90,7 +90,7 @@ export function DirectContactSection() {
                 <TiltCard className="flex h-full flex-col justify-between p-6 md:p-8 hover:border-slate-300/40">
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/40 bg-legacy-red/10 text-legacy-red transition-all duration-300 group-hover:bg-legacy-red group-hover:text-white group-hover:shadow-[0_0_20px_rgba(225,18,45,0.4)]">
+                      <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/40 bg-legacy-red/10 text-legacy-red transition-all duration-300 group-hover:bg-legacy-red group-hover:text-white group-hover:shadow-[0_0_20px_rgba(196,58,49,0.4)]">
                         <Icon size={22} />
                       </div>
                       <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-slate-300">

@@ -30,29 +30,37 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
 
     const formData = new FormData(event.currentTarget);
 
-    const response = await fetch("/api/applications", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        property_id: propertyId,
-        guest_first_name: formData.get("guest_first_name"),
-        guest_last_name: formData.get("guest_last_name"),
-        guest_email: formData.get("guest_email"),
-        guest_phone_number: formData.get("guest_phone_number"),
-        guest_current_address: formData.get("guest_current_address"),
-        message_from_applicant: formData.get("message_from_applicant"),
-      }),
-    });
+    const form = event.currentTarget;
+    let response: Response;
+    try {
+      response = await fetch("/api/applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          property_id: propertyId,
+          guest_first_name: formData.get("guest_first_name"),
+          guest_last_name: formData.get("guest_last_name"),
+          guest_email: formData.get("guest_email"),
+          guest_phone_number: formData.get("guest_phone_number"),
+          guest_current_address: formData.get("guest_current_address"),
+          message_from_applicant: formData.get("message_from_applicant"),
+        }),
+      });
+    } catch {
+      setFormState("error");
+      setMessage("We could not reach the server. Please check your connection and try again.");
+      return;
+    }
 
     const body = (await response.json().catch(() => null)) as { error?: string } | null;
 
     if (!response.ok) {
       setFormState("error");
-      setMessage(body?.error ?? "Unable to submit your application.");
+      setMessage(body?.error ?? "Unable to submit your application. Please try again, or contact us directly.");
       return;
     }
 
-    event.currentTarget.reset();
+    form.reset();
     setPostcode("");
     setAddresses([]);
     setSelectedAddressId("");
@@ -134,7 +142,7 @@ export function PropertyApplicationForm({ propertyId }: { propertyId: number }) 
       <button
         type="submit"
         disabled={formState === "submitting"}
-        className="mt-6 inline-flex items-center gap-2 border border-[#1F4030] bg-[#1F4030] px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-legacy-red hover:bg-legacy-red disabled:opacity-60"
+        className="mt-6 inline-flex items-center gap-2 border border-[#112A22] bg-[#112A22] px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-legacy-red hover:bg-legacy-red disabled:opacity-60"
       >
         <Send size={15} />
         {formState === "submitting" ? "Submitting" : "Submit application"}

@@ -34,7 +34,7 @@ export function WhatWeSolve() {
           <RevealItem key={scenario.title}>
             <ShimmerCard className="h-full p-8">
               <div className="flex items-center justify-between">
-                <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/35 bg-legacy-red/10 text-legacy-red transition-colors duration-300 group-hover:border-legacy-red group-hover:bg-legacy-red group-hover:text-white group-hover:shadow-[0_0_20px_rgba(225,18,45,0.4)]">
+                <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/35 bg-legacy-red/10 text-legacy-red transition-colors duration-300 group-hover:border-legacy-red group-hover:bg-legacy-red group-hover:text-white group-hover:shadow-[0_0_20px_rgba(196,58,49,0.4)]">
                   <Icon size={24} />
                 </div>
                 <span className="eyebrow">{scenario.label}</span>

@@ -12,11 +12,11 @@ type ButtonProps = ComponentPropsWithoutRef<"button"> & {
 
 const styles = {
   primary:
-    "border border-[#1F4030] bg-[#1F4030] text-white uppercase tracking-[0.14em] hover:border-legacy-red hover:bg-legacy-red active:translate-y-px",
+    "border border-[#112A22] bg-[#112A22] text-white uppercase tracking-[0.14em] hover:border-legacy-red hover:bg-legacy-red active:translate-y-px",
   secondary:
-    "border border-[#181818]/70 bg-transparent text-[#181818] uppercase tracking-[0.14em] hover:bg-[#1F4030] hover:text-white active:translate-y-px",
+    "border border-[#181818]/70 bg-transparent text-[#181818] uppercase tracking-[0.14em] hover:bg-[#112A22] hover:text-white active:translate-y-px",
   silver:
-    "border border-[#1F4030] bg-[#DCE6D6] text-[#181818] uppercase tracking-[0.14em] hover:bg-[#1F4030] hover:text-white active:translate-y-px",
+    "border border-[#112A22] bg-[#EBE5D9] text-[#181818] uppercase tracking-[0.14em] hover:bg-[#112A22] hover:text-white active:translate-y-px",
   ghost:
     "bg-transparent text-[#181818] underline decoration-[#181818]/40 underline-offset-4 hover:decoration-legacy-red hover:text-legacy-red"
 };

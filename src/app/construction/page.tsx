@@ -24,7 +24,6 @@ const assetMetrics = [
 
 const coreServices = [
   {
-    number: "01",
     title: "Rental & Tenancy Management",
     description:
       "Comprehensive day-to-day stewardship designed to safeguard rental cash flow, protect prime asset condition, and ensure flawless statutory compliance.",
@@ -37,7 +36,6 @@ const coreServices = [
     image: images.brickMullions
   },
   {
-    number: "02",
     title: "Portfolio Strategy & Yield Enhancement",
     description:
       "Strategic advisory, yield benchmarking, asset repositioning, and capital enhancement for single and multi-market prime real estate holdings.",
@@ -104,8 +102,7 @@ export default function ConstructionPage() {
               <article className="grid gap-8 border-b border-theme-border py-12 md:grid-cols-[minmax(0,16rem)_1fr] md:gap-12">
                 <Photo image={service.image} ratio="aspect-[4/5]" sizes="(max-width: 768px) 100vw, 256px" zoom={false} />
                 <div>
-                  <span className="font-mono text-xs font-bold text-theme-muted">Service {service.number}</span>
-                  <h3 className="display mt-2 text-3xl font-semibold leading-tight text-theme-primary">{service.title}</h3>
+                  <h3 className="display text-3xl font-semibold leading-tight text-theme-primary">{service.title}</h3>
                   <p className="mt-4 max-w-xl leading-relaxed text-theme-secondary">{service.description}</p>
                   <ul className="mt-6 divide-y divide-theme-border border-y border-theme-border text-sm text-theme-secondary">
                     {service.capabilities.map((cap) => (
@@ -143,9 +140,6 @@ export default function ConstructionPage() {
         <Reveal className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
           <Link href="/contact" className={linkClass}>
             Contact asset desk →
-          </Link>
-          <Link href="/appointment" className={linkClass}>
-            Book consultation →
           </Link>
         </Reveal>
       </Section>

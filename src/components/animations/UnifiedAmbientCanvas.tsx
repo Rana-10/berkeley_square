@@ -235,8 +235,8 @@ export function UnifiedAmbientCanvas() {
         speed,
         length: isHeroTrail ? 0.34 + Math.random() * 0.12 : 0.22 + Math.random() * 0.1,
         width: isHeroTrail ? 2.4 + Math.random() * 1.4 : 1.3 + Math.random() * 1.2,
-        color: isHeroTrail ? "rgba(255, 95, 115, 0.95)" : "rgba(225, 18, 45, 0.85)",
-        glowColor: isHeroTrail ? "rgba(225, 18, 45, 0.5)" : "rgba(180, 10, 30, 0.3)",
+        color: isHeroTrail ? "rgba(255, 95, 115, 0.95)" : "rgba(196, 58, 49, 0.85)",
+        glowColor: isHeroTrail ? "rgba(196, 58, 49, 0.5)" : "rgba(180, 10, 30, 0.3)",
         opacity: isHeroTrail ? 0.85 : 0.5,
         trailHistory: [],
         maxHistory: 30,
@@ -288,7 +288,7 @@ export function UnifiedAmbientCanvas() {
           ctx.beginPath();
           ctx.moveTo(pA.x, pA.y);
           ctx.lineTo(pB.x, pB.y);
-          ctx.strokeStyle = `rgba(225, 18, 45, ${alpha * 0.4})`;
+          ctx.strokeStyle = `rgba(196, 58, 49, ${alpha * 0.4})`;
           ctx.lineWidth = Math.max(1, pA.width * alpha);
           ctx.lineCap = "round";
           ctx.lineJoin = "round";
@@ -368,7 +368,7 @@ export function UnifiedAmbientCanvas() {
           }
         }
       }
-      ctx.strokeStyle = "rgba(225, 18, 45, 0.14)";
+      ctx.strokeStyle = "rgba(196, 58, 49, 0.14)";
       ctx.lineWidth = 0.75;
       ctx.stroke();
 

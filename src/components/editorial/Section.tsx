@@ -14,8 +14,8 @@ type SectionProps = {
 
 const tones = {
   page: "bg-theme-page text-theme-primary",
-  stone: "bg-[#DCE6D6] text-theme-primary",
-  ink: "bg-[#1F4030] text-[#F2EEE6]"
+  stone: "bg-[#EBE5D9] text-theme-primary",
+  ink: "bg-[#112A22] text-[#F2EEE6]"
 } as const;
 
 /**
@@ -29,7 +29,7 @@ export function Section({ index, label, children, tone = "page", noRule, classNa
         <div className="grid gap-8 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-16">
           <Reveal direction="none" className="lg:sticky lg:top-32 lg:self-start">
             {index ? <p className={cn("font-mono text-xs font-bold tracking-widest", tone === "ink" ? "text-white/50" : "text-theme-muted")}>{index}</p> : null}
-            <p className={cn("eyebrow", index && "mt-2", tone === "ink" && "!text-[#E8B7A8]")}>{label}</p>
+            <p className={cn("eyebrow", index && "mt-2", tone === "ink" && "!text-[#BFCBC3]")}>{label}</p>
           </Reveal>
           <div>{children}</div>
         </div>

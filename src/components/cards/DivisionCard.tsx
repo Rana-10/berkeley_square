@@ -4,13 +4,12 @@ import { Photo } from "@/components/editorial/Photo";
 import { TextLink } from "@/components/editorial/Section";
 import { divisions } from "@/data/company";
 
-const pad = (n: number) => String(n).padStart(2, "0");
 
 /** Compact ruled index of the three divisions: photograph, title, one-line summary. */
 export function DivisionCards() {
   return (
     <div className="border-t border-[#181818]/70">
-      {divisions.map((division, idx) => (
+      {divisions.map((division) => (
         <Reveal key={division.name}>
           <Link
             href={division.href}
@@ -24,8 +23,7 @@ export function DivisionCards() {
             />
 
             <div>
-              <span className="font-mono text-xs font-bold text-theme-muted">{pad(idx + 1)}</span>
-              <h3 className="display mt-1 text-3xl font-semibold text-theme-primary transition-colors group-hover:text-legacy-red md:text-4xl">
+              <h3 className="display text-3xl font-semibold text-theme-primary transition-colors group-hover:text-legacy-red md:text-4xl">
                 {division.name}
               </h3>
               <p className="mt-3 max-w-xl leading-relaxed text-theme-secondary">{division.summary}</p>

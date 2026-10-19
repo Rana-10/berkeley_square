@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Loan, property, and construction services from Berkeley Square Capital."
 };
 
-const groupImages = [images.portlandStone, images.victorianStoneCorner, images.thamesTownhouses];
+const groupImages = [images.gothicDoorway, images.terracottaCorner, images.stuccoSash];
 
 export default function ServicesPage() {
   return (
@@ -21,7 +21,7 @@ export default function ServicesPage() {
       />
       <section className="container pb-24">
         {serviceGroups.map((group, idx) => (
-          <ServiceGroupSection key={group.division} group={group} image={groupImages[idx % groupImages.length]} index={idx} />
+          <ServiceGroupSection key={group.division} group={group} image={groupImages[idx % groupImages.length]} />
         ))}
       </section>
     </main>

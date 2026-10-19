@@ -35,7 +35,7 @@ export function Photo({
 }: PhotoProps) {
   return (
     <figure className={cn("m-0", className)}>
-      <div className={cn("relative w-full overflow-hidden rounded-[10px] bg-[#C6D3C0]", ratio)}>
+      <div className={cn("relative w-full overflow-hidden rounded-[10px] bg-[#DDD7CA]", ratio)}>
         <Image
           src={image.src}
           alt={image.alt}

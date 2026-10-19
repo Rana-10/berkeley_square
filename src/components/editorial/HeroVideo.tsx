@@ -115,7 +115,7 @@ export function HeroVideo({ poster, alt, desktopSrc, mobileSrc, ratio = "aspect-
   }
 
   return (
-    <div ref={frame} className={cn("relative w-full overflow-hidden bg-[#1F4030]", ratio, className)}>
+    <div ref={frame} className={cn("relative w-full overflow-hidden bg-[#112A22]", ratio, className)}>
       <div ref={layer} className="absolute inset-0 will-change-transform" style={{ transform: "scale(1.07)" }}>
         <Image src={poster} alt={alt} fill priority sizes="100vw" quality={90} className="object-cover" />
         {load ? (
@@ -143,7 +143,7 @@ export function HeroVideo({ poster, alt, desktopSrc, mobileSrc, ratio = "aspect-
           type="button"
           onClick={togglePlayback}
           aria-label={paused ? "Play background video" : "Pause background video"}
-          className="focus-ring absolute right-4 top-4 z-10 rounded-full bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1F4030] transition-colors hover:bg-white"
+          className="focus-ring absolute right-4 top-4 z-10 rounded-full bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#112A22] transition-colors hover:bg-[#FAF7F1]"
         >
           {paused ? "Play" : "Pause"}
         </button>

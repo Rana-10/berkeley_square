@@ -32,7 +32,7 @@ export function StatsLedger({ items, tone = "page", className }: { items: Ledger
             <dd className={cn("display text-4xl font-semibold leading-none md:text-5xl", ink ? "text-white" : "text-theme-primary")}>
               <CountUpValue value={item.value} />
             </dd>
-            <dt className={cn("mt-4 text-[11px] font-bold uppercase tracking-[0.18em]", ink ? "text-[#E8B7A8]" : "text-legacy-red")}>{item.label}</dt>
+            <dt className={cn("mt-4 text-[11px] font-bold uppercase tracking-[0.18em]", ink ? "text-[#BFCBC3]" : "text-legacy-red")}>{item.label}</dt>
             {item.note ? <p className={cn("mt-1.5 text-sm leading-snug", ink ? "text-white/65" : "text-theme-secondary")}>{item.note}</p> : null}
           </div>
         ))}

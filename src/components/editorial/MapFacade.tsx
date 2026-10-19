@@ -7,7 +7,7 @@ export function MapFacade({ embedUrl, title, address }: { embedUrl: string; titl
   const [active, setActive] = useState(false);
 
   return (
-    <div className="relative aspect-square w-full overflow-hidden bg-[#C6D3C0] md:aspect-[4/5]">
+    <div className="relative aspect-square w-full overflow-hidden bg-[#ECE9E1] md:aspect-[4/5]">
       {active ? (
         <iframe id="map" title={title} src={embedUrl} className="absolute inset-0 h-full w-full border-0 grayscale contrast-110" loading="lazy" />
       ) : (
@@ -16,7 +16,7 @@ export function MapFacade({ embedUrl, title, address }: { embedUrl: string; titl
           <button
             type="button"
             onClick={() => setActive(true)}
-            className="focus-ring border border-[#1F4030] bg-[#1F4030] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-legacy-red hover:bg-legacy-red"
+            className="focus-ring border border-[#112A22] bg-[#112A22] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-legacy-red hover:bg-legacy-red"
           >
             Load interactive map
           </button>

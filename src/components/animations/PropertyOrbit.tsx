@@ -60,7 +60,7 @@ export function PropertyOrbit() {
           animation: `spin 52s linear infinite ${isPaused ? "paused" : "running"}`
         }}
       >
-        <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-legacy-red/80 shadow-[0_0_12px_#e1122d]" />
+        <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-legacy-red/80 shadow-[0_0_12px_#C43A31]" />
       </div>
 
       {/* 3. Middle Orbital Ring 2 (Counter-Clockwise) */}
@@ -70,7 +70,7 @@ export function PropertyOrbit() {
           animation: `spin-reverse 40s linear infinite ${isPaused ? "paused" : "running"}`
         }}
       >
-        <span className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full border border-white bg-white shadow-[0_0_10px_#ffffff]" />
+        <span className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full border border-white bg-[#FAF7F1] shadow-[0_0_10px_#ffffff]" />
       </div>
 
       {/* 4. Inner Orbital Ring 1 (Tilted Gyroscope Feel) */}
@@ -82,7 +82,7 @@ export function PropertyOrbit() {
       />
 
       {/* 5. Central Luxury Property Core Hub */}
-      <div className="group relative z-10 h-52 w-52 overflow-hidden rounded-full border-2 border-white/20 bg-legacy-panel shadow-[0_0_50px_rgba(225,18,45,0.3)] transition-all duration-500 hover:scale-105 hover:border-legacy-red/60">
+      <div className="group relative z-10 h-52 w-52 overflow-hidden rounded-full border-2 border-white/20 bg-legacy-panel shadow-[0_0_50px_rgba(196,58,49,0.3)] transition-all duration-500 hover:scale-105 hover:border-legacy-red/60">
         <Image
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
           alt="Luxury property showcase core"
@@ -130,7 +130,7 @@ export function PropertyOrbit() {
                   animation: `spin-reverse 32s linear infinite ${isPaused ? "paused" : "running"}`
                 }}
               >
-                <div className="glass flex items-center gap-2.5 rounded-2xl border border-white/15 bg-black/80 px-3.5 py-2.5 shadow-[0_8px_24px_rgba(0,0,0,0.6)] transition-all duration-300 hover:scale-110 hover:border-legacy-red/60 hover:bg-black/95 hover:shadow-[0_0_25px_rgba(225,18,45,0.4)]">
+                <div className="glass flex items-center gap-2.5 rounded-2xl border border-white/15 bg-black/80 px-3.5 py-2.5 shadow-[0_8px_24px_rgba(0,0,0,0.6)] transition-all duration-300 hover:scale-110 hover:border-legacy-red/60 hover:bg-black/95 hover:shadow-[0_0_25px_rgba(196,58,49,0.4)]">
                   <div className="grid h-8 w-8 shrink-0 place-items-center rounded-xl border border-legacy-red/40 bg-legacy-red/15 text-legacy-red transition-colors group-hover/badge:bg-legacy-red group-hover/badge:text-white">
                     <Icon size={16} />
                   </div>

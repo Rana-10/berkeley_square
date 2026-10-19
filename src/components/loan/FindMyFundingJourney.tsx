@@ -126,7 +126,7 @@ const questions: Question[] = [
     options: [
       {
         id: "tier-1",
-        label: "£250,000 to £1,000,000",
+        label: "£100,000 to £1,000,000",
         sublabel: "Fast-track bridging & streamlined desktop security verification",
         icon: Landmark
       },
@@ -215,6 +215,7 @@ interface MatchedFacility {
   categoryBadge: string;
   tagline: string;
   maxLTV: string;
+  fundingRange?: string;
   indicativeRate: string;
   speed: string;
   structure: string;
@@ -233,12 +234,13 @@ function computeMatchedFacility(answers: Record<string, string>): MatchedFacilit
       categoryBadge: "Auction Protocol",
       tagline: "Tailored for 28-day auction windows with expedited legal packs.",
       maxLTV: "Up to 75% LTV (100% with additional security)",
+      fundingRange: "£100k – £100M",
       indicativeRate: "From 0.65% per month",
-      speed: "Drawdown in 5–8 business days",
+      speed: "Indicative terms in 24–48 hrs · completion in 14 days",
       structure: "First legal charge, 100% rolled-up interest (zero monthly servicing), search indemnity enabled.",
       whyMatched: "Configured for your tight auction deadline, utilizing pre-instructed RICS surveyors and dual-representation legal counsel.",
       highlights: [
-        "Binding Facility Agreement issued in 48 hours",
+        "Indicative terms issued within 24–48 hours",
         "No early repayment penalties on selected lines",
         "Cross-collateralisation accepted to achieve 100% purchase funding"
       ]
@@ -251,8 +253,9 @@ function computeMatchedFacility(answers: Record<string, string>): MatchedFacilit
       categoryBadge: "Value-Add Structuring",
       tagline: "Funding acquisition cost plus 100% of the build programme in stage drawdowns.",
       maxLTV: "Up to 75% Day 1 / 70% LTGDV / 88% LTC",
+      fundingRange: "£250k – £100M",
       indicativeRate: "From 0.72% per month",
-      speed: "Terms within 24 hours · 10-14 Day Drawdown",
+      speed: "Indicative terms in 24–48 hrs · completion in 14 days",
       structure: "Blended senior tranche with staged drawdown facility tied to QS sign-off.",
       whyMatched: "Engineered specifically for structural remodelling and commercial-to-residential conversions.",
       highlights: [
@@ -270,7 +273,7 @@ function computeMatchedFacility(answers: Record<string, string>): MatchedFacilit
       tagline: "Release developer equity and slash monthly interest rates during the unit sales period.",
       maxLTV: "Up to 75% of Current Market Value",
       indicativeRate: "From 0.58% per month",
-      speed: "7–10 Days to Completion",
+      speed: "Indicative terms in 24–48 hrs · completion in 14 days",
       structure: "Capital redemption upon each unit sale with flexible partial release deeds.",
       whyMatched: "Replaces high-cost construction debt with cheaper bridging capital while marketing completed units.",
       highlights: [
@@ -287,8 +290,9 @@ function computeMatchedFacility(answers: Record<string, string>): MatchedFacilit
       categoryBadge: "Rapid Liquidity",
       tagline: "Secure off-market acquisitions and bridge the funding gap between purchase and sale.",
       maxLTV: "Up to 75% LTV",
+      fundingRange: "£100k – £100M",
       indicativeRate: "From 0.65% per month",
-      speed: "Fastest Drawdown: 5 Business Days",
+      speed: "Indicative terms in 24–48 hrs · completion in 14 days",
       structure: "Short-term bridging facility with 12-month term and rolled interest options.",
       whyMatched: "Eliminates chain vulnerabilities, enabling you to transact with cash-buyer confidence.",
       highlights: [
@@ -305,8 +309,9 @@ function computeMatchedFacility(answers: Record<string, string>): MatchedFacilit
       categoryBadge: "Asset Repositioning",
       tagline: "Flexible debt for secondary offices, mixed-use retail, industrial, and unencumbered portfolios.",
       maxLTV: "Up to 70% LTV",
+      fundingRange: "£100k – £100M",
       indicativeRate: "From 0.75% per month / Base + 4.5% p.a.",
-      speed: "14 Days to Drawdown",
+      speed: "Indicative terms in 24–48 hrs · completion in 2–3 weeks",
       structure: "Interest-only term or rolled interest with flexible ICR covenants.",
       whyMatched: "Tailored around your commercial asset profile, accommodating vacant spaces or lease repositioning.",
       highlights: [
@@ -321,9 +326,10 @@ function computeMatchedFacility(answers: Record<string, string>): MatchedFacilit
     title: "Capital Release & Portfolio Equity Refinance",
     categoryBadge: "Equity Extraction",
     tagline: "Release substantial capital from existing property holdings for reinvestment.",
-    maxLTV: "Up to 75% LTV",
+    maxLTV: "Up to 70% LTV",
+    fundingRange: "£100k – £100M",
     indicativeRate: "From 0.60% per month",
-    speed: "7–12 Business Days",
+    speed: "Indicative terms in 24–48 hrs · completion in 2–3 weeks",
     structure: "1st or 2nd charge debt facility with tailored interest roll-up.",
     whyMatched: "Unlocks maximum liquidity from unencumbered or low-geared assets to support strategic growth.",
     highlights: [
@@ -417,7 +423,7 @@ export function FindMyFundingJourney() {
               {/* Progress Bar */}
               <div className="h-1.5 w-full rounded-full bg-white/10 mb-8 overflow-hidden">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-legacy-deepRed via-legacy-red to-white shadow-[0_0_10px_#e1122d]"
+                  className="h-full bg-gradient-to-r from-legacy-deepRed via-legacy-red to-white shadow-[0_0_10px_#C43A31]"
                   initial={{ width: `${(currentStep / questions.length) * 100}%` }}
                   animate={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
                   transition={{ type: "spring", stiffness: 150, damping: 20 }}
@@ -437,7 +443,7 @@ export function FindMyFundingJourney() {
                       onClick={() => handleSelectOption(opt.id)}
                       className={`group relative flex items-start gap-4 rounded-2xl p-5 text-left border transition-all duration-300 ${
                         isSelected
-                          ? "border-legacy-red bg-legacy-red/20 shadow-[0_0_20px_rgba(225,18,45,0.3)]"
+                          ? "border-legacy-red bg-legacy-red/20 shadow-[0_0_20px_rgba(196,58,49,0.3)]"
                           : "border-white/10 bg-white/[0.03] hover:border-slate-300/40 hover:bg-white/[0.06] hover:scale-[1.01]"
                       }`}
                     >
@@ -472,7 +478,7 @@ export function FindMyFundingJourney() {
 
               {/* Navigation Back Button */}
               {currentStep > 0 && (
-                <div className="mt-8 flex justify-start border-t border-white/10 [html.light_&]:border-[#C6D3C0] pt-4">
+                <div className="mt-8 flex justify-start border-t border-white/10 [html.light_&]:border-[#DDD7CA] pt-4">
                   <button
                     type="button"
                     onClick={handleBack}
@@ -491,7 +497,7 @@ export function FindMyFundingJourney() {
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <TiltCard className="p-8 md:p-12 border-legacy-red/50 shadow-[0_25px_80px_rgba(0,0,0,0.8),0_0_40px_rgba(225,18,45,0.25)]">
+              <TiltCard className="p-8 md:p-12 border-legacy-red/50 shadow-[0_25px_80px_rgba(0,0,0,0.8),0_0_40px_rgba(196,58,49,0.25)]">
                 {/* Result Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
                   <div className="flex items-center gap-3">
@@ -524,20 +530,20 @@ export function FindMyFundingJourney() {
                 {/* Key Term Matrix Strip */}
                 <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                   <div>
-                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">MAX LTV</p>
+                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">LTV</p>
                     <p className="font-mono text-base font-bold text-legacy-red mt-0.5">{matchedFacility.maxLTV}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Pricing Matrix</p>
+                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Indicative rate</p>
                     <p className="font-mono text-base font-bold text-white mt-0.5">{matchedFacility.indicativeRate}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Execution Speed</p>
+                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Terms &amp; completion</p>
                     <p className="font-mono text-base font-bold text-emerald-400 mt-0.5">{matchedFacility.speed}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Governance</p>
-                    <p className="font-mono text-base font-bold text-slate-200 mt-0.5">Senior Underwriter</p>
+                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">{matchedFacility.fundingRange ? "Funding range" : "Governance"}</p>
+                    <p className="font-mono text-base font-bold text-slate-200 mt-0.5">{matchedFacility.fundingRange ?? "Senior Underwriter"}</p>
                   </div>
                 </div>
 
@@ -570,7 +576,7 @@ export function FindMyFundingJourney() {
                 {/* Actions */}
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-6">
                   <div className="text-xs text-slate-400">
-                    Terms indicative subject to RICS appraisal & credit sanction.
+                    Indicative terms only: non-binding, and subject to RICS appraisal & credit sanction. Completion timings run from instruction.
                   </div>
 
                   <ButtonLink

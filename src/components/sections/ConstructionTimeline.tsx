@@ -33,7 +33,7 @@ export function ConstructionTimeline() {
       <div className="flex flex-col justify-between gap-4 border-b border-legacy-border pb-6 md:flex-row md:items-end">
         <div>
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-legacy-red shadow-[0_0_8px_#e1122d]" />
+            <span className="h-2 w-2 rounded-full bg-legacy-red shadow-[0_0_8px_#C43A31]" />
             <span className="eyebrow">Project Journey</span>
           </div>
           <h2 className="display mt-2 text-2xl md:text-3xl font-bold text-white [html.light_&]:text-[#121316]">A visible route to delivery.</h2>
@@ -52,7 +52,7 @@ export function ConstructionTimeline() {
           aria-hidden="true"
           className="absolute left-8 right-8 top-12 hidden h-0.5 overflow-hidden bg-white/10 lg:block pointer-events-none"
         >
-          <div className="h-full w-1/3 bg-gradient-to-r from-transparent via-legacy-red to-transparent shadow-[0_0_12px_#e1122d] animate-[laser-stream_3s_linear_infinite]" />
+          <div className="h-full w-1/3 bg-gradient-to-r from-transparent via-legacy-red to-transparent shadow-[0_0_12px_#C43A31] animate-[laser-stream_3s_linear_infinite]" />
         </div>
 
         {stages.map((stage, index) => {
@@ -61,7 +61,7 @@ export function ConstructionTimeline() {
             <TiltCard key={stage.title} className="relative flex flex-col justify-between p-6">
               <div>
                 <div className="flex items-center justify-between">
-                  <div className="relative z-10 grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/40 bg-legacy-red/10 text-legacy-red shadow-[0_0_15px_rgba(225,18,45,0.2)] transition-colors group-hover:bg-legacy-red group-hover:text-white">
+                  <div className="relative z-10 grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/40 bg-legacy-red/10 text-legacy-red shadow-[0_0_15px_rgba(196,58,49,0.2)] transition-colors group-hover:bg-legacy-red group-hover:text-white">
                     <Icon size={22} />
                   </div>
                   <span className="font-mono text-xs font-bold text-white/40 [html.light_&]:text-[#8E8B85]">

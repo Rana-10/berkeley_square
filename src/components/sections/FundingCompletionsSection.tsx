@@ -27,7 +27,7 @@ export function FundingCompletionsSection() {
           <TiltCard key={stat.label} className="p-7">
             <div className="flex items-center justify-between">
               <span className="eyebrow">Metric</span>
-              <span className="h-1.5 w-1.5 rounded-full bg-legacy-red shadow-[0_0_6px_#e1122d]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-legacy-red shadow-[0_0_6px_#C43A31]" />
             </div>
             <p className="display mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white [html.light_&]:text-[#121316]">
               <AnimatedCounter
@@ -44,14 +44,14 @@ export function FundingCompletionsSection() {
 
       {/* 3. Filterable Completed Transactions Showcase */}
       <div>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 [html.light_&]:border-[#C6D3C0] pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 [html.light_&]:border-[#DDD7CA] pb-6">
           <div>
             <span className="eyebrow">Verified Track Record</span>
             <h2 className="display mt-2 text-2xl md:text-3xl lg:text-4xl font-bold text-white [html.light_&]:text-[#121316]">Selected Facility Completions</h2>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap gap-1.5 rounded-full border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-[#F4F7F0] p-1.5">
+          <div className="flex flex-wrap gap-1.5 rounded-full border border-white/10 [html.light_&]:border-[#DDD7CA] bg-white/[0.03] [html.light_&]:bg-[#F6F2EA] p-1.5">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -59,7 +59,7 @@ export function FundingCompletionsSection() {
                 onClick={() => setActiveCategory(cat)}
                 className={`focus-ring rounded-full px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-all ${
                   activeCategory === cat
-                    ? "border border-legacy-red/40 bg-legacy-red text-white shadow-[0_0_15px_rgba(225,18,45,0.4)]"
+                    ? "border border-legacy-red/40 bg-legacy-red text-white shadow-[0_0_15px_rgba(196,58,49,0.4)]"
                     : "text-slate-400 [html.light_&]:text-[#555d6b] hover:text-white [html.light_&]:hover:text-[#121316] [html.light_&]:hover:bg-white/80"
                 }`}
               >
@@ -76,7 +76,7 @@ export function FundingCompletionsSection() {
                 <div>
                   {/* Card Header */}
                   <div className="flex items-center justify-between">
-                    <span className="rounded-full border border-white/15 [html.light_&]:border-[#C6D3C0] bg-white/5 [html.light_&]:bg-[#F4F7F0] px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-300 [html.light_&]:text-[#444444]">
+                    <span className="rounded-full border border-white/15 [html.light_&]:border-[#DDD7CA] bg-white/5 [html.light_&]:bg-[#F6F2EA] px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-300 [html.light_&]:text-[#444444]">
                       {deal.type}
                     </span>
                     <span className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-emerald-400 [html.light_&]:text-emerald-700">
@@ -100,7 +100,7 @@ export function FundingCompletionsSection() {
                 </div>
 
                 {/* Card Specs */}
-                <div className="mt-6 border-t border-white/[0.08] [html.light_&]:border-[#C6D3C0] pt-4 space-y-2.5 text-sm">
+                <div className="mt-6 border-t border-white/[0.08] [html.light_&]:border-[#DDD7CA] pt-4 space-y-2.5 text-sm">
                   <div className="flex justify-between text-slate-400 [html.light_&]:text-[#706D68]">
                     <span>LTV / Facility Structure</span>
                     <span className="font-bold text-white [html.light_&]:text-[#121316]">{deal.ltv}</span>

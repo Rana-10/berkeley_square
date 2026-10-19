@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  CalendarCheck,
   CheckCircle2,
   Coins,
   Download,
@@ -16,7 +15,6 @@ import {
   ShieldCheck,
   Sparkles
 } from "lucide-react";
-import { ButtonLink } from "@/components/ui/Button";
 import { company } from "@/data/company";
 import type { PropertyItem } from "@/data/properties";
 import { cn } from "@/lib/utils";
@@ -74,7 +72,7 @@ export function PropertyInquirySidebar({ property }: PropertyInquirySidebarProps
           {/* Direct Apply for Property */}
           <Link
             href={`/property/apply?property=${property.slug}`}
-            className="focus-ring flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-legacy-deepRed to-legacy-red px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_25px_rgba(225,18,45,0.45)] transition-all hover:scale-[1.02]"
+            className="focus-ring flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-legacy-deepRed to-legacy-red px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_25px_rgba(196,58,49,0.45)] transition-all hover:scale-[1.02]"
           >
             <ShieldCheck size={16} />
             <span>Apply for Property</span>
@@ -103,16 +101,6 @@ export function PropertyInquirySidebar({ property }: PropertyInquirySidebarProps
             <Mail size={15} />
             <span>Request Full Prospectus</span>
           </a>
-
-          {/* Book Private Viewing */}
-          <ButtonLink
-            href={`/appointment?service=property&property=${encodeURIComponent(property.slug)}`}
-            variant="secondary"
-            className="w-full text-xs font-bold uppercase tracking-wider py-3"
-          >
-            <CalendarCheck size={15} />
-            <span>Book Private Viewing</span>
-          </ButtonLink>
         </div>
 
         {/* Factsheet Download */}

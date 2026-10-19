@@ -60,8 +60,8 @@ function GalleryLightboxModal() {
   }
 
   return (
-    <div className="fixed inset-0 z-[80] grid place-items-center bg-[#15291F]/95 p-4" role="dialog" aria-modal="true">
-      <button onClick={closeImage} className="focus-ring absolute right-5 top-5 grid h-11 w-11 place-items-center border border-white/40 text-white transition-colors hover:bg-white hover:text-[#181818]" aria-label="Close image">
+    <div className="fixed inset-0 z-[80] grid place-items-center bg-[#112A22]/95 p-4" role="dialog" aria-modal="true">
+      <button onClick={closeImage} className="focus-ring absolute right-5 top-5 grid h-11 w-11 place-items-center border border-white/40 text-white transition-colors hover:bg-[#FAF7F1] hover:text-[#181818]" aria-label="Close image">
         <X />
       </button>
       <figure className="w-full max-w-5xl">

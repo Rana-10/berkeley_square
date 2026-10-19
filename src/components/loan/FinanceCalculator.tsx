@@ -47,7 +47,7 @@ function LtvRing({ ltv }: { ltv: number }) {
           cy="60"
           r="54"
           fill="none"
-          stroke="#e1122d"
+          stroke="#C43A31"
           strokeWidth="8"
           strokeLinecap="butt"
           strokeDasharray={circumference}
@@ -124,7 +124,7 @@ export function FinanceCalculator() {
           <RangeSlider
             label="Loan amount"
             value={loan}
-            min={50000}
+            min={100000}
             max={2000000}
             step={10000}
             onChange={setLoan}
@@ -150,8 +150,8 @@ export function FinanceCalculator() {
                   onClick={() => setTerm(months)}
                   className={`focus-ring min-h-11 border px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-300 ${
                     term === months
-                      ? "border-[#1F4030] bg-[#1F4030] text-white"
-                      : "border-[#181818]/30 bg-transparent text-[#181818] hover:border-[#1F4030]"
+                      ? "border-[#112A22] bg-[#112A22] text-white"
+                      : "border-[#181818]/30 bg-transparent text-[#181818] hover:border-[#112A22]"
                   }`}
                 >
                   {months} mo

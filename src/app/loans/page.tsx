@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 const loanMetrics = [
-  { value: "£100k–£100M+", label: "Facility size", note: "Senior, mezzanine & structured equity" },
-  { value: "Up to 80%", label: "Maximum LTV", note: "Across prime residential & commercial assets" },
-  { value: "24–48 hrs", label: "Indicative term sheet", note: "Rapid preliminary terms issued directly" },
-  { value: "From 7 days", label: "Speed to completion", note: "Fast-track execution when timing is critical" }
+  { value: "£100k–£100M", label: "Bridging & refinance", note: "Other products carry their own funding ranges" },
+  { value: "Up to 75%", label: "LTV", note: "Bridging. Other products carry their own LTV" },
+  { value: "24–48 hrs", label: "Indicative terms", note: "Non-binding proposal, issued directly" },
+  { value: "14 days", label: "Completion", note: "Speed & Agility: bridging, subject to valuation & legals" }
 ];
 
 const consultation = [
@@ -35,7 +35,7 @@ export default function LoansPage() {
         eyebrow="Financial Services · Est. 2015"
         title="Finance structured exactly to your requirements."
         intro="Tailor-made bridging finance, structured development lending, and mortgage solutions. Renowned for completing transactions fast and flexibly – the ideal solution for auction purchases, distressed sales, and time-critical funding needs."
-        bleed={<ParallaxPhoto image={images.victorianStoneCorner} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_35%]" />}
+        bleed={<ParallaxPhoto image={images.terracottaCorner} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_35%]" />}
       />
 
       <OverlapPanel title="Your first consultation." action={{ href: "/loan-application", label: "Begin loan application" }}>

@@ -78,7 +78,7 @@ export default function CookiesPage() {
                       className={`self-start sm:self-auto rounded-full px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider border ${
                         category.required
                           ? "border-legacy-red/40 bg-legacy-red/10 text-legacy-red [html.light_&]:bg-legacy-red/10"
-                          : "border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-[#F4F7F0] text-slate-300 [html.light_&]:text-[#4A4844]"
+                          : "border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-[#F6F2EA] text-slate-300 [html.light_&]:text-[#4A4844]"
                       }`}
                     >
                       {category.required ? "Strictly Necessary" : "Optional"}
@@ -92,7 +92,7 @@ export default function CookiesPage() {
                     {category.examples.map((ex) => (
                       <code
                         key={ex}
-                        className="rounded bg-white/5 [html.light_&]:bg-[#DCE6D6] [html.light_&]:border [html.light_&]:border-[#D8D3C8] px-2.5 py-0.5 text-legacy-red font-semibold"
+                        className="rounded bg-white/5 [html.light_&]:bg-[#EBE5D9] [html.light_&]:border [html.light_&]:border-[#D8D3C8] px-2.5 py-0.5 text-legacy-red font-semibold"
                       >
                         {ex}
                       </code>

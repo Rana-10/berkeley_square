@@ -69,7 +69,7 @@ export function StatsCounterSection({
                       <div className="grid h-11 w-11 place-items-center rounded-xl border border-legacy-red/40 bg-legacy-red/10 text-legacy-red transition-colors group-hover:bg-legacy-red group-hover:text-white">
                         <Icon size={22} />
                       </div>
-                      <span className="h-2 w-2 rounded-full bg-legacy-red shadow-[0_0_8px_#e1122d]" />
+                      <span className="h-2 w-2 rounded-full bg-legacy-red shadow-[0_0_8px_#C43A31]" />
                     </div>
 
                     <div className="mt-6">
@@ -86,7 +86,7 @@ export function StatsCounterSection({
                     </div>
                   </div>
 
-                  <p className="mt-5 border-t border-white/[0.08] [html.light_&]:border-[#C6D3C0] pt-4 text-sm leading-6 text-legacy-muted [html.light_&]:text-[#555d6b]">
+                  <p className="mt-5 border-t border-white/[0.08] [html.light_&]:border-[#DDD7CA] pt-4 text-sm leading-6 text-legacy-muted [html.light_&]:text-[#555d6b]">
                     {stat.description}
                   </p>
                 </TiltCard>

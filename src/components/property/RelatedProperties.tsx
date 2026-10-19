@@ -44,7 +44,7 @@ export function RelatedProperties({ currentPropertyId, allProperties, category }
           <Link
             key={prop.id}
             href={`/property/${prop.slug}`}
-            className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#0c0c12]/95 shadow-xl transition-all duration-300 hover:border-legacy-red/40 hover:shadow-[0_16px_50px_rgba(0,0,0,0.85),0_0_30px_rgba(225,18,45,0.18)]"
+            className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#0c0c12]/95 shadow-xl transition-all duration-300 hover:border-legacy-red/40 hover:shadow-[0_16px_50px_rgba(0,0,0,0.85),0_0_30px_rgba(196,58,49,0.18)]"
           >
             <div>
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">

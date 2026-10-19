@@ -22,13 +22,13 @@ const config: Config = {
           red: "var(--accent-red)",
 
           // Brand static primitives preserved for backward compatibility
-          offwhite: "#F7F5F2",
-          offwhiteSoft: "#FAF8F5",
+          offwhite: "#F3EEE4",
+          offwhiteSoft: "#F6F2EA",
           stone: "#ECE7DE",
           stoneDark: "#E4DFD4",
           charcoal: "#181818",
           charcoalMuted: "#4A4844",
-          cardLight: "#FFFFFF",
+          cardLight: "#FAF7F1",
           cardBorderLight: "#E4DFD4"
         },
         legacy: {
@@ -44,7 +44,7 @@ const config: Config = {
           silver: "#e2e8f0",
           silverMuted: "#94a3b8",
           silverDark: "#64748b",
-          red: "#e1122d",
+          red: "#C43A31",
           deepRed: "#70000d",
           brightRed: "#ff2b4e",
           text: "var(--text-primary)",
@@ -54,22 +54,22 @@ const config: Config = {
         }
       },
       boxShadow: {
-        glow: "0 0 50px rgba(225,18,45,0.22)",
+        glow: "0 0 50px rgba(196, 58, 49,0.22)",
         "glow-silver": "0 0 40px rgba(226,232,240,0.15)",
-        "glass-elevated": "0 20px 50px rgba(0,0,0,0.7), 0 0 30px rgba(225,18,45,0.12)",
+        "glass-elevated": "0 20px 50px rgba(0,0,0,0.7), 0 0 30px rgba(196, 58, 49,0.12)",
         "light-card": "0 10px 30px rgba(0,0,0,0.03)",
-        "light-card-hover": "0 20px 45px rgba(0,0,0,0.07), 0 0 20px rgba(225,18,45,0.06)",
+        "light-card-hover": "0 20px 45px rgba(0,0,0,0.07), 0 0 20px rgba(196, 58, 49,0.06)",
         "theme-card": "var(--shadow-card)",
         "theme-card-hover": "var(--shadow-card-hover)",
         "theme-floating": "var(--shadow-floating)",
         "theme-glass": "var(--shadow-glass)"
       },
       backgroundImage: {
-        "radial-red": "radial-gradient(circle at 50% 0%, rgba(225,18,45,0.18), transparent 45%)",
+        "radial-red": "radial-gradient(circle at 50% 0%, rgba(196, 58, 49,0.18), transparent 45%)",
         "radial-silver": "radial-gradient(circle at 50% 0%, rgba(226,232,240,0.1), transparent 50%)",
         "metallic-silver": "linear-gradient(135deg, #ffffff 0%, #cbd5e1 45%, #94a3b8 100%)",
-        "metallic-card": "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 40%, rgba(225,18,45,0.03) 100%)",
-        "edge-red": "linear-gradient(135deg, rgba(225,18,45,0.15) 0%, rgba(19,19,24,0.85) 60%, rgba(7,7,9,0.95) 100%)"
+        "metallic-card": "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 40%, rgba(196, 58, 49,0.03) 100%)",
+        "edge-red": "linear-gradient(135deg, rgba(196, 58, 49,0.15) 0%, rgba(19,19,24,0.85) 60%, rgba(7,7,9,0.95) 100%)"
       }
     }
   },

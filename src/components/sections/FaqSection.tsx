@@ -22,9 +22,9 @@ const items = [
       "We serve individual investors building residential/commercial portfolios, property developers requiring bridging or development finance, business owners seeking commercial mortgages or growth capital, High-Net-Worth Individuals (HNWIs) requiring bespoke wealth structuring, and international investors acquiring UK/global property."
   },
   {
-    question: "How fast can bridging finance or indicative terms be issued?",
+    question: "How fast are indicative terms issued, and how quickly can a loan complete?",
     answer:
-      "We provide clear indicative terms within 24 to 48 hours. For time-critical auction purchases, distressed sales, or chain breaks, our streamlined underwriting allows completions from 7 to 10 days."
+      "Indicative terms (a non-binding proposal) are issued within 24 to 48 hours. Completion is separate: bridging can complete in 14 days from instruction, subject to valuation, legal work and credit approval. Refinance typically completes in 2 to 3 weeks."
   },
   {
     question: "Does an initial finance enquiry affect my credit profile?",
@@ -56,7 +56,7 @@ export function FaqSection() {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border transition-colors ${
                     isOpen
-                      ? "border-legacy-red bg-legacy-red text-white shadow-[0_0_12px_rgba(225,18,45,0.5)]"
+                      ? "border-legacy-red bg-legacy-red text-white shadow-[0_0_12px_rgba(196,58,49,0.5)]"
                       : "border-white/20 bg-white/5 text-white/70"
                   }`}
                 >

@@ -33,7 +33,7 @@ export function ShimmerCard({
       ref={cardRef}
       onPointerMove={handlePointerMove}
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-white/[0.1] bg-legacy-panel/85 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_12px_40px_rgba(0,0,0,0.6)] [html.light_&]:bg-white [html.light_&]:border-[#E8E5E0] [html.light_&]:shadow-[0_10px_30px_rgba(0,0,0,0.03)] [html.light_&]:hover:border-slate-400/40 [html.light_&]:hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)]",
+        "group relative overflow-hidden rounded-2xl border border-white/[0.1] bg-legacy-panel/85 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_12px_40px_rgba(0,0,0,0.6)] [html.light_&]:bg-[#FAF7F1] [html.light_&]:border-[#E8E5E0] [html.light_&]:shadow-[0_10px_30px_rgba(0,0,0,0.03)] [html.light_&]:hover:border-slate-400/40 [html.light_&]:hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)]",
         className
       )}
       {...props}
@@ -44,7 +44,7 @@ export function ShimmerCard({
         className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(400px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%), rgba(225, 18, 45, 0.14), transparent 65%)"
+            "radial-gradient(400px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%), rgba(196, 58, 49, 0.14), transparent 65%)"
         }}
       />
 

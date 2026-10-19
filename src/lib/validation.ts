@@ -142,7 +142,7 @@ export const loanApplicationSchema = z.object({
       country: optionalText
     }),
     estimatedValue: optionalNumericString("Estimated property value", { min: 0, max: 500_000_000, isCurrency: true }),
-    loanAmountRequired: optionalNumericString("Loan amount required", { min: 0, max: 100_000_000, isCurrency: true }),
+    loanAmountRequired: optionalNumericString("Loan amount required", { min: 100_000, max: 100_000_000, isCurrency: true }),
     propertyUse: optionalText,
     repaymentMethod: optionalText,
     currentMortgageBalance: optionalNumericString("Current mortgage balance", { min: 0, max: 500_000_000, isCurrency: true }),

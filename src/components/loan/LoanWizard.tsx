@@ -3,11 +3,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle2, Edit3, FileText, Home, LockKeyhole, User } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { defaultApplication } from "@/components/loan/defaults";
 import { CurrencyField, Field, SelectField, TextArea } from "@/components/loan/FormFields";
 import { Button } from "@/components/ui/Button";
+import { company } from "@/data/company";
 import { loanApplicationService, type SubmissionResult } from "@/lib/loan-application-service";
 import { cn } from "@/lib/utils";
 import { loanApplicationSchema } from "@/lib/validation";
@@ -26,6 +27,7 @@ export function LoanWizard() {
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<SubmissionResult | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<LoanApplication>({
     resolver: zodResolver(loanApplicationSchema),
@@ -40,10 +42,24 @@ export function LoanWizard() {
   const personalInfo = watchedValues?.personalInformation;
   const securityInfo = watchedValues?.securityInformation;
 
+  // The confirmation replaces a long form, so bring it into view rather than leaving the visitor in the footer.
+  useEffect(() => {
+    if (result) document.getElementById("loan-confirmation")?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [result]);
+
   const progress = useMemo(() => Math.round(((step + 1) / steps.length) * 100), [step]);
 
-  function next() {
+  // Check the current step before moving on, so errors are shown where the visitor is looking.
+  async function next() {
+    const group = step === 0 ? "personalInformation" : step === 1 ? "securityInformation" : null;
+    if (group && !(await form.trigger(group))) return;
     setStep((current) => Math.min(current + 1, steps.length - 1));
+  }
+
+  // A failed final submit may be caused by a field on an earlier step: take the visitor back to it.
+  function onInvalid(invalid: typeof errors) {
+    setSubmitError("Some details need attention before we can send your application. Please check the highlighted fields.");
+    setStep(invalid.personalInformation ? 0 : invalid.securityInformation ? 1 : steps.length - 1);
   }
 
   async function onSubmit(data: LoanApplication) {
@@ -53,9 +69,12 @@ export function LoanWizard() {
     }
 
     setSubmitting(true);
+    setSubmitError(null);
     try {
       const response = await loanApplicationService.submitApplication(data);
       setResult(response);
+    } catch {
+      setSubmitError(`We could not send your application just now. Nothing has been lost: please try again, or call us on ${company.phoneDisplay}.`);
     } finally {
       setSubmitting(false);
     }
@@ -67,12 +86,13 @@ export function LoanWizard() {
         initial={{ opacity: 0, scale: 0.96, y: 16 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        id="loan-confirmation"
         className="mx-auto max-w-3xl border-y border-[#181818]/70 py-12"
       >
         <CheckCircle2 className="h-10 w-10 text-legacy-red" />
         <h1 className="mt-5 text-3xl font-semibold">Application Submitted</h1>
-        <p className="mt-3 text-legacy-muted">Thank you. Your application has been successfully received.</p>
-        <p className="mt-5 border border-legacy-border bg-black/30 p-3 text-sm text-white/70">Reference: {result.reference}</p>
+        <p className="mt-3 text-[#4A4844]">Thank you. Your application has been received and a member of the team will be in touch. This is an enquiry, not an offer of finance.</p>
+        <p className="mt-5 border border-[#181818]/20 bg-[#EBE5D9] p-3 text-sm text-[#2A2927]">Reference: {result.reference}</p>
       </motion.div>
     );
   }
@@ -87,7 +107,7 @@ export function LoanWizard() {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmit, onInvalid)}
       onKeyDown={(e) => {
         if (e.key === "Enter" && step < steps.length - 1) {
           e.preventDefault();
@@ -180,7 +200,7 @@ export function LoanWizard() {
                             "rounded-none border px-4 py-3 text-left text-sm font-semibold transition",
                             isSelected
                               ? "border-legacy-red bg-legacy-red text-white"
-                              : "border-legacy-border bg-black/50 text-white/70 hover:border-white/20 hover:text-white [html.light_&]:bg-white [html.light_&]:border-[#C6D3C0] [html.light_&]:text-[#2A2927] [html.light_&]:hover:bg-black/[0.04]"
+                              : "border-legacy-border bg-black/50 text-white/70 hover:border-white/20 hover:text-white [html.light_&]:bg-[#FAF7F1] [html.light_&]:border-[#DDD7CA] [html.light_&]:text-[#2A2927] [html.light_&]:hover:bg-black/[0.04]"
                           )}
                         >
                           {option}
@@ -425,7 +445,13 @@ export function LoanWizard() {
         </AnimatePresence>
       </section>
 
-      <div className="flex flex-col justify-between gap-3 border-t border-legacy-border [html.light_&]:border-[#C6D3C0] pt-6 sm:flex-row">
+      {submitError ? (
+        <p role="alert" className="border border-legacy-red/40 bg-legacy-red/5 px-4 py-3 text-sm text-legacy-red">
+          {submitError}
+        </p>
+      ) : null}
+
+      <div className="flex flex-col justify-between gap-3 border-t border-legacy-border [html.light_&]:border-[#DDD7CA] pt-6 sm:flex-row">
         {step > 0 ? (
           <button
             type="button"
@@ -438,11 +464,11 @@ export function LoanWizard() {
           <div className="hidden sm:block" />
         )}
         {step < steps.length - 1 ? (
-          <Button type="button" onClick={next}>
+          <Button key="continue" type="button" onMouseDown={(event) => event.preventDefault()} onClick={next}>
             Continue <ArrowRight size={18} />
           </Button>
         ) : (
-          <Button type="submit" disabled={submitting}>
+          <Button key="submit" type="submit" disabled={submitting}>
             {submitting ? "Submitting..." : "Submit Application"}
           </Button>
         )}

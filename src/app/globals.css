@@ -7,27 +7,27 @@ html.light {
   color-scheme: light;
 
   /* Brand Accents (Shared) */
-  --accent-red: #e1122d;
-  --accent-red-hover: #c91028;
+  --accent-red: #C43A31;
+  --accent-red-hover: #A8302A;
   --accent-red-deep: #70000d;
   --accent-red-bright: #ff2b4e;
-  --accent-red-glow: rgba(225, 18, 45, 0.22);
+  --accent-red-glow: rgba(196, 58, 49, 0.22);
 
   /* Backgrounds */
-  --bg-page: #EEF2EA;
-  --bg-page-alt: #F4F7F0;
-  --bg-surface: #FFFFFF;
-  --bg-surface-elevated: #FFFFFF;
-  --bg-subtle: #DCE6D6;
+  --bg-page: #F3EEE4;
+  --bg-page-alt: #F6F2EA;
+  --bg-surface: #FAF7F1;
+  --bg-surface-elevated: #FAF7F1;
+  --bg-subtle: #EBE5D9;
   --bg-subtle-alpha: rgba(236, 231, 222, 0.65);
-  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass: rgba(250, 247, 241, 0.9);
   --bg-overlay: rgba(24, 24, 24, 0.65);
 
   /* Borders */
-  --border-default: #C6D3C0;
-  --border-subtle: #D6E0D1;
-  --border-accent: rgba(225, 18, 45, 0.35);
-  --border-glass: #C6D3C0;
+  --border-default: #DDD7CA;
+  --border-subtle: #E7E2D7;
+  --border-accent: rgba(196, 58, 49, 0.35);
+  --border-glass: #DDD7CA;
 
   /* Typography */
   --text-primary: #181818;
@@ -36,36 +36,36 @@ html.light {
   --text-inverse: #FFFFFF;
 
   /* Inputs & Controls */
-  --input-bg: #FFFFFF;
-  --input-border: #C6D3C0;
-  --input-focus-border: #e1122d;
+  --input-bg: #FAF7F1;
+  --input-border: #DDD7CA;
+  --input-focus-border: #C43A31;
 
   /* Shadows */
   --shadow-card: 0 10px 30px rgba(24, 24, 24, 0.04);
-  --shadow-card-hover: 0 20px 45px rgba(24, 24, 24, 0.07), 0 0 20px rgba(225, 18, 45, 0.06);
+  --shadow-card-hover: 0 20px 45px rgba(24, 24, 24, 0.07), 0 0 20px rgba(196, 58, 49, 0.06);
   --shadow-floating: 0 20px 45px rgba(24, 24, 24, 0.1);
   --shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 12px 36px rgba(24, 24, 24, 0.05);
   --shadow-surface: 0 10px 30px rgba(24, 24, 24, 0.04);
-  --shadow-surface-hover: 0 18px 40px rgba(24, 24, 24, 0.07), 0 0 20px rgba(225, 18, 45, 0.06);
+  --shadow-surface-hover: 0 18px 40px rgba(24, 24, 24, 0.07), 0 0 20px rgba(196, 58, 49, 0.06);
 
   /* Backward Compatibility Aliases */
   --bg-main: var(--bg-page);
   --text-main: var(--text-primary);
   --card-bg: var(--bg-surface);
   --card-border: var(--border-default);
-  --section-offwhite: #EEF2EA;
-  --section-stone: #DCE6D6;
+  --section-offwhite: #F3EEE4;
+  --section-stone: #EBE5D9;
 }
 
 html.dark {
   color-scheme: dark;
 
   /* Brand Accents (Shared) */
-  --accent-red: #e1122d;
-  --accent-red-hover: #c91028;
+  --accent-red: #C43A31;
+  --accent-red-hover: #A8302A;
   --accent-red-deep: #70000d;
   --accent-red-bright: #ff2b4e;
-  --accent-red-glow: rgba(225, 18, 45, 0.22);
+  --accent-red-glow: rgba(196, 58, 49, 0.22);
 
   /* Backgrounds */
   --bg-page: #080808;
@@ -80,7 +80,7 @@ html.dark {
   /* Borders */
   --border-default: rgba(255, 255, 255, 0.1);
   --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-accent: rgba(225, 18, 45, 0.35);
+  --border-accent: rgba(196, 58, 49, 0.35);
   --border-glass: rgba(255, 255, 255, 0.1);
 
   /* Typography */
@@ -92,23 +92,23 @@ html.dark {
   /* Inputs & Controls */
   --input-bg: rgba(0, 0, 0, 0.45);
   --input-border: rgba(255, 255, 255, 0.15);
-  --input-focus-border: #e1122d;
+  --input-focus-border: #C43A31;
 
   /* Shadows */
   --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.6);
-  --shadow-card-hover: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(225, 18, 45, 0.14);
+  --shadow-card-hover: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(196, 58, 49, 0.14);
   --shadow-floating: 0 25px 60px rgba(0, 0, 0, 0.85);
   --shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 12px 36px rgba(0, 0, 0, 0.5);
   --shadow-surface: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 16px 40px rgba(0, 0, 0, 0.4);
-  --shadow-surface-hover: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(225, 18, 45, 0.12);
+  --shadow-surface-hover: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(196, 58, 49, 0.12);
 
   /* Backward Compatibility Aliases */
   --bg-main: var(--bg-page);
   --text-main: var(--text-primary);
   --card-bg: var(--bg-surface);
   --card-border: var(--border-default);
-  --section-offwhite: #EEF2EA;
-  --section-stone: #DCE6D6;
+  --section-offwhite: #F3EEE4;
+  --section-stone: #EBE5D9;
 }
 
 * {
@@ -175,12 +175,12 @@ input[type="number"] {
 }
 
 ::selection {
-  background: rgba(225, 18, 45, 0.45);
+  background: rgba(196, 58, 49, 0.45);
   color: #ffffff;
 }
 
 html.light ::selection {
-  background: rgba(225, 18, 45, 0.25);
+  background: rgba(196, 58, 49, 0.25);
   color: #181818;
 }
 
@@ -297,7 +297,7 @@ html.light .glass {
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-surface);
   border-radius: 1.25rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 40%, rgba(225, 18, 45, 0.025) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 40%, rgba(196, 58, 49, 0.025) 100%);
   backdrop-filter: blur(10px);
   transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease, background 0.4s ease;
 }
@@ -317,7 +317,7 @@ html.light .surface {
     115deg,
     transparent 20%,
     rgba(255, 255, 255, 0.04) 45%,
-    rgba(225, 18, 45, 0.12) 50%,
+    rgba(196, 58, 49, 0.12) 50%,
     rgba(255, 255, 255, 0.04) 55%,
     transparent 80%
   );
@@ -331,7 +331,7 @@ html.light .surface::after {
     115deg,
     transparent 20%,
     rgba(0, 0, 0, 0.02) 45%,
-    rgba(225, 18, 45, 0.08) 50%,
+    rgba(196, 58, 49, 0.08) 50%,
     rgba(0, 0, 0, 0.02) 55%,
     transparent 80%
   );
@@ -343,7 +343,7 @@ html.light .surface::after {
 }
 
 html.light .surface:hover {
-  border-color: rgba(225, 18, 45, 0.35);
+  border-color: rgba(196, 58, 49, 0.35);
   box-shadow: var(--shadow-surface-hover);
 }
 
@@ -368,7 +368,12 @@ html.light .fine-rule {
   display: grid;
   place-items: center;
   background: #080808;
-  animation: loader-exit .4s ease 1.05s forwards;
+  animation: loader-exit .3s ease .4s forwards;
+}
+
+/* Set by an inline script in <head> when the splash has already been shown this session. */
+html.loader-seen .site-loader {
+  display: none;
 }
 
 html.light .site-loader {
@@ -400,7 +405,7 @@ html.light .loader-line {
   width: 50%;
   height: 100%;
   background: var(--accent-red);
-  box-shadow: 0 0 10px #e1122d;
+  box-shadow: 0 0 10px #C43A31;
   border-radius: 9999px;
   animation: loader-line .85s ease-in-out infinite;
 }
@@ -408,13 +413,13 @@ html.light .loader-line {
 .ticker {
   overflow: hidden;
   border-block: 1px solid rgba(255,255,255,.11);
-  background: rgba(225,18,45,.08);
+  background: rgba(196, 58, 49,.08);
   padding-block: .9rem;
 }
 
 html.light .ticker {
   border-block: 1px solid var(--border-default);
-  background: rgba(225,18,45,.04);
+  background: rgba(196, 58, 49,.04);
 }
 
 .ticker-track {
@@ -466,7 +471,7 @@ html.light .range-track {
 .range-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #70000d, #e1122d);
+  background: linear-gradient(90deg, #70000d, #C43A31);
   transition: width 0.2s ease-out;
 }
 
@@ -486,14 +491,14 @@ html.light .range-track {
   height: 22px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.85);
-  background: #e1122d;
-  box-shadow: 0 0 0 4px rgba(225, 18, 45, 0.18), 0 8px 20px rgba(0, 0, 0, 0.35);
+  background: #C43A31;
+  box-shadow: 0 0 0 4px rgba(196, 58, 49, 0.18), 0 8px 20px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .range-input:active::-webkit-slider-thumb {
   transform: scale(1.08);
-  box-shadow: 0 0 0 6px rgba(225, 18, 45, 0.24), 0 10px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 6px rgba(196, 58, 49, 0.24), 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
 .range-input::-moz-range-thumb {
@@ -501,8 +506,8 @@ html.light .range-track {
   height: 22px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.85);
-  background: #e1122d;
-  box-shadow: 0 0 0 4px rgba(225, 18, 45, 0.18), 0 8px 20px rgba(0, 0, 0, 0.35);
+  background: #C43A31;
+  box-shadow: 0 0 0 4px rgba(196, 58, 49, 0.18), 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .compare-handle {
@@ -527,18 +532,18 @@ html.light .range-track {
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.75);
   background: rgba(8, 8, 8, 0.82);
-  box-shadow: 0 0 0 6px rgba(225, 18, 45, 0.18), 0 12px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 0 6px rgba(196, 58, 49, 0.18), 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 html.light .compare-handle-ring {
   border: 2px solid var(--text-primary);
   background: var(--bg-surface);
-  box-shadow: 0 0 0 6px rgba(225, 18, 45, 0.18), 0 12px 30px rgba(24, 24, 24, 0.12);
+  box-shadow: 0 0 0 6px rgba(196, 58, 49, 0.18), 0 12px 30px rgba(24, 24, 24, 0.12);
 }
 
 .compare-slider:active .compare-handle-ring {
   transform: translate(-50%, -50%) scale(1.06);
-  box-shadow: 0 0 0 8px rgba(225, 18, 45, 0.28), 0 14px 34px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 8px rgba(196, 58, 49, 0.28), 0 14px 34px rgba(0, 0, 0, 0.5);
 }
 
 .wizard-step-dot {
@@ -556,11 +561,11 @@ html.light .wizard-step-dot {
 .wizard-step-dot.is-active {
   transform: scale(1.35);
   background: var(--accent-red);
-  box-shadow: 0 0 0 4px rgba(225, 18, 45, 0.18);
+  box-shadow: 0 0 0 4px rgba(196, 58, 49, 0.18);
 }
 
 .wizard-step-dot.is-complete {
-  background: rgba(225, 18, 45, 0.55);
+  background: rgba(196, 58, 49, 0.55);
 }
 
 .btn-sheen-primary {

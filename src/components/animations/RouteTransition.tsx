@@ -4,7 +4,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LoaderScreen } from "@/components/animations/LoaderScreen";
 
-const MIN_VISIBLE_MS = 650; // long enough to read as a deliberate transition, short enough not to nag
+const SHOW_AFTER_MS = 250; // fast navigations never show the overlay at all
+const MIN_VISIBLE_MS = 350; // once shown, stay long enough not to flicker
 const FAILSAFE_MS = 6000;
 
 /**
@@ -18,6 +19,7 @@ export function RouteTransition() {
   const currentPath = useRef(pathname);
   const hideTimer = useRef<number | undefined>(undefined);
   const failsafe = useRef<number | undefined>(undefined);
+  const showTimer = useRef<number | undefined>(undefined);
 
   // Start: internal link click, or browser back/forward.
   useEffect(() => {
@@ -25,10 +27,17 @@ export function RouteTransition() {
 
     const start = () => {
       window.clearTimeout(hideTimer.current);
-      startedAt.current = performance.now();
-      setVisible(true);
+      window.clearTimeout(showTimer.current);
+      // Only reveal the overlay if the new page is slow to arrive.
+      showTimer.current = window.setTimeout(() => {
+        startedAt.current = performance.now();
+        setVisible(true);
+      }, SHOW_AFTER_MS);
       window.clearTimeout(failsafe.current);
-      failsafe.current = window.setTimeout(() => setVisible(false), FAILSAFE_MS);
+      failsafe.current = window.setTimeout(() => {
+        window.clearTimeout(showTimer.current);
+        setVisible(false);
+      }, FAILSAFE_MS);
     };
 
     const onClick = (event: MouseEvent) => {
@@ -58,6 +67,7 @@ export function RouteTransition() {
   // End: the new route has rendered.
   useEffect(() => {
     currentPath.current = pathname;
+    window.clearTimeout(showTimer.current);
     if (!visible) return;
     const remaining = Math.max(0, MIN_VISIBLE_MS - (performance.now() - startedAt.current));
     window.clearTimeout(hideTimer.current);
@@ -73,7 +83,7 @@ export function RouteTransition() {
     <div
       aria-hidden={!visible}
       className={
-        "fixed inset-0 z-[95] grid place-items-center bg-[#EEF2EA] transition-[opacity,visibility] duration-300 ease-out " +
+        "fixed inset-0 z-[95] grid place-items-center bg-[#F3EEE4] transition-[opacity,visibility] duration-300 ease-out " +
         (visible ? "visible opacity-100" : "invisible pointer-events-none opacity-0")
       }
     >

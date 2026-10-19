@@ -20,10 +20,10 @@ type PageHeroProps = {
 /** Full-width deep green page header used on every inner page. Type sits on the green, never on a photo. */
 export function PageHero({ eyebrow, title, intro, actions, side, children, bleed }: PageHeroProps) {
   return (
-    <section className={"select-none bg-[#1F4030] pt-36 text-white md:pt-44 " + (bleed ? "pb-0" : "pb-14 md:pb-20")}>
+    <section className={"select-none bg-[#112A22] pt-36 text-white md:pt-44 " + (bleed ? "pb-0" : "pb-14 md:pb-20")}>
       <div className={"container " + (bleed ? "pb-12 md:pb-16" : "")}>
         <Reveal>
-          <p className="eyebrow !text-[#E8B7A8]">{eyebrow}</p>
+          <p className="eyebrow !text-[#BFCBC3]">{eyebrow}</p>
           <h1 className="display mt-6 max-w-4xl text-4xl font-semibold leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">{title}</h1>
         </Reveal>
 
@@ -37,7 +37,7 @@ export function PageHero({ eyebrow, title, intro, actions, side, children, bleed
                     <Link
                       key={action.href + action.label}
                       href={action.href}
-                      className="focus-ring border-b border-white pb-1 text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:border-[#E8B7A8] hover:text-[#E8B7A8]"
+                      className="focus-ring border-b border-white pb-1 text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:border-[#BFCBC3] hover:text-[#BFCBC3]"
                     >
                       {action.label} →
                     </Link>

@@ -64,7 +64,7 @@ export function PropertyDetailView({ propertyId }: { propertyId: number }) {
         {/* Photograph first, then price and address as plain type */}
         <section className="mt-8">
           <figure className="m-0">
-            <div className="relative aspect-[4/3] overflow-hidden bg-[#C6D3C0] md:aspect-[16/9]">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#DDD7CA] md:aspect-[16/9]">
               <Image
                 src={gallery[activeImage]}
                 alt={property.title}

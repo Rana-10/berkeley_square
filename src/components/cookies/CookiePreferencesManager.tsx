@@ -68,8 +68,8 @@ export function CookiePreferencesManager() {
   }
 
   return (
-    <div className="rounded-none border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-white p-6 sm:p-8">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10 [html.light_&]:border-[#C6D3C0]">
+    <div className="rounded-none border border-white/15 [html.light_&]:border-[#D8D3C8] bg-black/60 [html.light_&]:bg-[#FAF7F1] p-6 sm:p-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10 [html.light_&]:border-[#DDD7CA]">
         <div>
           <div className="flex items-center gap-2">
             <span className="grid h-8 w-8 place-items-center rounded-none bg-legacy-red/15 text-legacy-red border border-legacy-red/30">
@@ -96,7 +96,7 @@ export function CookiePreferencesManager() {
               <ShieldCheck size={13} /> Essential Only
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300 [html.light_&]:text-[#4A4844] [html.light_&]:border-[#D8D3C8] [html.light_&]:bg-[#F4F7F0]">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300 [html.light_&]:text-[#4A4844] [html.light_&]:border-[#D8D3C8] [html.light_&]:bg-[#F6F2EA]">
               <ShieldAlert size={13} /> Not Set (Default)
             </span>
           )}
@@ -124,7 +124,7 @@ export function CookiePreferencesManager() {
           className={`inline-flex items-center gap-2 rounded-none border px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-all active:scale-[0.98] ${
             status === "essential"
               ? "border-amber-500/50 bg-amber-500/15 text-amber-300 [html.light_&]:text-amber-800 ring-2 ring-amber-400/40"
-              : "border-white/15 [html.light_&]:border-[#D8D3C8] bg-white/5 [html.light_&]:bg-[#F4F7F0] text-slate-200 [html.light_&]:text-[#222222] hover:bg-white/10 [html.light_&]:hover:bg-[#EAE5DC]"
+              : "border-white/15 [html.light_&]:border-[#D8D3C8] bg-white/5 [html.light_&]:bg-[#F6F2EA] text-slate-200 [html.light_&]:text-[#222222] hover:bg-white/10 [html.light_&]:hover:bg-[#EAE5DC]"
           }`}
         >
           <ShieldCheck size={14} />

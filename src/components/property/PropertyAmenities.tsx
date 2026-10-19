@@ -91,7 +91,7 @@ export function PropertyAmenities({ amenities, amenityCategories = [] }: Propert
                 className="rounded-3xl border border-white/10 bg-black/40 p-6 backdrop-blur-xl"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="h-2 w-2 rounded-full bg-legacy-red shadow-[0_0_8px_#e1122d]" />
+                  <span className="h-2 w-2 rounded-full bg-legacy-red shadow-[0_0_8px_#C43A31]" />
                   <h5 className="font-sans text-xs font-bold uppercase tracking-wider text-white">
                     {cat.category}
                   </h5>

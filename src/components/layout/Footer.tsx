@@ -15,7 +15,6 @@ const quickLinks = [
   { label: "About us", href: "/about" },
   { label: "Gallery", href: "/gallery" },
   { label: "Loan application", href: "/loan-application" },
-  { label: "Book an appointment", href: "/appointment" },
   { label: "Contact", href: "/contact" }
 ];
 
@@ -25,7 +24,7 @@ function footerImage(pathname: string) {
   if (pathname.startsWith("/loans")) return images.etonChapel;
   if (pathname.startsWith("/property/listings")) return images.etonChapel;
   if (pathname.startsWith("/about")) return images.etonHighStreet;
-  if (pathname.startsWith("/gallery")) return images.victorianStoneCorner;
+  if (pathname.startsWith("/gallery")) return images.portlandStone;
   if (pathname.startsWith("/contact")) return images.terracottaCorner;
   return images.etonHighStreet;
 }
@@ -39,12 +38,13 @@ export function Footer() {
     }
   }
 
-  const colTitle = "text-[11px] font-bold uppercase tracking-[0.22em] text-[#E8B7A8]";
+  const colTitle = "text-[11px] font-bold uppercase tracking-[0.22em] text-[#BFCBC3]";
   const link = "text-sm text-white/70 transition-colors hover:text-white";
 
   return (
-    <footer className="select-none bg-[#15291F] text-white/75" suppressHydrationWarning>
+    <footer className="select-none bg-[#112A22] text-white/75" suppressHydrationWarning>
       {/* Image band: one more look at the architecture before the legal small print */}
+      {pathname !== "/" && pathname !== "/property" && pathname !== "/property/listings" && (
       <div className="container pt-16 md:pt-24">
         <div className="grid items-end gap-8 md:grid-cols-[1.6fr_1fr] md:gap-12">
           <div className="group [&_figcaption]:border-white/25 [&_figcaption]:text-white/55">
@@ -57,17 +57,18 @@ export function Footer() {
             </p>
             <Link
               href="/contact"
-              className="focus-ring mt-6 inline-flex items-center gap-2 border-b border-white pb-1 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#E8B7A8] hover:text-[#E8B7A8]"
+              className="focus-ring mt-6 inline-flex items-center gap-2 border-b border-white pb-1 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#BFCBC3] hover:text-[#BFCBC3]"
             >
               Speak with our Mayfair team →
             </Link>
           </div>
         </div>
       </div>
+      )}
 
-      <div className="container mt-16 grid gap-12 border-t border-white/15 pt-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+      <div className={"container grid gap-12 pt-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr] " + (["/", "/property", "/property/listings"].includes(pathname) ? "" : "mt-16 border-t border-white/15")}>
         <div>
-          <Link href="/" className="inline-block rounded-sm bg-[#EEF2EA] px-3 py-2">
+          <Link href="/" className="inline-block rounded-sm bg-[#F3EEE4] px-3 py-2">
             <BSQLogo variant="horizontal" theme="light" size="md" />
           </Link>
           <address className="mt-6 text-sm not-italic leading-relaxed text-white/70">
@@ -79,7 +80,7 @@ export function Footer() {
             {company.registeredAddress}
           </address>
           <p className="mt-6 text-sm leading-relaxed">
-            <a href={`tel:${company.phone}`} className="font-semibold text-white transition-colors hover:text-[#E8B7A8]">
+            <a href={`tel:${company.phone}`} className="font-semibold text-white transition-colors hover:text-[#BFCBC3]">
               {company.phoneDisplay}
             </a>
             <br />

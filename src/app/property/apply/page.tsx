@@ -28,7 +28,7 @@ export default async function PropertyApplyPage({
         </Link>
 
         {/* Page Header */}
-        <div className="mb-10 border-b border-white/10 [html.light_&]:border-[#C6D3C0] pb-8">
+        <div className="mb-10 border-b border-white/10 [html.light_&]:border-[#DDD7CA] pb-8">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-legacy-red">
             <Sparkles size={14} className="text-legacy-red" /> Direct Deal Desk Application
           </div>

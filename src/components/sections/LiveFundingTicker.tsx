@@ -10,11 +10,11 @@ export function LiveFundingTicker() {
   return (
     <div
       ref={ref}
-      className="relative overflow-hidden border-y border-white/10 bg-gradient-to-r from-[#070709] via-[#0e0e13] to-[#070709] py-3.5 select-none backdrop-blur-md [html.light_&]:bg-[#F4F7F0] [html.light_&]:border-[#E8E5E0]"
+      className="relative overflow-hidden border-y border-white/10 bg-gradient-to-r from-[#070709] via-[#0e0e13] to-[#070709] py-3.5 select-none backdrop-blur-md [html.light_&]:bg-[#F6F2EA] [html.light_&]:border-[#E8E5E0]"
     >
       {/* Edge Gradient Fade Masks */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-[#070709] to-transparent [html.light_&]:from-[#F4F7F0]" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-[#070709] to-transparent [html.light_&]:from-[#F4F7F0]" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-[#070709] to-transparent [html.light_&]:from-[#F6F2EA]" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-[#070709] to-transparent [html.light_&]:from-[#F6F2EA]" />
 
       {/* Ticker Track */}
       <div
@@ -26,7 +26,7 @@ export function LiveFundingTicker() {
             {completedDeals.map((deal) => (
               <div
                 key={deal.id}
-                className="group flex items-center gap-3.5 rounded-full border border-white/[0.1] bg-black/60 px-4 py-2 shadow-sm transition-all duration-300 hover:border-legacy-red/40 hover:bg-black/90 [html.light_&]:bg-white [html.light_&]:border-[#E8E5E0] [html.light_&]:shadow-[0_2px_10px_rgba(0,0,0,0.03)] [html.light_&]:hover:bg-white [html.light_&]:hover:border-legacy-red/40"
+                className="group flex items-center gap-3.5 rounded-full border border-white/[0.1] bg-black/60 px-4 py-2 shadow-sm transition-all duration-300 hover:border-legacy-red/40 hover:bg-black/90 [html.light_&]:bg-[#FAF7F1] [html.light_&]:border-[#E8E5E0] [html.light_&]:shadow-[0_2px_10px_rgba(0,0,0,0.03)] [html.light_&]:hover:bg-[#FAF7F1] [html.light_&]:hover:border-legacy-red/40"
               >
                 {/* Live Status Indicator */}
                 <span className="relative flex h-2 w-2">

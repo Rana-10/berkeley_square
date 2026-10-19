@@ -33,7 +33,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
         "group focus-ring relative flex h-8 sm:h-9 items-center gap-1.5 rounded-full border px-2 sm:px-2.5 transition-all duration-300 select-none",
         isDark
           ? "border-white/15 bg-white/5 hover:border-white/30 hover:bg-white/10 text-white/90"
-          : "border-[#C6D3C0] bg-white hover:bg-[#F4F7F0] hover:border-[#181818]/25 text-[#181818] shadow-sm",
+          : "border-[#DDD7CA] bg-[#FAF7F1] hover:bg-[#F6F2EA] hover:border-[#181818]/25 text-[#181818] shadow-sm",
         className
       )}
     >
@@ -50,7 +50,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
             {isDark ? (
               <Moon size={14} className="text-legacy-red" />
             ) : (
-              <Sun size={14} className="text-[#e1122d]" />
+              <Sun size={14} className="text-[#C43A31]" />
             )}
           </motion.div>
         ) : (

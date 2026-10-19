@@ -21,81 +21,11 @@ import {
 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { TiltCard } from "@/components/animations/TiltCard";
+import { financeOfferings } from "@/data/finance-offerings";
 
-const bespokeSolutions = [
-  {
-    id: "bridging",
-    title: "Bespoke Bridging & Auction Debt",
-    badge: "Speed & Agility",
-    icon: Zap,
-    facilitySize: "£100k – £100M",
-    ltv: "Up to 75% LTV",
-    speed: "48hr Term Sheet · 14 Day Completion",
-    idealFor: "Broken chains, auction purchases, time-sensitive acquisitions, short lease extensions.",
-    structure: "2nd Charge, rolled-up interest, no early repayment penalties on selected lines.",
-    propertyType: "Prime Residential & Commercial W1/SW1"
-  },
-  {
-    id: "dev-stretch",
-    title: "Development Stretch Senior",
-    badge: "Maximum LTV",
-    icon: Hammer,
-    facilitySize: "£250k – £100M",
-    ltv: "Up to 70% LTGDV / 88% LTC",
-    speed: "Phased Tranche Drawdowns",
-    idealFor: "Ground-up residential schemes, luxury conversions, heavy airspace extensions.",
-    structure: "Senior debt with blended mezzanine tranche, fully rolled interest during build.",
-    propertyType: "Multi-Unit Schemes & High-End Townhomes"
-  },
-  {
-    id: "mezzanine",
-    title: "Mezzanine & Equity Stretcher",
-    badge: "Capital Optimization",
-    icon: Coins,
-    facilitySize: "£500k – £10,000,000",
-    ltv: "Up to 90% Loan-to-Cost",
-    speed: "Co-Terminus with Senior Lenders",
-    idealFor: "Developers seeking to minimize cash equity exposure across multiple live schemes.",
-    structure: "2nd charge subordinated debt behind clearing banks or institutional senior lenders.",
-    propertyType: "Mixed-Use & Prime Residential"
-  },
-  {
-    id: "spv-offshore",
-    title: "Offshore Trusts & Complex SPVs",
-    badge: "High Net Worth",
-    icon: Globe2,
-    facilitySize: "£1,000,000 – £40,000,000",
-    ltv: "Up to 75% LTV",
-    speed: "Discreet Bespoke Underwriting",
-    idealFor: "International UHNW buyers, Jersey/Guernsey/BVI structures, non-UK resident borrowers.",
-    structure: "Multi-jurisdictional security, non-recourse & limited guarantee facilities.",
-    propertyType: "Mayfair, Belgravia & Prime London Freeholds"
-  },
-  {
-    id: "commercial-refi",
-    title: "Unregulated Residential and Commercial Refinance",
-    badge: "Cashflow Release",
-    icon: Building,
-    facilitySize: "£100k – £100M",
-    ltv: "Up to 70% LTV",
-    speed: "2-3 Week Execution",
-    idealFor: "Equity release, repositioning secondary offices into ESG workspace, mixed-use blocks.",
-    structure: "Term facilities with interest-only options and flexible ICR hurdles.",
-    propertyType: "City Office, Semi-Commercial & Retail"
-  },
-  {
-    id: "planning-gain",
-    title: "Planning Gain & Conversion Bridging",
-    badge: "Value Creation",
-    icon: TrendingUp,
-    facilitySize: "£1,000,000 – £18,000,000",
-    ltv: "Up to 70% of Current Use Value",
-    speed: "Seamless Conversion into Senior Debt",
-    idealFor: "Sites pending planning determination or Class MA permitted development conversions.",
-    structure: "Short-term bridge that rolls into full development facility upon planning grant.",
-    propertyType: "Unconsented Land & Commercial-to-Resi"
-  }
-];
+const solutionIcons = { bridging: Zap, "dev-stretch": Hammer, mezzanine: Coins, "spv-offshore": Globe2, "commercial-refi": Building, "planning-gain": TrendingUp } as const;
+
+const bespokeSolutions = financeOfferings.map((offering) => ({ ...offering, icon: solutionIcons[offering.id as keyof typeof solutionIcons] }));
 
 export function BespokeFinanceOrbitSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -114,7 +44,7 @@ export function BespokeFinanceOrbitSection() {
   }, [isAutoRotating]);
 
   return (
-    <section className="relative py-24 select-none overflow-hidden [html.light_&]:bg-[#DCE6D6]">
+    <section className="relative py-24 select-none overflow-hidden [html.light_&]:bg-[#EBE5D9]">
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute inset-0 bg-radial-red opacity-50 [html.light_&]:opacity-25" />
 
@@ -140,14 +70,14 @@ export function BespokeFinanceOrbitSection() {
           <div
             onMouseEnter={() => setIsAutoRotating(false)}
             onMouseLeave={() => setIsAutoRotating(true)}
-            className="relative flex items-center justify-center p-6 md:p-12 min-h-[460px] rounded-3xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-gradient-to-br from-[#121218]/90 via-[#0a0a0e]/90 to-[#070709]/90 [html.light_&]:from-white/90 [html.light_&]:via-[#F4F7F0]/90 [html.light_&]:to-[#F2EFE9]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_30px_80px_rgba(0,0,0,0.8)] [html.light_&]:shadow-[0_20px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl"
+            className="relative flex items-center justify-center p-6 md:p-12 min-h-[460px] rounded-3xl border border-white/15 [html.light_&]:border-[#D8D3C8] bg-gradient-to-br from-[#121218]/90 via-[#0a0a0e]/90 to-[#070709]/90 [html.light_&]:from-white/90 [html.light_&]:via-[#F6F2EA]/90 [html.light_&]:to-[#F2EFE9]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_30px_80px_rgba(0,0,0,0.8)] [html.light_&]:shadow-[0_20px_50px_rgba(0,0,0,0.06)] backdrop-blur-2xl"
           >
             {/* Outer Concentric Orbit Track */}
             <div className="absolute h-80 w-80 md:h-96 md:w-96 rounded-full border border-white/10 [html.light_&]:border-black/10 border-dashed animate-[spin_40s_linear_infinite]" />
             <div className="absolute h-64 w-64 md:h-72 md:w-72 rounded-full border border-legacy-red/30 animate-[spin-reverse_25s_linear_infinite]" />
 
             {/* Central Property Core Container */}
-            <div className="relative z-10 h-44 w-44 md:h-52 md:w-52 rounded-full border-2 border-legacy-red/60 p-2 bg-black/70 [html.light_&]:bg-white shadow-[0_0_50px_rgba(225,18,45,0.35)]">
+            <div className="relative z-10 h-44 w-44 md:h-52 md:w-52 rounded-full border-2 border-legacy-red/60 p-2 bg-black/70 [html.light_&]:bg-[#FAF7F1] shadow-[0_0_50px_rgba(196,58,49,0.35)]">
               <div className="relative h-full w-full rounded-full overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
@@ -194,8 +124,8 @@ export function BespokeFinanceOrbitSection() {
                   }}
                   className={`absolute z-20 flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide transition-all duration-300 shadow-xl backdrop-blur-xl ${
                     isCurrent
-                      ? "scale-110 border-2 border-legacy-red bg-legacy-red text-white shadow-[0_0_25px_rgba(225,18,45,0.6)]"
-                      : "border border-white/20 [html.light_&]:border-[#D8D3C8] bg-black/80 [html.light_&]:bg-white [html.light_&]:text-[#222222] text-white/80 hover:border-legacy-red/60 hover:text-white [html.light_&]:hover:text-black hover:scale-105"
+                      ? "scale-110 border-2 border-legacy-red bg-legacy-red text-white shadow-[0_0_25px_rgba(196,58,49,0.6)]"
+                      : "border border-white/20 [html.light_&]:border-[#D8D3C8] bg-black/80 [html.light_&]:bg-[#FAF7F1] [html.light_&]:text-[#222222] text-white/80 hover:border-legacy-red/60 hover:text-white [html.light_&]:hover:text-black hover:scale-105"
                   }`}
                 >
                   <SolIcon size={14} className={isCurrent ? "text-white" : "text-legacy-red"} />
@@ -218,12 +148,12 @@ export function BespokeFinanceOrbitSection() {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
-                <TiltCard className="p-8 md:p-10 flex flex-col justify-between h-full border-white/15 [html.light_&]:border-[#C6D3C0] [html.light_&]:bg-white [html.light_&]:shadow-lg">
+                <TiltCard className="p-8 md:p-10 flex flex-col justify-between h-full border-white/15 [html.light_&]:border-[#DDD7CA] [html.light_&]:bg-[#FAF7F1] [html.light_&]:shadow-lg">
                   <div>
                     {/* Header */}
-                    <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#C6D3C0] pb-4">
+                    <div className="flex items-center justify-between border-b border-white/10 [html.light_&]:border-[#DDD7CA] pb-4">
                       <div className="flex items-center gap-3">
-                        <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/50 bg-legacy-red/10 text-legacy-red shadow-[0_0_15px_rgba(225,18,45,0.25)]">
+                        <div className="grid h-12 w-12 place-items-center rounded-xl border border-legacy-red/50 bg-legacy-red/10 text-legacy-red shadow-[0_0_15px_rgba(196,58,49,0.25)]">
                           <Icon size={22} />
                         </div>
                         <div>
@@ -239,7 +169,7 @@ export function BespokeFinanceOrbitSection() {
                     </div>
 
                     {/* Key Metrics Strip */}
-                    <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-white/10 [html.light_&]:border-[#C6D3C0] bg-white/[0.03] [html.light_&]:bg-[#F4F7F0] p-4">
+                    <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-white/10 [html.light_&]:border-[#DDD7CA] bg-white/[0.03] [html.light_&]:bg-[#F6F2EA] p-4">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 [html.light_&]:text-[#666460]">Facility Sizing</p>
                         <p className="font-mono text-lg font-bold text-white [html.light_&]:text-[#181818] mt-0.5">{activeSolution.facilitySize}</p>
@@ -272,7 +202,7 @@ export function BespokeFinanceOrbitSection() {
                   </div>
 
                   {/* Actions & Navigation */}
-                  <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 [html.light_&]:border-[#C6D3C0] pt-6">
+                  <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 [html.light_&]:border-[#DDD7CA] pt-6">
                     <ButtonLink href="/loan-application" className="w-full sm:w-auto px-6 py-3 text-xs uppercase tracking-wider">
                       Structure This Facility <ArrowRight size={15} />
                     </ButtonLink>
@@ -289,7 +219,7 @@ export function BespokeFinanceOrbitSection() {
                           }}
                           className={`h-2 rounded-full transition-all ${
                             i === selectedIndex
-                              ? "w-7 bg-legacy-red shadow-[0_0_8px_#e1122d]"
+                              ? "w-7 bg-legacy-red shadow-[0_0_8px_#C43A31]"
                               : "w-2 bg-white/25 [html.light_&]:bg-black/20 hover:bg-white/50 [html.light_&]:hover:bg-black/40"
                           }`}
                           aria-label={`Select solution ${i + 1}`}

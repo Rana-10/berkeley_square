@@ -45,3 +45,4 @@ out/
 .env.local
 *.tsbuildinfo
 bsq images/
+reference_designs/

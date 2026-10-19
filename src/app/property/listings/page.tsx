@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/editorial/PageHero";
-import { PropertyListingsHub } from "@/components/property/PropertyListingsHub";
+import { PropertyPageShell } from "@/components/property/PropertyPageShell";
 
 export const metadata: Metadata = {
   title: "Property Listings & Portfolio",
@@ -8,17 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function PropertyListingsPage() {
-  return (
-    <main className="min-h-screen select-none bg-theme-page">
-      <PageHero
-        eyebrow="Property portfolio"
-        title="Available properties."
-        intro="Browse live property records, compare core specifications, and apply directly from each listing."
-        actions={[{ href: "/property", label: "Property overview" }]}
-      />
-      <div className="container py-12 md:py-16">
-        <PropertyListingsHub />
-      </div>
-    </main>
-  );
+  return <PropertyPageShell />;
 }

@@ -71,14 +71,13 @@ export default function ContactPage() {
         title="Speak with Berkeley Square Capital."
         intro="Whether you are securing fast-track bridging finance, acquiring prime property, or structuring cross-border portfolios, our senior partners are ready to assist."
         actions={[
-          { href: "/appointment", label: "Book an appointment" },
           { href: "/loan-application", label: "Loan enquiry" }
         ]}
-        bleed={<ParallaxPhoto image={images.etonChapel} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_40%]" />}
+        bleed={<ParallaxPhoto image={images.portlandStone} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_35%]" />}
       />
 
-      <OverlapPanel title="Berkeley Square, Mayfair." action={{ href: "/appointment", label: "Book an appointment" }}>
-        <p>Our trading office sits on Berkeley Square in the heart of London. Call or email the team directly, or book a time to meet us in person.</p>
+      <OverlapPanel title="Berkeley Square, Mayfair.">
+        <p>Our trading office sits on Berkeley Square in the heart of London. Call or email the team directly to arrange a time to meet us in person.</p>
         <p>We respond to every enquiry from a named member of the team, usually within the working day.</p>
       </OverlapPanel>
 
@@ -128,11 +127,11 @@ export default function ContactPage() {
           <Reveal>
             <p className="eyebrow">Mayfair</p>
             <h2 className="display mt-4 max-w-xl text-3xl font-semibold leading-tight text-theme-primary md:text-4xl">
-              Arrange a confidential consultation with our London team.
+              Arrange a confidential conversation with our London team.
             </h2>
-            <Link href="/appointment" className={`${linkClass} mt-8 inline-block`}>
-              Book an appointment →
-            </Link>
+            <a href={`mailto:${company.email}`} className={`${linkClass} mt-8 inline-block`}>
+              Email the London team →
+            </a>
           </Reveal>
           <Reveal delay={0.1}>
             <Photo image={images.stuccoSash} ratio="aspect-[4/5]" sizes="(max-width: 768px) 100vw, 352px" zoom={false} />

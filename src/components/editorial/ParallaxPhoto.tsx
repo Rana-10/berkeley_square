@@ -79,7 +79,7 @@ export function ParallaxPhoto({
   }, [amount]);
 
   return (
-    <div ref={frame} className={cn("relative w-full overflow-hidden bg-[#C6D3C0]", ratio, rounded && "rounded-[10px]", className)}>
+    <div ref={frame} className={cn("relative w-full overflow-hidden bg-[#DDD7CA]", ratio, rounded && "rounded-[10px]", className)}>
       <Image
         src={image.src}
         alt={image.alt}

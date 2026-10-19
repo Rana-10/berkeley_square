@@ -20,7 +20,7 @@ export const completedDeals: CompletedDeal[] = [
     type: "Bridging",
     location: "Mayfair, London W1K",
     ltv: "72%",
-    timeframe: "8 Days to Completion",
+    timeframe: "14 Days to Completion",
     summary: "Time-critical acquisition bridging facility securing a prime residential asset ahead of institutional auction.",
     status: "Completed",
     date: "August 2026"
@@ -69,7 +69,7 @@ export const completedDeals: CompletedDeal[] = [
     type: "Acquisition",
     location: "Belgravia, London SW1",
     ltv: "75%",
-    timeframe: "5 Days from Term Sheet",
+    timeframe: "14 Days to Completion",
     summary: "Rapid completion facility preventing chain break on prime freehold townhome purchase.",
     status: "Completed",
     date: "April 2026"

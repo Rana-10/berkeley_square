@@ -21,8 +21,8 @@ export const financialSpecialists: {
     title: "Bridging Loan Specialist",
     tagline: "Ultra-fast liquidity and time-critical property acquisition",
     facilityRange: "£100k – £100M",
-    maxLtv: "Up to 80% LTV",
-    speed: "Drawdown within 14 days",
+    maxLtv: "Up to 75% LTV",
+    speed: "Indicative terms in 24–48 hrs · completion in 14 days",
     overview:
       "Market-leading bridging finance engineered for fast execution. Renowned for completing transactions when conventional lenders cannot meet critical deadlines.",
     highlights: [
@@ -39,9 +39,9 @@ export const financialSpecialists: {
     id: "commercial-finance-specialist",
     title: "Commercial Finance Specialist",
     tagline: "Prime offices, mixed-use freeholds, retail and industrial assets",
-    facilityRange: "£250k – £50M+",
-    maxLtv: "Up to 75% LTV",
-    speed: "Term sheet in 24–48 hrs",
+    facilityRange: "£100k – £100M",
+    maxLtv: "Up to 70% LTV",
+    speed: "Indicative terms in 24–48 hrs · completion in 2–3 weeks",
     overview:
       "Structured commercial property debt across owner-occupier, investment commercial, and semi-commercial assets across London and UK gateway hubs.",
     highlights: [
@@ -58,7 +58,7 @@ export const financialSpecialists: {
     id: "development-finance-specialist",
     title: "Development Finance Specialist",
     tagline: "Ground-up new builds, heavy refurbishments and conversions",
-    facilityRange: "£100M+",
+    facilityRange: "£250k – £100M",
     maxLtv: "Up to 70% LTGDV / 88% LTC",
     speed: "Staged QS drawdowns",
     overview:
@@ -101,14 +101,13 @@ export const financialSpecialists: {
 export function FinancialSpecialistsGrid() {
   return (
     <div className="border-t border-[#181818]/70" id="specialist-divisions">
-      {financialSpecialists.map((spec, idx) => (
+      {financialSpecialists.map((spec) => (
         <Reveal key={spec.id}>
           <article className="grid gap-8 border-b border-theme-border py-12 md:grid-cols-[minmax(0,17rem)_1fr] md:gap-12 lg:grid-cols-[minmax(0,19rem)_1fr_minmax(0,18rem)]">
             <Photo image={spec.image} ratio="aspect-[4/5]" sizes="(max-width: 768px) 100vw, 300px" zoom={false} />
 
             <div>
-              <span className="font-mono text-xs font-bold text-theme-muted">0{idx + 1}</span>
-              <h3 className="display mt-2 text-3xl font-semibold leading-tight text-theme-primary">{spec.title}</h3>
+              <h3 className="display text-3xl font-semibold leading-tight text-theme-primary">{spec.title}</h3>
               <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-legacy-red">{spec.tagline}</p>
               <p className="mt-5 leading-relaxed text-theme-secondary">{spec.overview}</p>
 

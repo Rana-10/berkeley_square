@@ -142,7 +142,7 @@ export function TextArea({
         {...register(name)}
         rows={4}
         placeholder={placeholder}
-        className="focus-ring min-h-28 rounded-none border border-white/15 bg-black/40 px-4 py-3 text-base text-white transition-colors duration-200 placeholder:text-white/40 [html.light_&]:bg-white [html.light_&]:border-[#C6D3C0] [html.light_&]:text-[#121316] [html.light_&]:placeholder:text-[#9E9B94]"
+        className="focus-ring min-h-28 rounded-none border border-white/15 bg-black/40 px-4 py-3 text-base text-white transition-colors duration-200 placeholder:text-white/40 [html.light_&]:bg-[#FAF7F1] [html.light_&]:border-[#DDD7CA] [html.light_&]:text-[#121316] [html.light_&]:placeholder:text-[#9E9B94]"
         aria-invalid={Boolean(error)}
       />
       {error ? <span className="text-sm font-normal text-red-400">{error}</span> : null}
@@ -173,7 +173,7 @@ export function SelectField({
       </span>
       <select
         {...register(name)}
-        className="focus-ring min-h-12 rounded-none border border-white/15 bg-black/80 px-4 text-base text-white transition-colors duration-200 [html.light_&]:bg-white [html.light_&]:border-[#C6D3C0] [html.light_&]:text-[#121316]"
+        className="focus-ring min-h-12 rounded-none border border-white/15 bg-black/80 px-4 text-base text-white transition-colors duration-200 [html.light_&]:bg-[#FAF7F1] [html.light_&]:border-[#DDD7CA] [html.light_&]:text-[#121316]"
         aria-invalid={Boolean(error)}
       >
         <option value="">Select option</option>
@@ -181,7 +181,7 @@ export function SelectField({
           const optValue = typeof option === "string" ? option : option.value;
           const optLabel = typeof option === "string" ? option : option.label;
           return (
-            <option key={optValue} value={optValue} className="bg-white text-black dark:bg-[#121316] dark:text-white">
+            <option key={optValue} value={optValue} className="bg-[#FAF7F1] text-black dark:bg-[#121316] dark:text-white">
               {optLabel}
             </option>
           );
@@ -303,14 +303,14 @@ function YesNoFieldView({
                 "group relative flex min-h-12 flex-1 cursor-pointer items-center justify-center gap-2.5 rounded-none border px-4 text-sm font-semibold capitalize transition-all duration-200 select-none",
                 isSelected
                   ? "border-legacy-red bg-legacy-red text-white"
-                  : "border-legacy-border bg-black/40 text-white/70 hover:border-white/20 hover:bg-white/[0.04] hover:text-white [html.light_&]:bg-[#F4F7F0] [html.light_&]:border-[#C6D3C0] [html.light_&]:text-[#2A2927] [html.light_&]:hover:bg-black/[0.04]",
+                  : "border-legacy-border bg-black/40 text-white/70 hover:border-white/20 hover:bg-white/[0.04] hover:text-white [html.light_&]:bg-[#F6F2EA] [html.light_&]:border-[#DDD7CA] [html.light_&]:text-[#2A2927] [html.light_&]:hover:bg-black/[0.04]",
                 "focus:outline-none focus:ring-2 focus:ring-legacy-red"
               )}
             >
               <span
                 className={cn(
                   "flex h-4 w-4 items-center justify-center rounded-full border border-white/30 transition-all duration-200 [html.light_&]:border-black/30",
-                  isSelected ? "border-white bg-white" : "group-hover:border-white/60"
+                  isSelected ? "border-white bg-[#FAF7F1]" : "group-hover:border-white/60"
                 )}
               >
                 <span
@@ -351,7 +351,7 @@ export function CheckboxGroup({
           <label
             key={option}
             className={cn(
-              "flex min-h-12 cursor-pointer items-center gap-3 rounded-none border border-legacy-border bg-black/34 px-4 text-sm text-white/76 transition-all duration-200 [html.light_&]:bg-white [html.light_&]:border-[#C6D3C0] [html.light_&]:text-[#2A2927]",
+              "flex min-h-12 cursor-pointer items-center gap-3 rounded-none border border-legacy-border bg-black/34 px-4 text-sm text-white/76 transition-all duration-200 [html.light_&]:bg-[#FAF7F1] [html.light_&]:border-[#DDD7CA] [html.light_&]:text-[#2A2927]",
               "hover:border-white/20 hover:text-white [html.light_&]:hover:border-slate-400",
               "has-[:checked]:border-legacy-red/60 has-[:checked]:bg-legacy-red/10 has-[:checked]:text-white [html.light_&]:has-[:checked]:text-[#121316]"
             )}

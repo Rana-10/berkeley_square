@@ -96,9 +96,9 @@ export const clientJourney = [
     step: 2,
     title: "Strategy & Proposal",
     icon: Layers,
-    timeframe: "2–7 Business Days",
+    timeframe: "Indicative terms in 24–48 Hours",
     summary:
-      "We shape a tailored plan, sourcing suitable properties where needed, and send a clear proposal setting out structure, costs and timings.",
+      "We shape a tailored plan, sourcing suitable properties where needed, and send clear, non-binding indicative terms setting out structure, costs and timings.",
     actions: ["Off-market sourcing (if required)", "Transparent term sheet", "Full fee & cost breakdown"]
   },
   {
@@ -114,9 +114,9 @@ export const clientJourney = [
     step: 4,
     title: "Completion",
     icon: Landmark,
-    timeframe: "From 7 Days",
+    timeframe: "14 Days",
     summary:
-      "Funds are released and the purchase or refinance completes. Bridging can complete in as little as 7 days; acquisitions typically take 2–8 weeks.",
+      "Funds are released and the purchase or refinance completes. This is the actual completion: bridging can complete in 14 days from instruction, subject to valuation and legal work; acquisitions typically take 2–8 weeks.",
     actions: ["Funds drawdown & transfer", "Legal completion & registry", "Asset handover & transition"]
   },
   {
@@ -248,7 +248,7 @@ export const divisions = [
     icon: Landmark,
     summary:
       "Tailor-made bridging finance, structured development lending, and international mortgage solutions for fast, flexible transaction execution.",
-    image: "/images/uk/portland-stone-portico.webp",
+    image: "/images/uk/gothic-doorway.webp",
     services: [
       "Bridging Loan Specialist (Auction, Distressed, Fast Liquidity)",
       "Commercial Finance Specialist (Offices, Retail, Mixed-Use & Portfolios)",
@@ -277,7 +277,7 @@ export const divisions = [
     icon: ShieldCheck,
     summary:
       "Full rental management, tenant vetting, maintenance care, regulatory compliance, and strategic multi-market portfolio rebalancing.",
-    image: "/images/uk/thames-townhouses.webp",
+    image: "/images/uk/stucco-sash-windows.webp",
     services: [
       "Rental Management (Tenant Vetting, Rent Collection & Care)",
       "Portfolio Management (Performance Monitoring & Asset Rebalancing)",

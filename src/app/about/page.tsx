@@ -97,7 +97,7 @@ export default function AboutPage() {
       </OverlapPanel>
 
       {/* Team */}
-      <section className="bg-[#DCE6D6]">
+      <section className="bg-[#EBE5D9]">
         <div className="container border-t border-theme-border py-16 md:py-28">
           <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-end lg:gap-20">
             <Reveal>
@@ -190,11 +190,10 @@ export default function AboutPage() {
         </Reveal>
 
         <div className="mt-12 border-t border-[#181818]/70">
-          {divisionDetails.map((division, idx) => (
+          {divisionDetails.map((division) => (
             <Reveal key={division.name}>
               <article className="grid gap-8 border-b border-theme-border py-10 md:grid-cols-[1fr_1.4fr] md:gap-14">
                 <div>
-                  <span className="font-mono text-xs font-bold text-theme-muted">{pad(idx + 1)}</span>
                   <h3 className="display mt-2 text-2xl font-semibold text-theme-primary md:text-3xl">{division.name}</h3>
                   <p className="mt-3 leading-relaxed text-theme-secondary">{division.tagline}</p>
                   <Link
@@ -232,7 +231,7 @@ export default function AboutPage() {
           {globalHubs.map((hub) => (
             <li
               key={hub.country}
-              className="grid items-center gap-1 border-b border-theme-border py-4 transition-colors hover:bg-[#DCE6D6]/70 md:grid-cols-[3.5rem_1.1fr_1fr_1.6fr] md:gap-6 md:px-2"
+              className="grid items-center gap-1 border-b border-theme-border py-4 transition-colors hover:bg-[#EBE5D9]/70 md:grid-cols-[3.5rem_1.1fr_1fr_1.6fr] md:gap-6 md:px-2"
             >
               <FlagImages country={hub.country} flags={hub.flags} />
               <span className="display text-xl font-semibold text-theme-primary">{hub.country}</span>
