@@ -6,7 +6,11 @@ export type SiteImage = {
   caption: string;
   /** natural orientation of the source file */
   orientation: "landscape" | "portrait";
+  /** openly licensed photographs must credit the author and licence wherever they are shown */
+  credit?: ImageCredit;
 };
+
+export type ImageCredit = { author: string; licence: string; source: string };
 
 const make = (file: string, orientation: SiteImage["orientation"], alt: string, caption: string): SiteImage => ({
   src: `/images/uk/${file}.webp`,
@@ -34,6 +38,38 @@ export const images = {
   portlandStone: make("portland-stone-portico", "portrait", "A white Portland stone classical entrance with columns and a tall arched window", "Portland stone portico"),
   ironLamp: make("wrought-iron-lamp", "portrait", "A wrought-iron street lamp silhouetted against a deep blue sky", "Wrought-iron lamp"),
   gardenBrick: make("garden-and-brick", "portrait", "Evening light across a wild garden beside a red-brick building", "Garden and brick, evening light")
+} satisfies Record<string, SiteImage>;
+
+// Openly licensed photography from Wikimedia Commons, used for the inner-page heroes. Each licence (CC BY / CC BY-SA)
+// permits commercial use on condition that the author and licence are credited, which PageHero does on the photo.
+const commons = (file: string, alt: string, caption: string, credit: ImageCredit): SiteImage => ({ ...make(file, "landscape", alt, caption), credit });
+
+export const heroImages = {
+  bankOfEngland: commons("bank-of-england", "The colonnaded Portland stone front of the Bank of England on Threadneedle Street", "Bank of England, City of London", {
+    author: "Diego Delso",
+    licence: "CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Banco_de_Inglaterra,_Londres,_Inglaterra,_2014-08-11,_DD_141.JPG"
+  }),
+  eatonPlace: commons("eaton-place", "A long Belgravia street of white stucco and brick terraces with black iron railings", "Eaton Place, Belgravia", {
+    author: "Mr Ignavy",
+    licence: "CC BY-SA 2.0",
+    source: "https://commons.wikimedia.org/wiki/File:Eaton_Place_-_Belgravia_-_geograph.org.uk_-_8158817.jpg"
+  }),
+  carltonHouseTerrace: commons("carlton-house-terrace", "The cream stucco colonnade of Carlton House Terrace under a deep blue winter sky", "Carlton House Terrace, St James's", {
+    author: "Matt Brown",
+    licence: "CC BY 2.0",
+    source: "https://commons.wikimedia.org/wiki/File:Carlton_House_Terrace_panorama.jpg"
+  }),
+  royalCrescent: commons("royal-crescent", "Ionic columns and sash windows along the Georgian stone sweep of the Royal Crescent", "Royal Crescent, Bath", {
+    author: "Mike Peel",
+    licence: "CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Royal_Crescent,_Bath_2014_07.jpg"
+  }),
+  berkeleySquare: commons("berkeley-square", "Plane trees and a gravel path through the garden of Berkeley Square in late autumn", "Berkeley Square, Mayfair", {
+    author: "Justinc",
+    licence: "CC BY-SA 2.0",
+    source: "https://commons.wikimedia.org/wiki/File:Berkeley_Square_evening_December_2005.jpg"
+  })
 } satisfies Record<string, SiteImage>;
 
 export type ImageKey = keyof typeof images;

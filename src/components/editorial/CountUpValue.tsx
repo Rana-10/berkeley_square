@@ -2,82 +2,87 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-type Part = { text: string } | { num: number; decimals: number };
+const ROLL_MS = 1500;
+const STAGGER_MS = 70;
+const DIGITS = Array.from({ length: 20 }, (_, i) => i % 10); // two cycles, so every digit (even a 0) visibly turns over
 
-/** "To £100m+" -> ["To £", 100, "m+"]; "24–48 hrs" -> [24, "–", 48, " hrs"]; "99.4%" -> [99.4, "%"] */
-function parse(value: string): Part[] {
-  const parts: Part[] = [];
-  let last = 0;
-  for (const match of value.matchAll(/\d+(?:\.\d+)?/g)) {
-    const index = match.index ?? 0;
-    if (index > last) parts.push({ text: value.slice(last, index) });
-    const raw = match[0];
-    parts.push({ num: parseFloat(raw), decimals: raw.includes(".") ? raw.split(".")[1].length : 0 });
-    last = index + raw.length;
-  }
-  if (last < value.length) parts.push({ text: value.slice(last) });
-  return parts;
+/** "£100k–£100M" -> ["£100k–", "£100M"]: the figure may only wrap after a dash or a space, never inside a number. */
+function words(value: string) {
+  return value.split(/(?<=[–—\-\s])/);
 }
 
-const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+/**
+ * One digit in a fixed slot: a column of numerals that rolls up to its final digit.
+ * The invisible digit sizes the slot and supplies the baseline, so the figure never changes width or wraps differently.
+ */
+function RollingDigit({ digit, rolled, delay }: { digit: number; rolled: boolean; delay: number }) {
+  return (
+    <span className="relative inline-block [clip-path:inset(0)]">
+      <span className="invisible">{digit}</span>
+      <span
+        className="absolute inset-x-0 top-0 flex flex-col items-center"
+        style={{
+          transform: `translateY(-${rolled ? 10 + digit : 0}em)`,
+          transition: rolled ? `transform ${ROLL_MS}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms` : "none"
+        }}
+      >
+        {DIGITS.map((n, i) => (
+          <span key={i} className="block h-[1em]">
+            {n}
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+}
 
 /**
- * Counts every number inside a figure up from zero when it scrolls into view, keeping its prefix and suffix.
- * The final text is rendered invisibly underneath, so the column never changes width while it counts.
+ * Rolls every digit of a figure into place when it scrolls into view, odometer style, keeping prefixes and suffixes
+ * ("£", "k", "hrs") static. Server render, no-JS and reduced-motion visitors get the final figure with no movement.
  */
-export function CountUpValue({ value, duration = 1900 }: { value: string; duration?: number }) {
-  const parts = useMemo(() => parse(value), [value]);
+export function CountUpValue({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const [progress, setProgress] = useState(1); // 1 = final value (server render, no-JS, reduced motion)
+  const [state, setState] = useState<"final" | "waiting" | "rolled">("final");
+  const parts = useMemo(() => words(value).map((word) => Array.from(word)), [value]);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || !parts.some((p) => "num" in p)) return;
+    if (!el || !/\d/.test(value)) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof IntersectionObserver === "undefined") return;
 
+    setState("waiting");
     let raf = 0;
-    let started = false;
-
-    const run = () => {
-      started = true;
-      const t0 = performance.now();
-      const tick = (now: number) => {
-        const t = Math.min((now - t0) / duration, 1);
-        setProgress(easeOutCubic(t));
-        if (t < 1) raf = requestAnimationFrame(tick);
-      };
-      raf = requestAnimationFrame(tick);
-    };
-
-    setProgress(0);
     const observer = new IntersectionObserver(
       (entries) => {
-        if (!started && entries.some((e) => e.isIntersecting)) {
-          observer.disconnect();
-          run();
-        }
+        if (!entries.some((e) => e.isIntersecting)) return;
+        observer.disconnect();
+        // Two frames: let the reset to 0 paint before the transition to the final digit starts.
+        raf = requestAnimationFrame(() => (raf = requestAnimationFrame(() => setState("rolled"))));
       },
       { threshold: 0.6 }
     );
     observer.observe(el);
-
     return () => {
       observer.disconnect();
-      if (raf) cancelAnimationFrame(raf);
+      cancelAnimationFrame(raf);
     };
-  }, [parts, duration]);
+  }, [value]);
 
-  const live = parts
-    .map((p) => ("text" in p ? p.text : (p.num * progress).toFixed(p.decimals)))
-    .join("");
-
+  let digitIndex = 0;
   return (
-    <span ref={ref} className="relative inline-block">
-      <span className="invisible" aria-hidden="true">
-        {value}
-      </span>
-      <span className="absolute inset-0" aria-hidden="true">
-        {live}
+    <span ref={ref} className="leading-none [font-variant-numeric:lining-nums_tabular-nums]">
+      <span aria-hidden="true">
+        {parts.map((chars, w) => (
+          <span key={w} className="whitespace-nowrap">
+            {chars.map((ch, c) =>
+              /\d/.test(ch) ? (
+                <RollingDigit key={c} digit={Number(ch)} rolled={state !== "waiting"} delay={state === "rolled" ? digitIndex++ * STAGGER_MS : 0} />
+              ) : (
+                ch
+              )
+            )}
+          </span>
+        ))}
       </span>
       <span className="sr-only">{value}</span>
     </span>

@@ -53,7 +53,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   root.classList.remove('dark');
                   root.classList.add('light');
                   root.setAttribute('data-theme', 'light');
-                  if (sessionStorage.getItem('bsq_loader_seen')) root.classList.add('loader-seen');
                   root.style.colorScheme = 'light';
                 } catch(e) {}
               })();

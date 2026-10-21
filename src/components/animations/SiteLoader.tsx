@@ -3,13 +3,12 @@
 import { useEffect, useState } from "react";
 import { LoaderScreen } from "@/components/animations/LoaderScreen";
 
-/** Brief brand splash on the first visit of a session only; repeat page loads go straight to the content. */
+/** First-load preloader. Shows once per full page load, then fades out. */
 export function SiteLoader() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    try { window.sessionStorage.setItem("bsq_loader_seen", "1"); } catch {}
-    const timer = window.setTimeout(() => setVisible(false), 700);
+    const timer = window.setTimeout(() => setVisible(false), 1400);
     return () => window.clearTimeout(timer);
   }, []);
 

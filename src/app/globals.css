@@ -368,13 +368,9 @@ html.light .fine-rule {
   display: grid;
   place-items: center;
   background: #080808;
-  animation: loader-exit .3s ease .4s forwards;
+  animation: loader-exit .4s ease 1.05s forwards;
 }
 
-/* Set by an inline script in <head> when the splash has already been shown this session. */
-html.loader-seen .site-loader {
-  display: none;
-}
 
 html.light .site-loader {
   background: var(--bg-page);

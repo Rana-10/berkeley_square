@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ParallaxPhoto } from "@/components/editorial/ParallaxPhoto";
 import { OverlapPanel } from "@/components/editorial/OverlapPanel";
 import Link from "next/link";
 import { Reveal } from "@/components/animations/Reveal";
@@ -8,7 +7,7 @@ import { PageHero } from "@/components/editorial/PageHero";
 import { Photo } from "@/components/editorial/Photo";
 import { Heading, Section } from "@/components/editorial/Section";
 import { company } from "@/data/company";
-import { images } from "@/data/images";
+import { heroImages, images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Contact London Office & Global Desks",
@@ -70,13 +69,16 @@ export default function ContactPage() {
         eyebrow="Connect with our Mayfair desk"
         title="Speak with Berkeley Square Capital."
         intro="Whether you are securing fast-track bridging finance, acquiring prime property, or structuring cross-border portfolios, our senior partners are ready to assist."
+        image={heroImages.berkeleySquare}
+        position="50% 55%"
+        lede="Berkeley Square, Mayfair. Every enquiry answered by a named member of the team."
         actions={[
+          { href: `mailto:${company.email}`, label: "Email the desk" },
           { href: "/loan-application", label: "Loan enquiry" }
         ]}
-        bleed={<ParallaxPhoto image={images.portlandStone} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_35%]" />}
       />
 
-      <OverlapPanel title="Berkeley Square, Mayfair.">
+      <OverlapPanel overlap={false} title="Berkeley Square, Mayfair.">
         <p>Our trading office sits on Berkeley Square in the heart of London. Call or email the team directly to arrange a time to meet us in person.</p>
         <p>We respond to every enquiry from a named member of the team, usually within the working day.</p>
       </OverlapPanel>

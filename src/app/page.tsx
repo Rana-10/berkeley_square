@@ -177,7 +177,7 @@ export default function HomePage() {
               href="/contact"
               className="focus-ring inline-flex items-center gap-3 bg-[#F3EEE4] px-6 py-3.5 text-sm font-medium text-[#112A22] transition-colors hover:bg-[#FAF7F1]"
             >
-              Contact us <span aria-hidden>→</span>
+              Contact us
             </Link>
           </div>
           <div className="hidden border-l border-white/20 pl-12 lg:block">

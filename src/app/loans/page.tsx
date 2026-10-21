@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ParallaxPhoto } from "@/components/editorial/ParallaxPhoto";
 import { OverlapPanel } from "@/components/editorial/OverlapPanel";
 import { Reveal } from "@/components/animations/Reveal";
 import { PageHero } from "@/components/editorial/PageHero";
@@ -8,7 +7,7 @@ import { Heading, Section } from "@/components/editorial/Section";
 import { StatsLedger } from "@/components/editorial/StatsLedger";
 import { FinanceCalculator } from "@/components/loan/FinanceCalculator";
 import { FinancialSpecialistsGrid } from "@/components/loan/FinancialSpecialistsGrid";
-import { images } from "@/data/images";
+import { heroImages } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "BSQ Finance",
@@ -35,10 +34,16 @@ export default function LoansPage() {
         eyebrow="Financial Services · Est. 2015"
         title="Finance structured exactly to your requirements."
         intro="Tailor-made bridging finance, structured development lending, and mortgage solutions. Renowned for completing transactions fast and flexibly – the ideal solution for auction purchases, distressed sales, and time-critical funding needs."
-        bleed={<ParallaxPhoto image={images.terracottaCorner} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_35%]" />}
+        image={heroImages.bankOfEngland}
+        position="50% 45%"
+        lede="Bridging, development and term finance, completed fast and flexibly."
+        actions={[
+          { href: "/loan-application", label: "Start a loan enquiry" },
+          { href: "/contact", label: "Speak to the team" }
+        ]}
       />
 
-      <OverlapPanel title="Your first consultation." action={{ href: "/loan-application", label: "Begin loan application" }}>
+      <OverlapPanel overlap={false} title="Your first consultation." action={{ href: "/loan-application", label: "Begin loan application" }}>
         <ol className="divide-y divide-white/20 border-y border-white/25">
           {consultation.map((step, idx) => (
             <li key={step} className="grid grid-cols-[2.5rem_1fr] gap-3 py-4 text-base leading-relaxed">

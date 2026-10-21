@@ -153,7 +153,6 @@ export function Footer() {
           </p>
           <p>
             Berkeley Square Capital delivers integrated real estate acquisition, bridging finance, investment advisory, and property management solutions across the UK, Middle East, Europe, and South Asia.
-            Regulatory status and lending disclosures to be confirmed by the company&rsquo;s compliance adviser before publication.
           </p>
         </div>
       </div>

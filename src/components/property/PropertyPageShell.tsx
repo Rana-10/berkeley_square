@@ -1,21 +1,27 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { PageHero } from "@/components/editorial/PageHero";
 import { PropertyListingsHub } from "@/components/property/PropertyListingsHub";
+import { heroImages } from "@/data/images";
 
-/** Property page: headline and search on the page itself, the listings, then a closing brief band. */
+/** Property page: photographic hero, the search and listings, then a closing brief band. */
 export function PropertyPageShell() {
   return (
     <main className="select-none bg-theme-page text-[#181818]">
-      <section className="container pb-16 pt-32 md:pb-20 md:pt-36">
-        <h1 className="display max-w-3xl text-[2.7rem] font-normal leading-[1.05] tracking-[-0.02em] sm:text-6xl md:text-[4.1rem]">
-          Exceptional properties. Considered opportunities.
-        </h1>
-        <span aria-hidden className="mt-8 block h-[2px] w-12 bg-[#C43A31]" />
-        <p className="mt-7 max-w-3xl text-lg text-[#2A2927] md:text-xl">Explore residential and commercial opportunities across our selected markets.</p>
+      <PageHero
+        eyebrow="Property transactions"
+        title="Exceptional properties. Considered opportunities."
+        image={heroImages.eatonPlace}
+        position="50% 55%"
+        lede="Explore residential and commercial opportunities across our selected markets."
+        actions={[
+          { href: "#listings", label: "View listings" },
+          { href: "/contact", label: "Share your property brief" }
+        ]}
+      />
 
-        <div className="mt-10">
-          <PropertyListingsHub />
-        </div>
+      <section id="listings" className="container scroll-mt-28 pb-16 pt-12 md:pb-20 md:pt-16">
+        <PropertyListingsHub />
       </section>
 
       <section className="bg-[#154434] text-white">

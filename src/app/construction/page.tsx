@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { TintTile } from "@/components/editorial/Tiles";
-import { ParallaxPhoto } from "@/components/editorial/ParallaxPhoto";
 import { OverlapPanel } from "@/components/editorial/OverlapPanel";
 import Link from "next/link";
 import { Reveal, RevealGroup, RevealItem } from "@/components/animations/Reveal";
@@ -8,7 +7,7 @@ import { PageHero } from "@/components/editorial/PageHero";
 import { Photo } from "@/components/editorial/Photo";
 import { Heading, Section } from "@/components/editorial/Section";
 import { StatsLedger } from "@/components/editorial/StatsLedger";
-import { images } from "@/data/images";
+import { heroImages, images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Asset & Portfolio Management",
@@ -77,10 +76,13 @@ export default function ConstructionPage() {
         eyebrow="Asset & Portfolio Management"
         title="Active stewardship. Sustained capital growth."
         intro="End-to-end tenancy operations, regulatory governance, and strategic portfolio rebalancing for private clients and institutional property owners across prime UK and international markets."
-        bleed={<ParallaxPhoto image={images.thamesTownhouses} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_55%]" />}
+        image={heroImages.carltonHouseTerrace}
+        position="60% 40%"
+        lede="Tenancy, compliance and portfolio strategy, handled from our Mayfair desk."
+        actions={[{ href: "/contact", label: "Consult the advisory desk" }]}
       />
 
-      <OverlapPanel title="Complete operational accountability." action={{ href: "/contact", label: "Consult the advisory desk" }}>
+      <OverlapPanel overlap={false} title="Complete operational accountability." action={{ href: "/contact", label: "Consult the advisory desk" }}>
         <p>From day-to-day tenant care to long-term cross-border portfolio expansion, our Mayfair desk looks after the asset so you do not have to.</p>
         <p>Tenants vetted, rent collected, repairs handled, compliance certified and the numbers reported back to you every month.</p>
       </OverlapPanel>

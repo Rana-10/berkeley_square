@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PhotoTile, TintTile } from "@/components/editorial/Tiles";
-import { ParallaxPhoto } from "@/components/editorial/ParallaxPhoto";
 import { OverlapPanel } from "@/components/editorial/OverlapPanel";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -8,7 +7,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/animations/Reveal"
 import { HeroFacts, PageHero } from "@/components/editorial/PageHero";
 import { Photo } from "@/components/editorial/Photo";
 import { Section } from "@/components/editorial/Section";
-import { images } from "@/data/images";
+import { heroImages, images } from "@/data/images";
 import { company, coreValues, keyDifferentiators, targetClients } from "@/data/company";
 import { team } from "@/data/team";
 
@@ -77,9 +76,16 @@ export default function AboutPage() {
         eyebrow="About us"
         title="Your global partner in real estate & finance."
         intro="Headquartered in the heart of London, with established offices and operations across the United Kingdom, Dubai, Oman, Pakistan, Saudi Arabia, Greece, the USA, Spain, Cyprus, and Far East Asia, Berkeley Square Capital delivers seamless cross-border real estate and financial solutions to private clients, investors, developers, and institutions worldwide."
-        actions={[{ href: "/contact", label: "Contact us" }]}
+        image={heroImages.royalCrescent}
+        position="50% 40%"
+        lede="Headquartered in Mayfair, operating across ten jurisdictions."
+        actions={[
+          { href: "/contact", label: "Contact us" },
+          { href: "/services", label: "Our services" }
+        ]}
         side={
           <HeroFacts
+            tone="light"
             items={[
               ["Established", "2015"],
               ["Headquarters", "Mayfair, London W1J"],
@@ -88,10 +94,9 @@ export default function AboutPage() {
             ]}
           />
         }
-        bleed={<ParallaxPhoto image={images.terracottaCorner} ratio="aspect-[4/3] md:aspect-[21/9]" position="object-[50%_30%]" />}
       />
 
-      <OverlapPanel title="Speed, flexibility and trusted advice." action={{ href: "/services", label: "Our services" }}>
+      <OverlapPanel overlap={false} title="Speed, flexibility and trusted advice." action={{ href: "/services", label: "Our services" }}>
         <p>{company.mission}</p>
         <p>{company.philosophy}</p>
       </OverlapPanel>
